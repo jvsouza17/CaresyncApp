@@ -1,0 +1,269 @@
+.auth-container {
+  width: 80%;
+  height: 80%;
+  max-height: 80%;
+  margin: 0 auto;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px;
+  flex-direction: row; /* Adiciona flex-direction para garantir que a estrutura permaneça adequada */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .auth-container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    width: 95%;
+    padding: 5px;
+    flex-direction: column; /* Muda a direção para coluna em telas muito pequenas */
+    align-items: center;
+  }
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.auth-section,
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.auth-section {
+  background-color: rgba(255, 255, 255, 0.418);
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+.logo-section {
+  background-color: rgba(255, 255, 255, 0.838);
+  border-radius: 0 15px 15px 0;
+  width: 70%;
+  height: auto;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.titulo {
+  font-size: 75px;
+  margin: auto;
+  margin-top: 0;
+  color: #26606b;
+}
+
+.cadastro{
+  font-size: 60px;
+  margin-top: 0;
+}
+
+.logo-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #26606b;
+}
+
+.auth-itens {
+  width: 70%;
+  height: auto;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.input-container {
+  position: relative;
+  margin-top: 15px;
+}
+
+.input-container label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  color: #26606b;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.input-container input {
+  border: 0;
+  border-bottom: 1px solid #26606b;
+  background: transparent;
+  width: 100%;
+  padding: 8px 0 5px 0;
+  font-size: 16px;
+  color: #26606b;
+}
+
+.input-container input:focus {
+  outline: none;
+  border-bottom: 1px solid #00be75;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label {
+  top: -12px;
+  font-size: 12px;
+}
+
+.submit-button {
+  background-color: #26606b;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 40%;
+  margin: 100px auto 30px;
+}
+
+.button{
+  display: flex;
+  transform: translateX(100%) ;
+  position: absolute;
+}
+
+.register{
+  margin: 30px auto 5px;
+}
+.submit-button:hover {
+  background-color: #4ab68a;
+  transform: scale(1.05);
+}
+
+.submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(97, 202, 159, 0.5);
+}
+
+.submit-button:active {
+  background-color: #3b8f6a;
+}
+
+.link {
+  color: #26606b;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #00be75;
+}
+
+.separator {
+  margin: 0 5px;
+  color: #999;
+  font-size: 14px;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 50px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 50px;
+  }
+
+  .logo-section {
+    width: 80%;
+  }
+
+  .submit-button {
+    width: 80%;
+  }
+
+  .login-itens {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 40px;
+  }
+
+  .submit-button {
+    width: 90%;
+  }
+
+  .logo-section {
+    width: 100%;
+  }
+}
+
+.logo {
+  background-image: url("../../../assets/images/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  margin-left: 30%;
+}
+
+input[type="date"]::-webkit-datetime-edit-text,
+input[type="date"]::-webkit-datetime-edit-year-field,
+input[type="date"]::-webkit-datetime-edit-month-field,
+input[type="date"]::-webkit-datetime-edit-day-field {
+  color: transparent; /* Torna o texto transparente */
+}
+input[type="date"]:valid::-webkit-datetime-edit-text,
+input[type="date"]:valid::-webkit-datetime-edit-year-field,
+input[type="date"]:valid::-webkit-datetime-edit-month-field,
+input[type="date"]:valid::-webkit-datetime-edit-day-field {
+  color: #26606b; /* Altera a cor para visível (preto) após selecionar a data */
+}
+
+.share {
+  width: 50%;
+}
+
+.double-information {
+  display: flex;
+  gap: 10px;
+}

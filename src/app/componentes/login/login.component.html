@@ -1,0 +1,35 @@
+<app-auth-container>
+  <div class="auth-section">
+    <div class="auth-itens">
+      <div class="header">
+        <h1 class="titulo">LOGIN</h1>
+      </div>
+      <div class="labels">
+        <form [formGroup]="formulario">
+        <div class="input-container">
+          <input formControlName="email" type="mail" required=""/>
+          <label>E-mail</label>
+        </div>
+        <br />
+        
+        <div class="input-container">
+          <input formControlName="senha" type="password" required=""/>
+          <label>Senha</label>
+        </div>
+       </form> 
+        <button class="submit-button">ENTRAR</button>
+        <div class="link-container">
+          <a href="#" class="link">Esqueci a senha</a>
+          <span class="separator">|</span>
+          <a href="#" class="link" routerLink="/cadastro">Não tenho uma conta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="logo-section">
+    <div class="logo"></div>
+    <div class="logo-text">
+      <p>caresync.com.br</p>
+    </div>
+  </div>
+</app-auth-container>
