@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AuthContainerComponent } from './componentes/auth-container/auth-container.component';
 import { CadastroComponent } from './componentes/cadastro/cadastro.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()
