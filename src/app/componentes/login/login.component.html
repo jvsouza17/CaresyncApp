@@ -7,14 +7,20 @@
       <div class="labels">
         <form [formGroup]="formulario">
         <div class="input-container">
-          <input formControlName="email" type="mail" required=""/>
+          <input formControlName="login" type="mail" required=""/>
           <label>E-mail</label>
+          <div class="mensagem_erro" *ngIf="formulario.get('email')?.errors?.['required']  && formulario.get('email')?.touched">
+            E-mail é obrigatório!
+          </div>
         </div>
         <br />
         
         <div class="input-container">
           <input formControlName="senha" type="password" required=""/>
           <label>Senha</label>
+          <div class="mensagem_erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
+            Senha é obrigatória!
+          </div>
         </div>
        </form> 
         <button (click)="formularioValido()" class="submit-button">ENTRAR</button>

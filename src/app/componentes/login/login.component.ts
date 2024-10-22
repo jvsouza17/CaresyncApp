@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../service/authentication.service';
+import { UserLogin } from '../../dto/user-login';
 
 @Component({
   selector: 'app-login',
@@ -11,16 +12,17 @@ import { AuthenticationService } from '../../service/authentication.service';
 export class LoginComponent {
 
   formulario!: FormGroup;
+  user!: UserLogin;
 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService,
-  ) {}
+  ) {this.user = new UserLogin()}
 
   ngOnInit() {
     this.formulario = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      login: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required]]
     })
 
@@ -30,7 +32,9 @@ export class LoginComponent {
     formularioValido() {
       console.log(this.formulario.valid);
       if(this.formulario.valid){
-          this.authenticationService.login();
+          this.user.login = this.formulario.get('email')?.value;
+          this.user.password = this.formulario.get('senha')?.value;
+          this.authenticationService.login(this.user);
       } 
     }
 

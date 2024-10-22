@@ -112,6 +112,14 @@
   margin-top: 15px;
 }
 
+.mensagem_erro {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
 .input-container label {
   position: absolute;
   top: 0;
