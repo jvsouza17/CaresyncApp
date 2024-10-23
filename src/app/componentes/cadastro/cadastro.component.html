@@ -5,59 +5,67 @@
         <h1 class="titulo cadastro">CADASTRO</h1>
       </div>
       <div class="labels">
-        <div class="input-container">
-          <input type="text" required="" />
-          <label>Nome Completo</label>
-        </div>
-        <div class="double-information">
-          <div class="input-container share">
-            <input type="date" required="" />
-            <label>Data de Nasc.</label>
+
+        <form [formGroup]="formulario">
+          <div class="input-container">
+            <input formControlName="firstName" type="text" required="" />
+            <label>Nome</label>
           </div>
-          <div class="input-container share">
-            <select name="sexo" id="">
-              <option value="">SELECIONE</option>
-              <option value="M">MASCULINO</option>
-              <option value="F">FEMININO</option>
-            </select>
-            <label for="sexo">SEXO</label>
+          <div class="input-container">
+            <input formControlName="lastName" type="text" required="" />
+            <label>Sobrenome</label>
           </div>
-        </div>
-        <div class="double-information">
-          <div class="input-container share">
-            <input
-              type="text"
-              required=""
-            />
-            <label>CPF</label>
+          <div class="double-information">
+            <div class="input-container share">
+              <input formControlName="dataNascimento" type="date" required="" />
+              <label>Data de Nasc.</label>
+            </div>
+            <div class="input-container share">
+              <select name="sexo" id="">
+                <option value="">SELECIONE</option>
+                <option value="M">MASCULINO</option>
+                <option value="F">FEMININO</option>
+              </select>
+              <label for="sexo">Sexo</label>
+            </div>
           </div>
-          <div class="input-container share">
+          <div class="double-information">
+            <div class="input-container share">
+              <input
+                type="text"
+                required=""
+              />
+              <label>CPF</label>
+            </div>
+            <div class="input-container share">
+              <input type="text" required="" />
+              <label>RG</label>
+            </div>
+          </div>
+          <div class="input-container">
             <input type="text" required="" />
-            <label>RG</label>
+            <label>Endereço</label>
           </div>
-        </div>
-        <div class="input-container">
-          <input type="text" required="" />
-          <label>ENDEREÇO</label>
-        </div>
-        <div class="double-information">
-          <div class="input-container share">
-            <input type="text" required="" />
-            <label>TELEFONE</label>
+          <div class="double-information">
+            <div class="input-container share">
+              <input type="text" required="" />
+              <label>Telefone</label>
+            </div>
+            <div class="input-container share">
+              <input type="text" required="" />
+              <label>E-mail</label>
+            </div>
           </div>
-          <div class="input-container share">
-            <input type="text" required="" />
-            <label>E-MAIL</label>
+          <div class="input-container">
+            <input type="password" required="" />
+            <label>Senha</label>
           </div>
-        </div>
-        <div class="input-container">
-          <input type="password" required="" />
-          <label>SENHA</label>
-        </div>
-        <div class="input-container">
-          <input type="password" required="" />
-          <label>CONFIRMAR SENHA</label>
-        </div>
+          <div class="input-container">
+            <input type="password" required="" />
+            <label>Confirme sua senha</label>
+          </div>
+        </form>
+
         <button class="submit-button register">CADASTRAR</button>
       </div>
     </div>
