@@ -9,7 +9,7 @@
         <div class="input-container">
           <input formControlName="login" type="mail" required=""/>
           <label>E-mail</label>
-          <div class="mensagem_erro" *ngIf="formulario.get('email')?.errors?.['required']  && formulario.get('email')?.touched">
+          <div class="mensagem_erro" *ngIf="formulario.get('login')?.errors?.['required']  && formulario.get('login')?.touched">
             E-mail é obrigatório!
           </div>
         </div>
