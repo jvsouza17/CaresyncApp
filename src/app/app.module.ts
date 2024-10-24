@@ -14,13 +14,17 @@ import { AuthContainerComponent } from './componentes/auth-container/auth-contai
 import { CadastroComponent } from './componentes/cadastro/cadastro.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CpfMaskPipe } from './pipes/cpf-mask.pipe';
+import { TelefoneMaskPipe } from './pipes/telefone-mask.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AuthContainerComponent,
-    CadastroComponent
+    CadastroComponent,
+    CpfMaskPipe,
+    TelefoneMaskPipe
   ],
   imports: [
     BrowserModule,

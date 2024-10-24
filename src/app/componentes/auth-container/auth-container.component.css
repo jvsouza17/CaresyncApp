@@ -267,11 +267,21 @@ input[type="date"]:valid::-webkit-datetime-edit-day-field {
   color: #26606b; /* Altera a cor para visível (preto) após selecionar a data */
 }
 
+.select{ 
+  display: flex;
+  justify-content: space-around;
+  
+  padding: 5px;
+  width: auto;
+  border-bottom: 1px solid #26606b;
+}
+
 .share {
   width: 50%;
 }
 
 .double-information {
   display: flex;
+  box-sizing: border-box;
   gap: 10px;
 }
