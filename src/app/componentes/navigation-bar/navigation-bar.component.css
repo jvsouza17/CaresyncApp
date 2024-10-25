@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #000;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #325256; /* Cor similar ao texto CARESYNC */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #325256;
+    font-size: 18px;
+  }
+  
+  .nav-links li a:hover {
+    color: #000;
+  }

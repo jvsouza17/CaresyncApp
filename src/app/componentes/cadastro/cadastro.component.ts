@@ -79,7 +79,7 @@ export class CadastroComponent {
     //   if(this.formulario.valid){
     //       this.user.login = this.formulario.get('login')?.value;
     //       this.user.password = this.formulario.get('senha')?.value;
-    //       this.authenticationService.login(this.user);
+    //       this.authenticationService.cadastro(this.user);
     //   } 
     // }
 }

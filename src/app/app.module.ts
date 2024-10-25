@@ -16,6 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CpfMaskPipe } from './pipes/cpf-mask.pipe';
 import { TelefoneMaskPipe } from './pipes/telefone-mask.pipe';
+import { HomeComponent } from './componentes/home/home.component';
+import { NavigationBarComponent } from './componentes/navigation-bar/navigation-bar.component';
+import { ConsultasComponent } from './componentes/consultas/consultas.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { TelefoneMaskPipe } from './pipes/telefone-mask.pipe';
     AuthContainerComponent,
     CadastroComponent,
     CpfMaskPipe,
-    TelefoneMaskPipe
+    TelefoneMaskPipe,
+    HomeComponent,
+    NavigationBarComponent,
+    ConsultasComponent
   ],
   imports: [
     BrowserModule,
