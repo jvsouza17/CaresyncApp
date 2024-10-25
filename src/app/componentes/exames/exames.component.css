@@ -1,0 +1,57 @@
+.exam-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.exam-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 80%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header do Card */
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  border-radius: 12px 12px 0 0;
+}
+
+.text-primary {
+  color: #4caf50;
+}
+
+/* Informação do Paciente */
+.patient-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #555555;
+}
+
+/* Estilização da Tabela */
+.table {
+  margin: 0;
+}
+
+.table thead {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 12px;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+/* Responsividade da Tabela */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 0 0 12px 12px;
+}

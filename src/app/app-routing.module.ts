@@ -6,6 +6,7 @@ import { UsuarioNaoAutenticadoGuard } from './services/guards/usuario-nao-autent
 import { UsuarioAutenticadoGuard } from './services/guards/usuario-autenticado.guard';
 import { HomeComponent } from './componentes/home/home.component';
 import { ConsultasComponent } from './componentes/consultas/consultas.component';
+import { ExamesComponent } from './componentes/exames/exames.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [UsuarioAutenticadoGuard],
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },  // Rota para o componente de cadastro
   { path: 'home', component: HomeComponent, canActivate: [UsuarioAutenticadoGuard]},
   { path: 'consultas', component: ConsultasComponent, canActivate: [UsuarioAutenticadoGuard] },
+  { path: 'exames', component: ExamesComponent, canActivate: [UsuarioAutenticadoGuard]},
   { path: '**', redirectTo: '/login'},  // Rota coringa redireciona para login em caso de rota não encontrada
 ];
 

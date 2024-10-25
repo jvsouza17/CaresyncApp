@@ -13,12 +13,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { AuthContainerComponent } from './componentes/auth-container/auth-container.component';
 import { CadastroComponent } from './componentes/cadastro/cadastro.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CpfMaskPipe } from './pipes/cpf-mask.pipe';
 import { TelefoneMaskPipe } from './pipes/telefone-mask.pipe';
 import { HomeComponent } from './componentes/home/home.component';
 import { NavigationBarComponent } from './componentes/navigation-bar/navigation-bar.component';
 import { ConsultasComponent } from './componentes/consultas/consultas.component';
+import { ExamesComponent } from './componentes/exames/exames.component';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ConsultasComponent } from './componentes/consultas/consultas.component'
     TelefoneMaskPipe,
     HomeComponent,
     NavigationBarComponent,
-    ConsultasComponent
+    ConsultasComponent,
+    ExamesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { ConsultasComponent } from './componentes/consultas/consultas.component'
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule
   ],
   providers: [
     provideAnimationsAsync()
