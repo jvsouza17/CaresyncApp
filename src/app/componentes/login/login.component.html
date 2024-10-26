@@ -5,10 +5,11 @@
         <h1 class="titulo">LOGIN</h1>
       </div>
       <div class="labels">
+
         <form [formGroup]="formulario">
           <mat-form-field class="example-full-width">
             <mat-label>E-mail</mat-label>
-            <input matInput placeholder="" value="">
+            <input formControlName="login" matInput placeholder="" value="">
           </mat-form-field>
           <div class="mensagem_erro" *ngIf="formulario.get('login')?.errors?.['required']  && formulario.get('login')?.touched">
             E-mail é obrigatório!
@@ -16,16 +17,16 @@
           <div class="mensagem_erro" *ngIf="formulario.get('login')?.errors?.['email']  && formulario.get('login')?.touched">
             Digite um e-mail obrigatório!
           </div>
-        <br />
-        
+        <br/>
+
           <mat-form-field class="example-full-width">
             <mat-label>Senha</mat-label>
-            <input matInput placeholder="" value="" type="password">
+            <input formControlName="senha" matInput placeholder="" value="" type="password">
           </mat-form-field>
           <div class="mensagem_erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
             Senha é obrigatória!
         </div>
-       </form> 
+       </form>
         <button (click)="formularioValido()" class="submit-button">ENTRAR</button>
         <div class="link-container">
           <a href="#" class="link">Esqueci a senha</a>
