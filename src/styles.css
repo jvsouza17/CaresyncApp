@@ -13,4 +13,5 @@ body {
   background-size: cover; /* cobre toda a tela */
   background-repeat: no-repeat; /* evita que a imagem se repita */
   background-position: center center; /* centraliza a imagem */
+  background-attachment: fixed;
 }

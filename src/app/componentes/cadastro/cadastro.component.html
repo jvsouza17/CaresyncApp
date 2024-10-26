@@ -1,63 +1,58 @@
-<app-auth-container>
-  <div class="auth-section">
-    <div class="auth-itens">
+<app-auth-container fxLayout="column" fxLayoutAlign="center center" class="auth-container">
+  <div fxFlex="100%" fxLayout="row" fxLayoutAlign="center center" fxLayout.lt-md="column" class="auth-section">
+    <div fxFlex="80" fxFlex.lt-md="100" fxLayout="column" fxLayoutAlign="start stretch" class="auth-itens">
       <div class="header">
         <h1 class="titulo cadastro">CADASTRO</h1>
       </div>
-      <div class="labels">
-        <form [formGroup]="formulario">
-          <div class="double-information">
-            <mat-form-field class="example-full-width">
-              <mat-label>Nome Completo</mat-label>
-              <input matInput placeholder="" value="">
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Sexo</mat-label>
-              <mat-select>
-                <mat-option value="M">Masculino</mat-option>
-                <mat-option value="F">Feminino</mat-option>
-                <mat-option value="P">Prefiro não informar</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
+      
+      <form [formGroup]="formulario" fxLayout="column" fxLayoutGap="5px" class="labels">
+        <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" class="double-information">
+          <mat-form-field class="example-full-width" fxFlex="60">
+            <mat-label>Nome Completo</mat-label>
+            <input matInput placeholder="Digite seu nome completo">
+          </mat-form-field>
+          <mat-form-field fxFlex="40">
+            <mat-label>Sexo</mat-label>
+            <mat-select>
+              <mat-option value="M">Masculino</mat-option>
+              <mat-option value="F">Feminino</mat-option>
+              <mat-option value="P">Prefiro não informar</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
 
-          
-
-          <div class="double-information">
-            <mat-form-field class="example-full-width">
-              <mat-label>Data Nasc.</mat-label>
-              <input matInput [matDatepicker]="picker">
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-            <!-- necessário alinhar campo dataNascimento com cpf -->
-              <mat-form-field class="example-full-width">
-                <mat-label>CPF</mat-label>
-                <input matInput placeholder="" value="" formControlName="cpf"
-                required=""
-                (input)="formatCpf()"
-                [value]="cpfValue">
-              </mat-form-field>
-          </div>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Endereço</mat-label>
-            <input matInput placeholder="" value="">
+        <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" class="double-information">
+          <mat-form-field class="example-full-width" fxFlex="50">
+            <mat-label>Data de Nasc.</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Escolha a data">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
 
-          <mat-form-field class="example-full-width">
-            <mat-label>CEP</mat-label>
-            <input matInput placeholder="" value="">
+          <mat-form-field class="example-full-width" fxFlex="50">
+            <mat-label>CPF</mat-label>
+            <input matInput placeholder="Digite seu CPF" formControlName="cpf" required (input)="formatCpf()" [value]="cpfValue">
           </mat-form-field>
+        </div>
 
-          <div class="double-information">
-            <mat-form-field class="example-full-width">
-              <mat-label>Cidade</mat-label>
-              <input matInput placeholder="" value="">
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>UF</mat-label>
-              <mat-select>
+        <mat-form-field class="example-full-width" fxFlex="100">
+          <mat-label>Endereço</mat-label>
+          <input matInput placeholder="Digite seu endereço">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" fxFlex="100">
+          <mat-label>CEP</mat-label>
+          <input matInput placeholder="Digite seu CEP">
+        </mat-form-field>
+
+        <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" class="double-information">
+          <mat-form-field class="example-full-width" fxFlex="60">
+            <mat-label>Cidade</mat-label>
+            <input matInput placeholder="Digite sua cidade">
+          </mat-form-field>
+          <mat-form-field fxFlex="40">
+            <mat-label>UF</mat-label>
+            <mat-select>
                 <mat-option value="AC">AC</mat-option>
                 <mat-option value="AL">AL</mat-option>
                 <mat-option value="AM">AM</mat-option>
@@ -86,36 +81,36 @@
                 <mat-option value="TO">TO</mat-option>
                 <mat-option value="SP">SP</mat-option>
               </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="double-information">
-            <mat-form-field class="example-full-width">
-              <mat-label>Telefone</mat-label>
-              <input matInput placeholder="" value="" formControlName="telefone"
-              (input)="formatTelefone()"
-              [value]="telefoneValue">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <mat-label>E-mail</mat-label>
-              <input matInput placeholder="" value="">
-            </mat-form-field>
-          </div>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Senha</mat-label>
-            <input matInput placeholder="" value="" type="password">
           </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <mat-label>Confirmar Senha</mat-label>
-            <input matInput placeholder="" value="" type="password">
-          </mat-form-field>
-        </form>
+        </div>
 
-        <button class="submit-button register">CADASTRAR</button>
-      </div>
+        <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" class="double-information">
+          <mat-form-field class="example-full-width" fxFlex="60">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="Digite seu e-mail">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" fxFlex="40">
+            <mat-label>Telefone</mat-label>
+            <input matInput placeholder="Digite seu telefone" formControlName="telefone" (input)="formatTelefone()" [value]="telefoneValue">
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="example-full-width" fxFlex="100">
+          <mat-label>Senha</mat-label>
+          <input matInput type="password" placeholder="Digite sua senha">
+        </mat-form-field>
+        
+        <mat-form-field class="example-full-width" fxFlex="100">
+          <mat-label>Confirmar Senha</mat-label>
+          <input matInput type="password" placeholder="Confirme sua senha">
+        </mat-form-field>
+
+        <button class="submit-button register" fxFlex="50" fxFlex.lt-md="70" fxFlex.lt-sm="100">CADASTRAR</button>
+      </form>
     </div>
   </div>
-  <div class="logo-section">
+
+  <div fxFlex="20" fxFlex.lt-md="100" class="logo-section" fxLayoutAlign="center center">
     <div class="logo"></div>
     <div class="logo-text">
       <p>caresync.com.br</p>

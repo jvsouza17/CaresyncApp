@@ -1,33 +1,37 @@
 <app-auth-container>
-  <div class="auth-section">
-    <div class="auth-itens">
+  <div fxLayout="column" fxLayoutAlign="center center" class="auth-section">
+    <div fxLayout="column" fxFlex="100%" fxFlex.sm="75%" fxFlex.md="50%" fxFlex.lg="40%" fxLayoutAlign="center center" class="auth-itens">
       <div class="header">
         <h1 class="titulo">LOGIN</h1>
       </div>
-      <div class="labels">
-        <form [formGroup]="formulario">
-          <mat-form-field class="example-full-width">
+
+      <div class="labels" fxLayout="column" fxLayoutAlign="center">
+        <form [formGroup]="formulario" fxLayout="column" fxLayoutGap="10px">
+          <mat-form-field class="example-full-width-login">
             <mat-label>E-mail</mat-label>
-            <input matInput placeholder="" value="">
+            <input matInput formControlName="login" placeholder="" />
           </mat-form-field>
-          <div class="mensagem_erro" *ngIf="formulario.get('login')?.errors?.['required']  && formulario.get('login')?.touched">
+
+          <div class="mensagem_erro" *ngIf="formulario.get('login')?.errors?.['required'] && formulario.get('login')?.touched">
             E-mail é obrigatório!
           </div>
-          <div class="mensagem_erro" *ngIf="formulario.get('login')?.errors?.['email']  && formulario.get('login')?.touched">
-            Digite um e-mail obrigatório!
+          <div class="mensagem_erro" *ngIf="formulario.get('login')?.errors?.['email'] && formulario.get('login')?.touched">
+            Digite um e-mail válido!
           </div>
-        <br />
-        
-          <mat-form-field class="example-full-width">
+
+          <mat-form-field class="example-full-width-login">
             <mat-label>Senha</mat-label>
-            <input matInput placeholder="" value="" type="password">
+            <input matInput formControlName="senha" type="password" placeholder="" />
           </mat-form-field>
+
           <div class="mensagem_erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
             Senha é obrigatória!
-        </div>
-       </form> 
-        <button (click)="formularioValido()" class="submit-button">ENTRAR</button>
-        <div class="link-container">
+          </div>
+
+          <button (click)="formularioValido()" class="submit-button">ENTRAR</button>
+        </form>
+
+        <div fxLayout="row" fxLayoutAlign="center" class="link-container">
           <a href="#" class="link">Esqueci a senha</a>
           <span class="separator">|</span>
           <a href="#" class="link" routerLink="/cadastro">Não tenho uma conta</a>
@@ -35,7 +39,8 @@
       </div>
     </div>
   </div>
-  <div class="logo-section">
+
+  <div fxLayout="column" fxLayoutAlign="center center" class="logo-section">
     <div class="logo"></div>
     <div class="logo-text">
       <p>caresync.com.br</p>

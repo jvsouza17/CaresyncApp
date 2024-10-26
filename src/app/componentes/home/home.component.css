@@ -16,7 +16,7 @@
   border-radius: 10px;
   margin: auto;
   margin-top: 60px;
-  height: 80%;
+  height: auto; /* Alterado para auto para melhor responsividade */
   width: 80%;
   position: relative;
 }
@@ -49,7 +49,8 @@
   margin-top: 20px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   height: 60px;
-  width: 260px;
+  width: 260px; /* Largura padrão do botão */
+  text-align: center;
 }
 
 .consulta-btn:hover {
@@ -57,25 +58,44 @@
   transform: scale(1.05);
 }
 
+#imagem-medicos {
+  flex: 1; /* Permite que a div ocupe o espaço restante */
+  min-width: 300px; /* Define uma largura mínima para a div */
+  min-height: 400px; /* Define uma largura mínima para a div */
+  height: auto; /* Mantém a altura automática */
+  background-image: url("../../../assets/images/medicos.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+
+.div-consulta-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .image img {
-  width: 100%; /* Tornar a imagem responsiva */
-  height: auto; /* Manter a proporção */
+  width: 100%; /* Imagem responsiva */
+  height: auto; /* Mantém proporção */
+  background-color: aqua;
 }
 
 @media (max-width: 768px) {
   .home-container {
-      flex-direction: column;
+      flex-direction: column; /* Altera direção para coluna em telas menores */
       text-align: center;
-      padding: 20px; /* Reduzir o padding para telas menores */
+      padding: 20px; /* Reduzir padding */
   }
 
   .content {
-      max-width: 100%; /* Permitir que o conteúdo ocupe toda a largura */
+      max-width: 100%; /* Permite que o conteúdo ocupe toda a largura */
       margin-bottom: 20px;
   }
 
   .content h1 {
-      font-size: 28px; /* Tamanho do título reduzido para telas menores */
+      font-size: 28px; /* Tamanho do título reduzido */
   }
 
   .content p {
@@ -83,16 +103,7 @@
   }
 
   .consulta-btn {
-      width: 80%; /* Aumentar a largura do botão em telas menores */
-      font-size: 18px; /* Reduzir o tamanho da fonte */
-  }
-
-  .image {
-      width: 100%; /* A imagem ocupará toda a largura disponível */
-      height: auto; /* Manter a altura automática */
-      background-image: url("../../../assets/images/medicos.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center; /* Centraliza a imagem de fundo */
+      width: 80%; /* Aumenta largura do botão em telas menores */
+      font-size: 18px; /* Reduz tamanho da fonte */
   }
 }
