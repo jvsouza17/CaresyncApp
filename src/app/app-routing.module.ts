@@ -12,11 +12,11 @@ const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [UsuarioAutenticadoGuard],
     children: [{ path: '', component: HomeComponent }],
   },
-  { path: 'login', component: LoginComponent, canActivate: [UsuarioNaoAutenticadoGuard] },  // Rota para o componente de login
+  { path: 'login', component: LoginComponent },  // Rota para o componente de login
   { path: 'cadastro', component: CadastroComponent },  // Rota para o componente de cadastro
-  { path: 'home', component: HomeComponent, canActivate: [UsuarioAutenticadoGuard]},
-  { path: 'consultas', component: ConsultasComponent, canActivate: [UsuarioAutenticadoGuard] },
-  { path: 'exames', component: ExamesComponent, canActivate: [UsuarioAutenticadoGuard]},
+  { path: 'home', component: HomeComponent },
+  { path: 'consultas', component: ConsultasComponent },
+  { path: 'exames', component: ExamesComponent },
   { path: '**', redirectTo: '/login'},  // Rota coringa redireciona para login em caso de rota não encontrada
 ];
 

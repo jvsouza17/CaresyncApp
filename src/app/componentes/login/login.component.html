@@ -6,24 +6,24 @@
       </div>
       <div class="labels">
         <form [formGroup]="formulario">
-        <div class="input-container">
-          <input formControlName="login" type="mail" required=""/>
-          <label>E-mail</label>
+          <mat-form-field class="example-full-width">
+            <mat-label>E-mail</mat-label>
+            <input matInput placeholder="" value="">
+          </mat-form-field>
           <div class="mensagem_erro" *ngIf="formulario.get('login')?.errors?.['required']  && formulario.get('login')?.touched">
             E-mail é obrigatório!
           </div>
           <div class="mensagem_erro" *ngIf="formulario.get('login')?.errors?.['email']  && formulario.get('login')?.touched">
             Digite um e-mail obrigatório!
           </div>
-        </div>
         <br />
         
-        <div class="input-container">
-          <input formControlName="senha" type="password" required=""/>
-          <label>Senha</label>
+          <mat-form-field class="example-full-width">
+            <mat-label>Senha</mat-label>
+            <input matInput placeholder="" value="" type="password">
+          </mat-form-field>
           <div class="mensagem_erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
             Senha é obrigatória!
-          </div>
         </div>
        </form> 
         <button (click)="formularioValido()" class="submit-button">ENTRAR</button>

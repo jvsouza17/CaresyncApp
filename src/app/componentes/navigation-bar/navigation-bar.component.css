@@ -3,20 +3,26 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #fff;
-    border-bottom: 2px solid #000;
+    background-color:rgba(255, 255, 255, 0.838);
+    color: #26606b !important;
+    font-family: "Raleway", sans-serif !important;
+    font-size: larger !important;
   }
 
   .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #4caf50; /* Cor similar ao texto CARESYNC */
+    font-size: 28px;
+    font-weight: 400;
+    color: #26606b; /* Cor similar ao texto CARESYNC */
   }
 
   .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
+    align-items: center;
+  }
+  dl, ol, ul {
+    margin: 0 0 0 0;
   }
 
   .nav-links li a {
@@ -26,5 +32,5 @@
   }
 
   .nav-links li a:hover {
-    color: #000;
+    color: #00be75;
   }

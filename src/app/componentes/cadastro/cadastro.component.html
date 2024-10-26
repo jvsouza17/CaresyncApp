@@ -5,110 +5,110 @@
         <h1 class="titulo cadastro">CADASTRO</h1>
       </div>
       <div class="labels">
-
         <form [formGroup]="formulario">
           <div class="double-information">
-            <div class="input-container share">
-              <input formControlName="firstName" type="text" required="" />
-              <label>Nome</label>
-            </div>
-            <div class="input-container share">
-              <input formControlName="lastName" type="text" required="" />
-              <label>Sobrenome</label>
-            </div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Nome Completo</mat-label>
+              <input matInput placeholder="" value="">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Sexo</mat-label>
+              <mat-select>
+                <mat-option value="M">Masculino</mat-option>
+                <mat-option value="F">Feminino</mat-option>
+                <mat-option value="P">Prefiro não informar</mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
-
-            <div class="input-container select">
-              <select formControlName="sexo" name="sexo" id="">
-                <option value="" selected>SELECIONE</option>
-                <option value="M">MASCULINO</option>
-                <option value="F">FEMININO</option>
-                <option value="P">PREFIRO NÃO RESPONDER</option>
-              </select>
-              <label for="sexo">Sexo:</label>
-            </div>
 
           
+
           <div class="double-information">
-            <div class="input-container share">
-              <input formControlName="dataNascimento" type="date" required="" />
-              <label>Data de Nasc.</label>
-            </div>  
+            <mat-form-field class="example-full-width">
+              <mat-label>Data Nasc.</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
             <!-- necessário alinhar campo dataNascimento com cpf -->
-            <div class="input-container share">
-              <input type="text" formControlName="cpf" required="" (input)="formatCpf()" [value]="cpfValue">
-              <label>CPF</label>
-            </div>
+              <mat-form-field class="example-full-width">
+                <mat-label>CPF</mat-label>
+                <input matInput placeholder="" value="" formControlName="cpf"
+                required=""
+                (input)="formatCpf()"
+                [value]="cpfValue">
+              </mat-form-field>
           </div>
 
-          <div class="input-container">
-            <input formControlName="endereco" type="text" required="" />
-            <label>Endereço</label>
-          </div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Endereço</mat-label>
+            <input matInput placeholder="" value="">
+          </mat-form-field>
 
-          <div class="input-container">
-            <input formControlName="cep" type="text" required="" />
-            <label>CEP</label>
-          </div>
+          <mat-form-field class="example-full-width">
+            <mat-label>CEP</mat-label>
+            <input matInput placeholder="" value="">
+          </mat-form-field>
 
           <div class="double-information">
-            <div class="input-container share">
-              <input formControlName="cidade" type="text" required="" />
-              <label>Cidade</label>
-            </div>
-            <div class="input-container select share">
-              <select formControlName="uf" name="uf" id="">
-                <option value="" selected>SELECIONE</option>
-                <option value="AC">AC</option>
-                <option value="AL">AL</option>
-                <option value="AM">AM</option>
-                <option value="AP">AP</option>
-                <option value="BA">BA</option>
-                <option value="CE">CE</option>
-                <option value="DF">DF</option>
-                <option value="ES">ES</option>
-                <option value="GO">GO</option>
-                <option value="MA">MA</option>
-                <option value="MG">MG</option>
-                <option value="MS">MS</option>
-                <option value="MT">MT</option>
-                <option value="PA">PA</option>
-                <option value="PB">PB</option>
-                <option value="PE">PE</option>
-                <option value="PI">PI</option>
-                <option value="PR">PR</option>
-                <option value="RJ">RJ</option>
-                <option value="RN">RN</option>
-                <option value="RO">RO</option>
-                <option value="RR">RR</option>
-                <option value="RS">RS</option>
-                <option value="SC">SC</option>
-                <option value="SE">SE</option>
-                <option value="TO">TO</option>
-                <option value="SP">SP</option>
-              </select>
-              <label>UF</label>
-            </div>
-            
+            <mat-form-field class="example-full-width">
+              <mat-label>Cidade</mat-label>
+              <input matInput placeholder="" value="">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>UF</mat-label>
+              <mat-select>
+                <mat-option value="AC">AC</mat-option>
+                <mat-option value="AL">AL</mat-option>
+                <mat-option value="AM">AM</mat-option>
+                <mat-option value="AP">AP</mat-option>
+                <mat-option value="BA">BA</mat-option>
+                <mat-option value="CE">CE</mat-option>
+                <mat-option value="DF">DF</mat-option>
+                <mat-option value="ES">ES</mat-option>
+                <mat-option value="GO">GO</mat-option>
+                <mat-option value="MA">MA</mat-option>
+                <mat-option value="MG">MG</mat-option>
+                <mat-option value="MS">MS</mat-option>
+                <mat-option value="MT">MT</mat-option>
+                <mat-option value="PA">PA</mat-option>
+                <mat-option value="PB">PB</mat-option>
+                <mat-option value="PE">PE</mat-option>
+                <mat-option value="PI">PI</mat-option>
+                <mat-option value="PR">PR</mat-option>
+                <mat-option value="RJ">RJ</mat-option>
+                <mat-option value="RN">RN</mat-option>
+                <mat-option value="RO">RO</mat-option>
+                <mat-option value="RR">RR</mat-option>
+                <mat-option value="RS">RS</mat-option>
+                <mat-option value="SC">SC</mat-option>
+                <mat-option value="SE">SE</mat-option>
+                <mat-option value="TO">TO</mat-option>
+                <mat-option value="SP">SP</mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
           <div class="double-information">
-            <div class="input-container share">
-              <input type="text" required="" formControlName="telefone" (input)="formatTelefone()" [value]="telefoneValue">
-              <label>Telefone</label>
-            </div>
-            <div class="input-container share">
-              <input formControlName="email" type="text" required="" />
-              <label>E-mail</label>
-            </div>
+            <mat-form-field class="example-full-width">
+              <mat-label>Telefone</mat-label>
+              <input matInput placeholder="" value="" formControlName="telefone"
+              (input)="formatTelefone()"
+              [value]="telefoneValue">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>E-mail</mat-label>
+              <input matInput placeholder="" value="">
+            </mat-form-field>
           </div>
-          <div class="input-container">
-            <input formControlName="senha" type="password" required="" />
-            <label>Senha</label>
-          </div>
-          <div class="input-container">
-            <input formControlName="confirmSenha" type="password" required="" />
-            <label>Confirme sua senha</label>
-          </div>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Senha</mat-label>
+            <input matInput placeholder="" value="" type="password">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Confirmar Senha</mat-label>
+            <input matInput placeholder="" value="" type="password">
+          </mat-form-field>
         </form>
 
         <button class="submit-button register">CADASTRAR</button>

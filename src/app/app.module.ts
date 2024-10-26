@@ -21,6 +21,10 @@ import { NavigationBarComponent } from './componentes/navigation-bar/navigation-
 import { ConsultasComponent } from './componentes/consultas/consultas.component';
 import { ExamesComponent } from './componentes/exames/exames.component';
 import { DataTablesModule } from 'angular-datatables';
+import {FormsModule} from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {provideNativeDateAdapter} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -45,10 +49,15 @@ import { DataTablesModule } from 'angular-datatables';
     MatIconModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    MatSelectModule,
+    FormsModule,
+    MatDatepickerModule,
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideNativeDateAdapter(),
+
   ],
   bootstrap: [AppComponent]
 })
