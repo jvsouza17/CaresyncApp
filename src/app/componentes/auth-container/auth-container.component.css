@@ -55,6 +55,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 100%;
 }
 
 .auth-section {
@@ -284,10 +285,18 @@ input[type="date"]:valid::-webkit-datetime-edit-day-field {
   display: flex;
   box-sizing: border-box;
   gap: 10px;
+  width: 90%;
+  margin: auto;
 }
 
 .example-full-width {
-  width: 100%;
+  width: 90%;
+  margin: auto;
+}
+
+.example-full-width-login{
+  width: 80%;
+  margin: auto;
 }
 
 mat-label,
@@ -323,4 +332,57 @@ mat-label,
   color: #26606b !important;
   font-family: "Raleway", sans-serif !important;
   font-size: larger !important;
+}
+
+::ng-deep .mat-mdc-raised-button:not(:disabled) {
+  background-color: #4ab68a !important;
+  color: white !important;
+}
+
+.auth-itens {
+  width: 100%;
+  max-height: calc(100vh - 200px); /* Ajuste para altura disponível */
+  overflow-y: auto; /* Habilita rolagem vertical */
+  padding-right: 10px; /* Compensação para a barra de rolagem */
+}
+
+.labels form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Espaçamento reduzido entre os inputs */
+}
+
+.submit-button.register {
+  width: 50%;
+  margin: 20px auto;
+}
+
+/* Personaliza a barra de rolagem */
+.scrollable {
+  scrollbar-width: thin; /* Define a largura da barra de rolagem */
+  scrollbar-color: #00be75 #f1f1f1; /* Cor do "polegar" e do fundo */
+}
+
+/* Cor do "polegar" ao passar o mouse */
+.scrollable:hover {
+  scrollbar-color: #4ab68a #f1f1f1;
+}
+
+/* Personaliza a barra de rolagem */
+::-webkit-scrollbar {
+  width: 6px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cor do fundo da barra de rolagem */
+  border-radius: 10px; /* Bordas arredondadas do fundo */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #26606b; /* Cor do "polegar" da barra de rolagem */
+  border-radius: 10px; /* Bordas arredondadas do "polegar" */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4ab68a; /* Cor do "polegar" ao passar o mouse */
 }

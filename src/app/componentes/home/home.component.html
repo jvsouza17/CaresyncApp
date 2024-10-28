@@ -1,22 +1,13 @@
 <app-navigation-bar></app-navigation-bar>
 
-<div class="home-container">
-  <div class="content">
+<div class="home-container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <div class="content" fxFlex="70" fxFlex.lt-md="100">
     <h1>BEM-VINDO(A) AO CARESYNC!</h1>
-    <br>
-    <br>
-    <br>
+    <br />
     <h2>CUIDE DA SUA SAÚDE</h2>
     <p>
       Agende consultas, acesse seus exames e mantenha seu histórico médico
       sempre à mão.
-    </p>
-    <br />
-    <h2>A SAÚDE É UM INVESTIMENTO EM VOCÊ MESMO</h2>
-    <p>
-      Cuidar da sua saúde é um dos investimentos mais importantes que você pode
-      fazer. Não deixe para amanhã o que você pode fazer hoje! Faça do
-      autocuidado uma prioridade em sua vida.
     </p>
     <br />
     <h2>COMECE AGORA!</h2>
@@ -27,8 +18,13 @@
       mais saudável!
     </p>
     <br />
-    <button class="consulta-btn">AGENDAR CONSULTA</button>
+    <div class="div-consulta-btn" fxLayoutAlign="center">
+      <button class="consulta-btn">
+        AGENDAR CONSULTA
+      </button>
+    </div>
   </div>
-
-  <div class="image"></div>
+  <div id="imagem-medicos">
+    <img />
+  </div>
 </div>
