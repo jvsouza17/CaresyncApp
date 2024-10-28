@@ -20,7 +20,6 @@ export class LoginComponent {
   ) {this.user = new UserLogin()}
 
   ngOnInit() {
-    localStorage.clear() //limpar token do usuário no cache, usado para fins de teste
     this.criarForms();
   }
 
@@ -35,7 +34,7 @@ export class LoginComponent {
           this.user.login = this.formulario.get('login')?.value;
           this.user.password = this.formulario.get('senha')?.value;
           this.authenticationService.login(this.user);
-      } 
+      }
     }
 
 }
