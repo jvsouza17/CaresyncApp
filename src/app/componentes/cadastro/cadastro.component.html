@@ -30,14 +30,14 @@
         <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" class="double-information">
           <mat-form-field class="example-full-width" fxFlex="50">
             <mat-label>Data de Nasc.</mat-label>
-            <input formControlName="dataNascimento" matInput [matDatepicker]="picker" placeholder="Escolha a data">
+            <input matInput [matDatepicker]="picker" formControlName="dataNascimento" placeholder="DD/MM/YYYY">
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <mat-datepicker #picker startView="multi-year"></mat-datepicker>
           </mat-form-field>
 
           <mat-form-field class="example-full-width" fxFlex="50">
             <mat-label>CPF</mat-label>
-            <input matInput placeholder="Digite seu CPF" formControlName="cpf" required (input)="formatCpf()" [value]="cpfValue">
+            <input matInput placeholder="Digite seu CPF" formControlName="CPF" required (input)="formatCpf()" [value]="cpfValue">
           </mat-form-field>
         </div>
 
@@ -48,7 +48,7 @@
 
         <mat-form-field class="example-full-width" fxFlex="100">
           <mat-label>CEP</mat-label>
-          <input formControlName="cep" matInput placeholder="Digite seu CEP">
+          <input formControlName="CEP" matInput placeholder="Digite seu CEP">
         </mat-form-field>
 
         <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" class="double-information">
@@ -59,7 +59,7 @@
 
           <mat-form-field fxFlex="40">
             <mat-label>UF</mat-label>
-            <mat-select formControlName="uf">
+            <mat-select formControlName="UF">
                 <mat-option value="AC">AC</mat-option>
                 <mat-option value="AL">AL</mat-option>
                 <mat-option value="AM">AM</mat-option>
@@ -94,7 +94,7 @@
         <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" class="double-information">
           <mat-form-field class="example-full-width" fxFlex="60">
             <mat-label>E-mail</mat-label>
-            <input formControlName="login" matInput placeholder="Digite seu e-mail">
+            <input formControlName="email" matInput placeholder="Digite seu e-mail">
           </mat-form-field>
 
           <mat-form-field class="example-full-width" fxFlex="40">
@@ -112,6 +112,9 @@
           <mat-label>Confirmar Senha</mat-label>
           <input formControlName="confirmSenha" matInput type="password" placeholder="Confirme sua senha">
         </mat-form-field>
+        <div class="mensagem_erro" *ngIf="formulario.hasError('passwordMismatch') && formulario.get('confirmSenha')?.touched">
+          As senhas não coincidem!
+        </div>
 
         <button (click)="formularioValido()" class="submit-button register" fxFlex="50" fxFlex.lt-md="70" fxFlex.lt-sm="100">CADASTRAR</button>
       </form>

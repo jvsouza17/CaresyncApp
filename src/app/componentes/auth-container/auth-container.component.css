@@ -3,7 +3,7 @@
   height: 100%;
   max-height: 90%;
   margin: 0 auto;
-  border-radius: 8px;  
+  border-radius: 8px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -116,9 +116,7 @@
 
 .mensagem_erro {
   font-size: 12px;
-  margin-left: 5px;
   color: red;
-  margin-top: 5px;
 }
 
 .input-container label {
@@ -268,10 +266,10 @@ input[type="date"]:valid::-webkit-datetime-edit-day-field {
   color: #26606b; /* Altera a cor para visível (preto) após selecionar a data */
 }
 
-.select{ 
+.select{
   display: flex;
   justify-content: space-around;
-  
+
   padding: 5px;
   width: auto;
   border-bottom: 1px solid #26606b;
@@ -319,7 +317,7 @@ mat-label,
 }
 ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
   border-bottom-color: #00be75 !important;
-}  
+}
 
 ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input{
   color: #26606b;
