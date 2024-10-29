@@ -25,7 +25,6 @@ import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {provideNativeDateAdapter} from '@angular/material/core';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +56,6 @@ import {provideNativeDateAdapter} from '@angular/material/core';
   providers: [
     provideAnimationsAsync(),
     provideNativeDateAdapter(),
-
   ],
   bootstrap: [AppComponent]
 })

@@ -17,7 +17,7 @@ export class CadastroComponent {
   formulario!: FormGroup;
   user!: UserCadastro;
   telefoneValue: string = '';
-  cpfValue: string = '';	
+  cpfValue: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,25 +39,28 @@ export class CadastroComponent {
     const confirmSenha = form.get('confirmSenha')?.value;
 
     if (senha !== confirmSenha) {
-      form.get('confirmSenha')?.setErrors({ senhaNaoConfere: true });
+      return false;
     } else {
-      form.get('confirmSenha')?.setErrors(null);
+      return true;
     }
   }
 //validators.pattern ainda não testados
   criarForms() {
     this.formulario = this.formBuilder.group({
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
+      nome: ['', [Validators.required]],
+      sobrenome: ['', [Validators.required]],
       sexo: ['', [Validators.required]],
       dataNascimento: ['', [Validators.required]],
       cpf: ['', [Validators.required, Validators.pattern('^([0-9]{2}[\.]?){3}-[0-9]{2}$')]],
       endereco: ['', [Validators.required]],
+      cep: ['', [Validators.required]],
+      cidade: ['', [Validators.required]],
+      uf: ['', [Validators.required]],
+      login: ['', [Validators.required]],
       telefone: ['', [Validators.required, Validators.pattern('^(\([0-9]{2}\) |[0-9]{2})?([0-9]{4,5}|[0-9]{4}-[0-9]{4})$')]],
-      email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required]],
       confirmSenha: ['', [Validators.required]],
-    }, 
+    },
     { validator: this.passwordMatchValidator });
   }
 
@@ -74,13 +77,15 @@ export class CadastroComponent {
     this.telefoneValue = this.telefoneMaskPipe.transform(telefone);  // Aplica a máscara de Telefone usando o pipe
     this.formulario.get('telefone')?.setValue(this.telefoneValue, { emitEvent: false });  // Atualiza o campo com o valor formatado
   }
-  
-    // formularioValido() {
-    //   if(this.formulario.valid){
-    //       this.user.login = this.formulario.get('login')?.value;
-    //       this.user.password = this.formulario.get('senha')?.value;
-    //       this.authenticationService.cadastro(this.user);
-    //   } 
-    // }
+
+    formularioValido() {
+      if(this.formulario.valid){
+          // this.user.login = this.formulario.get('login')?.value;
+          // this.user.password = this.formulario.get('senha')?.value;
+          // this.authenticationService.cadastro(this.user);
+      } else {
+        throw new Error("Preencha os campos obrigatórios para continuar!");
+      }
+    }
 }
 
