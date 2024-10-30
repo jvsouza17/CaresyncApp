@@ -7,18 +7,8 @@ import { CpfMaskPipe } from '../../pipes/cpf-mask.pipe';
 import { TelefoneMaskPipe } from '../../pipes/telefone-mask.pipe';
 import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { provideMomentDateAdapter } from '@angular/material-moment-adapter';
+import { MY_FORMATS } from '../../pipes/date/date-br.pipe';
 
-export const MY_FORMATS = {
-  parse: {
-    dateInput: 'DD/MM/YYYY',
-  },
-  display: {
-    dateInput: 'DD/MM/YYYY',
-    monthYearLabel: 'MMM YYYY',
-    dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'MMMM YYYY',
-  },
-};
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -62,7 +52,6 @@ export class CadastroComponent {
   }
 //validators.pattern ainda não testados
   criarForms() {
-
     this.formulario = this.formBuilder.group({
       nome: ['', [Validators.required]],
       sobrenome: ['', [Validators.required]],

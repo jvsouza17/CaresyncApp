@@ -26,6 +26,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import { DatePipe } from '@angular/common';
+import { AgendarConsultaComponent } from './componentes/agendar-consulta/agendar-consulta.component';
+import { DateBRPipe } from './pipes/date/date-br.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +40,8 @@ import { DatePipe } from '@angular/common';
     NavigationBarComponent,
     ConsultasComponent,
     ExamesComponent,
+    AgendarConsultaComponent,
+    DateBRPipe,
   ],
   imports: [
     BrowserModule,
