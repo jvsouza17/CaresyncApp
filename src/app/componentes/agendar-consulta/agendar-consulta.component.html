@@ -42,6 +42,21 @@
 
     <div class="form-row">
       <mat-form-field class="form-field">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipo" required>
+          <mat-option value="rotina">Rotina</mat-option>
+          <mat-option value="retorno">Retorno</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="form-field">
+        <mat-label>Endereço</mat-label>
+        <input matInput formControlName="endereco" required>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field class="form-field">
         <mat-label>Data</mat-label>
         <input matInput [matDatepicker]="picker2" formControlName="dataConsulta" required>
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
@@ -53,6 +68,7 @@
         <input matInput formControlName="horario" required>
       </mat-form-field>
     </div>
+
 
     <mat-form-field class="form-field full-width">
       <mat-label>Observações</mat-label>

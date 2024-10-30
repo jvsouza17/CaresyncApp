@@ -8,6 +8,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { ConsultasComponent } from './componentes/consultas/consultas.component';
 import { ExamesComponent } from './componentes/exames/exames.component';
 import { AgendarConsultaComponent } from './componentes/agendar-consulta/agendar-consulta.component';
+import { MeusAgendamentosComponent } from './componentes/meus-agendamentos/meus-agendamentos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [UsuarioAutenticadoGuard],
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'consultas', component: ConsultasComponent, canActivate: [UsuarioAutenticadoGuard]},
   { path: 'exames', component: ExamesComponent, canActivate: [UsuarioAutenticadoGuard]},
   { path: 'agendar-consulta', component: AgendarConsultaComponent, canActivate: [UsuarioAutenticadoGuard]},
+  { path: 'meus-agendamentos', component: MeusAgendamentosComponent, canActivate: [UsuarioAutenticadoGuard]},
   { path: '**', redirectTo: '/login'},  // Rota coringa redireciona para login em caso de rota não encontrada
 ];
 

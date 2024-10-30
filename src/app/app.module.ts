@@ -28,6 +28,7 @@ import {provideNativeDateAdapter} from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { AgendarConsultaComponent } from './componentes/agendar-consulta/agendar-consulta.component';
 import { DateBRPipe } from './pipes/date/date-br.pipe';
+import { MeusAgendamentosComponent } from './componentes/meus-agendamentos/meus-agendamentos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +43,7 @@ import { DateBRPipe } from './pipes/date/date-br.pipe';
     ExamesComponent,
     AgendarConsultaComponent,
     DateBRPipe,
+    MeusAgendamentosComponent,
   ],
   imports: [
     BrowserModule,

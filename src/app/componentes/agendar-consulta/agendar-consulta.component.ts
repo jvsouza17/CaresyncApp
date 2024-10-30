@@ -45,8 +45,14 @@ export class AgendarConsultaComponent {
       localidade: ['', Validators.required],
       dataConsulta: ['', Validators.required],
       horario: ['', Validators.required],
+      tipo: ['', Validators.required],
+      endereco: ['', Validators.required],
       observacoes: ['']
     });
+  }
+
+  getDadosFixos(){
+    //função para capturar nome, nº do sus, sexo e data de nascimento
   }
 
   formularioValido(){
