@@ -16,7 +16,9 @@
             <mat-label>Sobrenome</mat-label>
             <input matInput placeholder="Digite seu sobrenome" formControlName="sobrenome">
           </mat-form-field>
+        </div>
 
+        <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" class="double-information">
           <mat-form-field class="example-full-width" fxFlex="40">
             <mat-label>Sexo</mat-label>
             <mat-select formControlName="sexo">
@@ -24,6 +26,10 @@
               <mat-option value="F">Feminino</mat-option>
               <mat-option value="P">Prefiro não informar</mat-option>
             </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-full-width" fxFlex="50">
+            <mat-label>Nº do SUS</mat-label>
+            <input matInput placeholder="Número no CNS" formControlName="numeroSUS" required>
           </mat-form-field>
         </div>
 

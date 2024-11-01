@@ -11,4 +11,5 @@ export class UserCadastro {
     email!: String;
     telefone!: String;
     senha!: String;
+    numeroSUS!: String;
 }

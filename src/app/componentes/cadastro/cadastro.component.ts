@@ -56,6 +56,7 @@ export class CadastroComponent {
       nome: ['', [Validators.required]],
       sobrenome: ['', [Validators.required]],
       sexo: ['', [Validators.required]],
+      numeroSUS: ['', [Validators.required]],
       dataNascimento: ['', [Validators.required]],
       CPF: ['', [Validators.required,]],
       endereco: ['', [Validators.required]],
@@ -84,11 +85,29 @@ export class CadastroComponent {
     this.formulario.get('telefone')?.setValue(this.telefoneValue, { emitEvent: false });  // Atualiza o campo com o valor formatado
   }
 
+  // mapFormToUser() {
+  //   this.user.nome = this.formulario.get('nome')?.value;
+  //   this.user.sobrenome = this.formulario.get('sobrenome')?.value;
+  //   this.user.sexo = this.formulario.get('sexo')?.value;
+  //   this.user.numeroSUS = this.formulario.get('numeroSUS')?.value;
+  //   this.user.dataNascimento = this.formulario.get('dataNascimento')?.value;
+  //   this.user.CPF = this.formulario.get('CPF')?.value;
+  //   this.user.endereco = this.formulario.get('endereco')?.value;
+  //   this.user.CEP = this.formulario.get('CEP')?.value;
+  //   this.user.cidade = this.formulario.get('cidade')?.value;
+  //   this.user.UF = this.formulario.get('UF')?.value;
+  //   this.user.email = this.formulario.get('email')?.value;
+  //   this.user.telefone = this.formulario.get('telefone')?.value;
+  //   this.user.senha = this.formulario.get('senha')?.value;
+  // }
+
+
     formularioValido() {
       if(this.formulario.valid){
           this.user.nome = this.formulario.get('nome')?.value;
           this.user.sobrenome = this.formulario.get('sobrenome')?.value;
           this.user.sexo = this.formulario.get('sexo')?.value;
+          this.user.numeroSUS = this.formulario.get('numeroSUS')?.value;
           this.user.dataNascimento = this.formulario.get('dataNascimento')?.value;
           this.user.CPF = this.formulario.get('CPF')?.value;
           this.user.endereco = this.formulario.get('endereco')?.value;

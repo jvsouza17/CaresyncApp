@@ -10,8 +10,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/user`);
-}
+//   agendarConsulta(): Observable<any> {
+//     return this.http.post(`${environment.apiUrl}/user`);
+// }
 
 }

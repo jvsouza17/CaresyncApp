@@ -31,24 +31,23 @@ export class AuthenticationService {
   }
 
   cadastrar(user: UserCadastro) {
-    console.log(user)
     this.cadastrarUsuario(user);
   }
 
   logarUsuario(user: UserLogin) {
     try {
-      console.log(user)
       return this.http.post(`${environment.apiUrl}/auth/login`, user).subscribe((response: any) => {
         localStorage.setItem('token', response.token);
         localStorage.setItem('currentUser', user.login)
         this.router.navigate(['/home']);
       });
     } catch (error) {
-      return console.log(error);
+      return console.error(error);
     }
   }
 
   cadastrarUsuario(user: UserCadastro) {
+    console.log(user)
     try {
       return this.http.post(`${environment.apiUrl}/auth/cadastro`, user).subscribe((response: any) => {
         console.log(response);
