@@ -26,8 +26,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let exame of exames">
-            <td>{{ exame.nome }}</td>
+          <tr routerLink='/exames-detalhes' *ngFor="let exame of exames">
+            <td >{{ exame.nome }}</td>
             <td>{{ exame.hora }}</td>
             <td>{{ exame.data | date: 'dd/MM/yyyy' }}</td>
             <td>{{ exame.resultado }}</td>

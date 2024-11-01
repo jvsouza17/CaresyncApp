@@ -30,6 +30,14 @@ import { AgendarConsultaComponent } from './componentes/agendar-consulta/agendar
 import { DateBRPipe } from './pipes/date/date-br.pipe';
 import { MeusAgendamentosComponent } from './componentes/meus-agendamentos/meus-agendamentos.component';
 import { TokenInterceptor } from './services/interceptors/token.interceptor';
+import { ExameDetalheComponent } from './componentes/exames-detalhe/exames-detalhe.component';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogTitle,
+  MatDialogContent,
+} from '@angular/material/dialog';
+import { PrescricaoDialogComponent } from './componentes/prescricao-dialog/prescricao-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +53,8 @@ import { TokenInterceptor } from './services/interceptors/token.interceptor';
     AgendarConsultaComponent,
     DateBRPipe,
     MeusAgendamentosComponent,
+    ExameDetalheComponent,
+    PrescricaoDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +70,8 @@ import { TokenInterceptor } from './services/interceptors/token.interceptor';
     MatSelectModule,
     FormsModule,
     MatDatepickerModule,
+    MatDialogTitle,
+    MatDialogContent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
