@@ -38,6 +38,7 @@ import {
   MatDialogContent,
 } from '@angular/material/dialog';
 import { PrescricaoDialogComponent } from './componentes/prescricao-dialog/prescricao-dialog.component';
+import { CartaoVacinasComponent } from './componentes/cartao-vacinas/cartao-vacinas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +56,7 @@ import { PrescricaoDialogComponent } from './componentes/prescricao-dialog/presc
     MeusAgendamentosComponent,
     ExameDetalheComponent,
     PrescricaoDialogComponent,
+    CartaoVacinasComponent,
   ],
   imports: [
     BrowserModule,
