@@ -1,0 +1,42 @@
+
+
+.vacina-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin: auto;
+  max-width: 80%;
+}
+
+h2 {
+  color: #3a6351;
+  margin-bottom: 10px;
+}
+
+.paciente-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.pendente {
+  color: red;
+}
+
+.completa {
+  color: green;
+}
+
+.detalhes-btn {
+  color: #3a6351;
+  font-weight: bold;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

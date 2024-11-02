@@ -1,0 +1,29 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div class="exame-detalhe-container">
+  <h2>Histórico e resultados</h2>
+
+  <div class="exame-info">
+    <p><strong>ESPECIALIDADE:</strong> {{ especialidade }}</p>
+    <p><strong>DATA EXAME:</strong> {{ dataExame }}</p>
+    <p><strong>LOCAL:</strong> {{ local }}</p>
+    <p><strong>ENDEREÇO:</strong> {{ endereco }}</p>
+    <p><strong>MÉDICO:</strong> {{ medico }}</p>
+    <p><strong>MOTIVO DO EXAME:</strong> {{ motivoExame }}</p>
+  </div>
+
+  <div class="paciente-info">
+    <p><strong>NOME DO PACIENTE</strong> {{ nomePaciente }}</p>
+    <p><strong>DATA NASC.:</strong> {{ dataNascimento }}</p>
+  </div>
+
+  <div class="observacoes">
+    <h3>OBSERVAÇÕES:</h3>
+    <p>{{ observacoes }}</p>
+    <h4>Reavaliação:</h4>
+    <p>{{ reavaliacao }}</p>
+  </div>
+
+  <button mat-button (click)="abrirModal()" class="prescricao-button">Prescrições médicas</button>
+
+</div>

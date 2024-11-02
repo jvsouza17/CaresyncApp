@@ -1,0 +1,30 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div class="vacina-container">
+  <h2>CARTÃO DE VACINAS</h2>
+  <div class="paciente-info">
+    <span><strong>Nome do Paciente:</strong> {{ nomePaciente }}</span>
+    <span><strong>Data Nasc.:</strong> {{ dataNascimento }}</span>
+  </div>
+
+  <table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+      <tr>
+        <th>VACINA</th>
+        <th>DATA DE APLICAÇÃO</th>
+        <th>PRÓXIMA DOSE</th>
+        <th>STATUS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vacina of vacinas">
+        <td>{{ vacina.nome }}</td>
+        <td>{{ vacina.dataAplicacao }}</td>
+        <td>{{ vacina.proximaDose }}</td>
+        <td [ngClass]="vacina.statusClass">{{ vacina.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button mat-button class="detalhes-btn">Ver detalhes</button>
+</div>
