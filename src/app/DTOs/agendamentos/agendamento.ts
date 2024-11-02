@@ -1,8 +1,15 @@
 export class Agendamento {
-  consulta!: string;
-  medico!: string;
-  dia!: string;
-  hora!: string;
-  endereco!: string;
-  localidade!: string;
+  nomePaciente?: string;
+  numeroSUS?: string;
+  sexo?: string;
+  dataNascimento?: string;
+  dataConsulta?: string;
+  horario?: string;
+  especialidade?: string;
+  localidade?: string;
+  endereco?: string;
+  tipo?: string;
+  observacoes?: string;
+  consulta?: string;
+  medico?: string;
 }

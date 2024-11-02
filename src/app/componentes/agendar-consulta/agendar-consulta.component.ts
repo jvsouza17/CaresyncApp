@@ -4,6 +4,8 @@ import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MY_FORMATS } from '../../pipes/date/date-br.pipe';
 import { provideMomentDateAdapter } from '@angular/material-moment-adapter';
 import { UserService } from '../../services/user/user.service';
+import { map, Observable } from 'rxjs';
+import { Agendamento } from '../../DTOs/agendamentos/agendamento';
 
 
 @Component({
@@ -17,36 +19,26 @@ import { UserService } from '../../services/user/user.service';
 export class AgendarConsultaComponent {
 
   formulario!: FormGroup;
-  patientInfo = {
-      nomePaciente: 'John Doe',
-      numeroSUS: '1234567890',
-      sexo: 'Masculino',
-      dataNascimento: new Date('01-01-1995')
-    };
-  dadosFixos = {};
-  user!: any;
+  dadosFixos: any = {};
+  user!: Agendamento;
 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-  ){
+  ){}
 
-  }
-  ngOnInit(){
-
-    this.criarForms();
-    this.getDadosFixos();
-
+  ngOnInit() {
+    this.getDadosFixos().subscribe(() => {
+      this.criarForms();
+    });
   }
 
-  //necessário capturar do backend dados do usuário
-  //necessário ajuste no backend para receber somente esses dados
-  criarForms(){
+  criarForms() {
     this.formulario = this.formBuilder.group({
-      nomePaciente: [this.patientInfo.nomePaciente],
-      numeroSUS: [this.patientInfo.numeroSUS],
-      sexo: [this.patientInfo.sexo],
-      dataNascimento: [this.patientInfo.dataNascimento],
+      nomePaciente: [{ value: this.dadosFixos.nomePaciente, disabled: true }],
+      numeroSUS: [{ value: this.dadosFixos.numeroSUS, disabled: true }],
+      sexo: [{ value: this.dadosFixos.sexo, disabled: true }],
+      dataNascimento: [{ value: this.dadosFixos.dataNascimento, disabled: true }],
       especialidade: ['', Validators.required],
       localidade: ['', Validators.required],
       dataConsulta: ['', Validators.required],
@@ -56,48 +48,39 @@ export class AgendarConsultaComponent {
       observacoes: ['']
     });
   }
-
-  getDadosFixos(){
-    this.userService.getUser().subscribe((response) =>{
-      this.dadosFixos = {
-        nomePaciente: response.nome + response.sobrenome,
-        numeroSUS: response.numeroSUS,
-        sexo: response.sexo,
-        dataNascimento: response.dataNascimento
-      }
-      console.log(this.dadosFixos)
-    })
+  getDadosFixos() {
+    return this.userService.getUser().pipe(
+      map((response) => {
+        this.dadosFixos = {
+          nomePaciente: `${response.nome} ${response.sobrenome}`,
+          numeroSUS: response.numeroSUS,
+          sexo: response.sexo,
+          dataNascimento: response.dataNascimento
+        };
+      })
+    );
   }
-
-  mapFormToUser() {
-    this.user.nomePaciente = this.patientInfo.nomePaciente
-    this.user.numeroSUS = this.patientInfo.numeroSUS
-    this.user.sexo = this.patientInfo.sexo
-    this.user.dataNascimento = this.patientInfo.dataNascimento
-    this.user.dataConsulta = this.formulario.get('dataConsulta')?.value
-    this.user.horario = this.formulario.get('horario')?.value
-    this.user.especialidade = this.formulario.get('especialidade')?.value
-    this.user.local = this.formulario.get('localidade')?.value
-    this.user.endereco = this.formulario.get('endereco')?.value
-    this.user.tipo = this.formulario.get('tipo')?.value
-    this.user.observacoes = this.formulario.get('observacoes')?.value
-    }
 
   formularioValido(){
     if(this.formulario.valid){
-      // this.user.nomePaciente = this.patientInfo.nomePaciente
-      // this.user.numeroSUS = this.patientInfo.numeroSUS
-      // this.user.sexo = this.patientInfo.sexo
-      // this.user.dataNascimento = this.patientInfo.dataNascimento
-      // this.user.dataConsulta = this.formulario.get('dataConsulta')?.value
-      // this.user.horario = this.formulario.get('horario')?.value
-      // this.user.especialidade = this.formulario.get('especialidade')?.value
-      // this.user.local = this.formulario.get('localidade')?.value
-      // this.user.endereco = this.formulario.get('endereco')?.value
-      // this.user.tipo = this.formulario.get('tipo')?.value
-      // this.user.observacoes = this.formulario.get('observacoes')?.value
-      // console.log(this.user)
-      // console.log(this.formulario)
+      this.user = {};
+
+    // Obtém todos os valores do formulário, inclusive os campos desabilitados
+      const formValues = this.formulario.getRawValue();
+      this.user.nomePaciente = formValues.nomePaciente;
+      this.user.numeroSUS = formValues.numeroSUS;
+      this.user.sexo = formValues.sexo;
+      this.user.dataNascimento = formValues.dataNascimento;
+      this.user.dataConsulta = formValues.dataConsulta;
+      this.user.horario = formValues.horario;
+      this.user.especialidade = formValues.especialidade;
+      this.user.localidade = formValues.localidade;
+      this.user.endereco = formValues.endereco;
+      this.user.tipo = formValues.tipo;
+      this.user.observacoes = formValues.observacoes;
+
+      console.log(this.user)
+      console.log(this.formulario)
       // this.consultaService.agendarConsulta(this.user)
     }
   }

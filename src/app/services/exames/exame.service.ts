@@ -8,8 +8,13 @@ export class ExameService {
 
   constructor(private http: HttpClient) { }
 
-  //lógica para requisição de exames, necessário alinhar com o backend
+  // listar exames do usuário logado
   // getExames(){
   //   return this.http.get<exames[]>('https://api.example.com/exames');
+  // }
+
+  // listar detalhes do exame clicado, capturar por id na rota?
+  //  getExameDetalhes(){
+  //   return this.http.get<exame>('https://api.example.com/exame/:id');
   // }
 }

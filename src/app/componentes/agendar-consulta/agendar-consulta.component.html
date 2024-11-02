@@ -1,6 +1,7 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="container">
   <h2>AGENDAMENTO</h2>
+  <div *ngIf="formulario">
   <form [formGroup]="formulario">
     <div class="form-row">
       <mat-form-field class="form-field">
@@ -77,4 +78,5 @@
 
     <button (click)="formularioValido()" mat-raised-button color="primary" type="submit">Agendar</button>
   </form>
+</div>
 </div>

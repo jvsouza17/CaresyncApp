@@ -11,7 +11,11 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 //   agendarConsulta(): Observable<any> {
-//     return this.http.post(`${environment.apiUrl}/user`);
+//     return this.http.post(`${environment.apiUrl}/agendar-consulta`);
 // }
 
+    // rota para listar as consultas do usuário logado.
+    // getConsultas(): Observable<any> {
+    //   return this.http.get(`${environment.apiUrl}/listar-consultas`);
+    // }
 }

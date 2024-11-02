@@ -14,10 +14,10 @@ import { UserService } from '../../services/user/user.service';
 
 export class MeusAgendamentosComponent {
   agendamentos: Agendamento[] = [
-    { consulta: 'Pediatria', medico: 'Dra. Marcela', dia: '12/01/2024', hora: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
-    { consulta: 'Oftalmologia', medico: 'Dr. João', dia: '12/01/2024', hora: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
-    { consulta: 'Dentista', medico: 'Dr. Carlos', dia: '12/01/2024', hora: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
-    { consulta: 'Endocrinologia', medico: 'Dr. Tiago', dia: '12/01/2024', hora: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
+    { consulta: 'Pediatria', medico: 'Dra. Marcela', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
+    { consulta: 'Oftalmologia', medico: 'Dr. João', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
+    { consulta: 'Dentista', medico: 'Dr. Carlos', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
+    { consulta: 'Endocrinologia', medico: 'Dr. Tiago', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
   ];
 
   @ViewChild(DataTableDirective)
