@@ -1,13 +1,25 @@
-.consultas-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f5f5f5;
-    padding: 40px;
-    border-radius: 10px;
-    margin: 20px;
-  }
-  
+::ng-deep body {
+  color: #26606b !important;
+  font-family: "Raleway", sans-serif !important;
+}
+
+::ng-deep p {
+  font-size: 25px !important;
+}
+
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:rgba(255, 255, 255, 0.838);
+  padding: 40px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 60px;
+  height: auto; /* Alterado para auto para melhor responsividade */
+  width: 80%;
+  position: relative;
+}
   .content {
     max-width: 50%;
   }
@@ -24,28 +36,43 @@
   }
   
   .buttons {
-    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
   }
-  
-  .consulta-btn,
-  .agendamentos-btn {
-    background-color: #4caf50;
+  .consulta-btn {
+    background-color: #26606b;
     color: white;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
-    margin-right: 10px;
-  }
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    height: 60px;
+    text-align: center;
+    margin: auto;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+}
   
-  .agendamentos-btn {
-    background-color: #45a049;
-  }
+  .consulta-btn:hover {
+    background-color: #4ab68a;
+    transform: scale(1.05);
+  }  
   
-  .consulta-btn:hover,
   .agendamentos-btn:hover {
     opacity: 0.9;
+  }
+
+  .imagem-paciente-medico{
+    flex: 1; /* Permite que a div ocupe o espaço restante */
+  min-width: 300px; /* Define uma largura mínima para a div */
+  min-height: 400px; /* Define uma largura mínima para a div */
+  height: auto; /* Mantém a altura automática */
+  background-image: url("../../../assets/images/consultas.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   }
   
   .image img {
@@ -53,18 +80,58 @@
     height: auto;
   }
   
+  .home-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.838);;
+  padding: 40px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 60px;
+  height: auto; /* Alterado para auto para melhor responsividade */
+  width: 80%;
+  position: relative;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+  
+  .content h1 {
+    font-size: 36px;
+    color: #26606b;
+    margin-top: 0;
+  }
+  
+  .content p {
+    font-size: 18px;
+    color: #26606b;
+    margin-top: 10px;
+  }
+
   @media (max-width: 768px) {
-    .consultas-container {
-      flex-direction: column;
-      text-align: center;
+    .home-container {
+        flex-direction: column; /* Altera direção para coluna em telas menores */
+        text-align: center;
+        padding: 20px; /* Reduzir padding */
     }
   
     .content {
-      max-width: 100%;
-      margin-bottom: 20px;
+        max-width: 100%; /* Permite que o conteúdo ocupe toda a largura */
+        margin-bottom: 20px;
     }
   
-    .image img {
-      width: 200px;
+    .content h1 {
+        font-size: 28px; /* Tamanho do título reduzido */
+    }
+  
+    .content p {
+        font-size: 16px; /* Tamanho do texto reduzido */
+    }
+  
+    .consulta-btn {
+        width: 80%; /* Aumenta largura do botão em telas menores */
+        font-size: 18px; /* Reduz tamanho da fonte */
     }
   }
