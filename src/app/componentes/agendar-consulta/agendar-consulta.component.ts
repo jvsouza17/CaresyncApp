@@ -57,6 +57,7 @@ export class AgendarConsultaComponent {
           sexo: response.sexo,
           dataNascimento: response.dataNascimento
         };
+        console.log(this.dadosFixos);
       })
     );
   }

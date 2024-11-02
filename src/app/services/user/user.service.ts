@@ -15,11 +15,11 @@ export class UserService {
   }
 
   // alterar informações do usuário logado, tem que ter o id do usuário na rota?
-  editUser(){
-    return this.http.put(`${environment.apiUrl}/user-editar/:id`, {
-      nome: 'NovoNome',
-      email: 'NovoEmail@example.com',
-      senha: 'novaSenha123'
-    });
-  }
+  // editUser(){
+  //   return this.http.put(`${environment.apiUrl}/user-editar/:id`, {
+  //     nome: 'NovoNome',
+  //     email: 'NovoEmail@example.com',
+  //     senha: 'novaSenha123'
+  //   });
+  // }
 }
