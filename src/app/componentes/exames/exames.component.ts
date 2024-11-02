@@ -43,11 +43,11 @@ export class ExamesComponent {
   }
   ngOnInit() {
     this.dtOptions = {
-      order: [[1, 'asc']],
+      order: [[2, 'asc']],
       ordering: true,
       dom: 'rfBtip',
       pagingType: 'full',
-      pageLength: 5,
+      pageLength: 10,
       processing: true,
       language: {
         url: '//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json'
