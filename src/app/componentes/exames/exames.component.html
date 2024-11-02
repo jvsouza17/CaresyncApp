@@ -3,14 +3,14 @@
 <!-- Container principal dos Exames -->
 <div class="exam-container mt-5">
   <div class="exam-card shadow-sm">
-    <div class="card-header d-flex justify-content-between align-items-center p-4">
+    <div class=" d-flex justify-content-between align-items-center p-4">
       <!-- Container Title -->
-      <h5 class="mb-0 text-primary">Histórico e Resultados</h5>
+      <h3 class="mb-0">HISTÓRICO E RESULTADOS</h3>
 
       <!-- Patient Information -->
       <div class="patient-info text-right">
-        <p class="mb-1"><strong>Nome:</strong> {{ paciente.nome }}</p>
-        <p class="mb-0"><strong>Data de Nascimento:</strong> {{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</p>
+        <p class="mb-1"> NOME: {{ paciente.nome }}</p>
+        <p class="mb-0">DATA DE NASCIMENTO: {{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</p>
       </div>
     </div>
 
@@ -19,10 +19,10 @@
       <table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
         <thead class="table-light">
           <tr>
-            <th>Exame</th>
-            <th>Hora</th>
-            <th>Data</th>
-            <th>Resultado</th>
+            <th>EXAME</th>
+            <th>HORA</th>
+            <th>DATA</th>
+            <th>RESULTADO</th>
           </tr>
         </thead>
         <tbody>
