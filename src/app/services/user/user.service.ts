@@ -12,6 +12,14 @@ export class UserService {
 
   getUser(): Observable<any> {
     return this.http.get(`${environment.apiUrl}/user`);
-}
+  }
 
+  // alterar informações do usuário logado, tem que ter o id do usuário na rota?
+  editUser(){
+    return this.http.put(`${environment.apiUrl}/user-editar/:id`, {
+      nome: 'NovoNome',
+      email: 'NovoEmail@example.com',
+      senha: 'novaSenha123'
+    });
+  }
 }

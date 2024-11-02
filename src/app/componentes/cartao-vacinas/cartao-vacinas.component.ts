@@ -43,4 +43,10 @@ export class CartaoVacinasComponent {
     this.dtTrigger.unsubscribe();
   }
 
+    // getVacinas() {
+  //   this.vacinaService.getVacinas().subscribe(result: => {
+  //     this.vacina = result;
+  //   })
+  // }
+
 }
