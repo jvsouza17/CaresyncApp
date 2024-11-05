@@ -1,30 +1,43 @@
 <app-navigation-bar></app-navigation-bar>
 
-<div class="vacina-container">
-  <h2>CARTÃO DE VACINAS</h2>
-  <div class="paciente-info">
-    <span><strong>Nome do Paciente:</strong> {{ nomePaciente }}</span>
-    <span><strong>Data Nasc.:</strong> {{ dataNascimento }}</span>
+<!-- Container principal das Vacinas -->
+<div class="vacina-container mt-5">
+  <div class="vacina-card shadow-sm">
+    <div class="d-flex justify-content-between align-items-center p-4">
+      <!-- Container Title -->
+      <h3 class="mb-0">CARTÃO DE VACINAS</h3>
+
+      <!-- Informações do Paciente -->
+      <div class="paciente-info text-right">
+        <p class="mb-1"><strong>Nome do Paciente:</strong> {{ nomePaciente }}</p>
+        <p class="mb-0"><strong>Data Nasc.:</strong> {{ dataNascimento }}</p>
+      </div>
+    </div>
+
+    <!-- Tabela de Vacinas -->
+    <div class="table-responsive p-4">
+      <table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>VACINA</th>
+            <th>DATA DE APLICAÇÃO</th>
+            <th>PRÓXIMA DOSE</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let vacina of vacinas" [ngClass]="vacina.statusClass">
+            <td>{{ vacina.nome }}</td>
+            <td>{{ vacina.dataAplicacao }}</td>
+            <td>{{ vacina.proximaDose }}</td>
+            <td>{{ vacina.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button mat-button class="detalhes-btn">Ver detalhes</button>
   </div>
-
-  <table datatable [dtOptions]="dtOptions" class="row-border hover">
-    <thead>
-      <tr>
-        <th>VACINA</th>
-        <th>DATA DE APLICAÇÃO</th>
-        <th>PRÓXIMA DOSE</th>
-        <th>STATUS</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let vacina of vacinas">
-        <td>{{ vacina.nome }}</td>
-        <td>{{ vacina.dataAplicacao }}</td>
-        <td>{{ vacina.proximaDose }}</td>
-        <td [ngClass]="vacina.statusClass">{{ vacina.status }}</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <button mat-button class="detalhes-btn">Ver detalhes</button>
 </div>
+
+
