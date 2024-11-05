@@ -4,19 +4,21 @@
 }
 
 h2 {
-  color: #3a6351;
+  color: #094D59;
   margin-bottom: 10px;
 }
 
 ul {
   list-style-type: none;
   padding-left: 0;
+  color: #094D59;
 }
 
 li {
   margin-bottom: 10px;
+  color: #094D59;
 }
 
 em {
-  color: #666;
+  color: #094D59;
 }
