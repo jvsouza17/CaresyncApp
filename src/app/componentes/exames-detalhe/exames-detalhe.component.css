@@ -5,43 +5,71 @@
   max-width: 600px;
   margin: 20px auto;
   font-family: Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: inline-flex; /* Flexbox para alinhar título e paciente info */
+  justify-content: space-between; /* Espaço entre eles */
+  align-items: center; /* Alinha verticalmente */
+  margin-bottom: 20px; /* Espaçamento abaixo do cabeçalho */
 }
 
 h2 {
-  color: #2f4f4f;
+  color: #094D59;
   font-size: 24px;
-  margin-bottom: 20px;
+  margin: 0; /* Remove margem padrão do título */
 }
 
-.exame-info, .paciente-info, .observacoes {
+.exame-info,
+.observacoes {
   margin-bottom: 20px;
+  color: #094D59;
 }
 
-.exame-info p, .paciente-info p {
+.exame-info p,
+.paciente-info-flex p {
   margin: 5px 0;
-  color: #333;
+  color: #094D59;
 }
 
-.observacoes h3, .observacoes h4 {
+.paciente-info-flex {
+  font-size: 14px;
+  display: flex; /* Flexbox para alinhar lado a lado */
+  justify-content: space-between; /* Espaço entre nome e data */
+  align-items: center; /* Alinha verticalmente */
+}
+
+.data-nascimento {
+  margin-left: 20px; /* Espaçamento à esquerda para a data de nascimento */
+}
+
+.observacoes h3,
+.observacoes h4 {
   margin: 10px 0;
-  color: #2f4f4f;
+  color: #094D59;
 }
 
 .observacoes p {
   margin: 5px 0;
-  color: #555;
+  color: #094D59;;
 }
 
 .prescricao-button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #094D59; /* Cor de fundo */
+  color: #094D59; /* Cor do texto */
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição para cor do texto */
 }
 
 .prescricao-button:hover {
-  background-color: #45a049;
+  background-color: white; /* Cor de fundo ao passar o mouse */
+  color: #094D59; /* A cor do texto permanece branca ao passar o mouse */
 }
+
