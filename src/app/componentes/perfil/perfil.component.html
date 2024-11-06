@@ -1,0 +1,74 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="container">
+  <h2>PERFIL</h2>
+  <form [formGroup]="formulario" (ngSubmit)="salvar()">
+
+    <!-- Nome Completo -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome Completo</mat-label>
+      <input matInput type="text" formControlName="nomeCompleto" readonly />
+    </mat-form-field>
+
+    <!-- E-mail -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>E-mail</mat-label>
+      <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+
+    <!-- Data de Nascimento -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Data de nascimento</mat-label>
+      <input matInput type="text" formControlName="dataNascimento" readonly/>
+    </mat-form-field>
+
+    <!-- Sexo -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Sexo</mat-label>
+      <input matInput type="text" formControlName="sexo" readonly />
+    </mat-form-field>
+
+    <!-- Telefone -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Telefone</mat-label>
+      <input matInput type="tel" formControlName="telefone" />
+    </mat-form-field>
+
+    <!-- CEP -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>CEP</mat-label>
+      <input matInput type="text" formControlName="cep" />
+    </mat-form-field>
+
+    <!-- Cidade -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Cidade</mat-label>
+      <input matInput type="text" formControlName="cidade" />
+    </mat-form-field>
+
+    <!-- Número -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Número</mat-label>
+      <input matInput type="text" formControlName="numero" />
+    </mat-form-field>
+
+    <!-- Endereço -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Endereço</mat-label>
+      <input matInput type="text" formControlName="endereco" />
+    </mat-form-field>
+
+    <!-- Foto de Perfil -->
+    <div class="profile-picture">
+      <img *ngIf="fotoPreview" [src]="fotoPreview" alt="Foto de perfil" class="foto-preview" />
+      <label class="upload-label">
+        <input type="file" (change)="onFileChange($event)" accept="image/*" hidden />
+        <button mat-raised-button color="primary" type="button">Alterar foto do perfil</button>
+      </label>
+    </div>
+
+    <!-- Botão Salvar -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid" class="save-button">
+      Salvar
+    </button>
+  </form>
+</div>

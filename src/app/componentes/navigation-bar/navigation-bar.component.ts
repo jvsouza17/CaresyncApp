@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class NavigationBarComponent {
 
+  constructor(private authenticationService: AuthenticationService) {}
+
+    logout(){
+      this.authenticationService.logout();
+    }
 }

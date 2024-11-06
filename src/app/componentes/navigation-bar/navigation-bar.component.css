@@ -10,6 +10,7 @@
   }
 
   .logo {
+    cursor: pointer;
     font-size: 28px;
     font-weight: 400;
     color: #26606b; /* Cor similar ao texto CARESYNC */

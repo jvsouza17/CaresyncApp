@@ -31,6 +31,7 @@ import { DateBRPipe } from './pipes/date/date-br.pipe';
 import { MeusAgendamentosComponent } from './componentes/meus-agendamentos/meus-agendamentos.component';
 import { TokenInterceptor } from './services/interceptors/token.interceptor';
 import { ExameDetalheComponent } from './componentes/exames-detalhe/exames-detalhe.component';
+import { MatMenuModule } from '@angular/material/menu';
 import {
   MatDialog,
   MAT_DIALOG_DATA,
@@ -39,6 +40,8 @@ import {
 } from '@angular/material/dialog';
 import { PrescricaoDialogComponent } from './componentes/prescricao-dialog/prescricao-dialog.component';
 import { CartaoVacinasComponent } from './componentes/cartao-vacinas/cartao-vacinas.component';
+import { VacinasDetalheComponent } from './componentes/vacinas-detalhe/vacinas-detalhe.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +60,8 @@ import { CartaoVacinasComponent } from './componentes/cartao-vacinas/cartao-vaci
     ExameDetalheComponent,
     PrescricaoDialogComponent,
     CartaoVacinasComponent,
+    VacinasDetalheComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +78,8 @@ import { CartaoVacinasComponent } from './componentes/cartao-vacinas/cartao-vaci
     FormsModule,
     MatDatepickerModule,
     MatDialogTitle,
-    MatDialogContent
+    MatDialogContent,
+    MatMenuModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

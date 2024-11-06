@@ -1,9 +1,17 @@
 <nav class="navbar">
-    <div class="logo">CARESYNC</div>
-    <ul class="nav-links">
-      <li><a href="/consultas">CONSULTAS</a></li>
-      <li><a href="/exames">EXAMES</a></li>
-      <li><a href="/cartao-vacinas">CARTÃO DE VACINAS</a></li>
-      <li><a href="#meu-perfil">MEU PERFIL</a></li>
-    </ul>
-  </nav>
+  <div routerLink="/home" class="logo">CARESYNC</div>
+  <ul class="nav-links">
+    <li><a routerLink="/consultas">CONSULTAS</a></li>
+    <li><a routerLink="/exames">EXAMES</a></li>
+    <li><a routerLink="/cartao-vacinas">CARTÃO DE VACINAS</a></li>
+
+    <!-- Item com Submenu -->
+    <li>
+      <a mat-menu-item [matMenuTriggerFor]="menu">MEU PERFIL</a>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/perfil">Perfil</button>
+        <button mat-menu-item (click)="logout()">Logout</button>
+      </mat-menu>
+    </li>
+  </ul>
+</nav>

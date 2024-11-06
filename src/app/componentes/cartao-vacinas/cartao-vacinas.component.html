@@ -30,13 +30,13 @@
             <td>{{ vacina.nome }}</td>
             <td>{{ vacina.dataAplicacao }}</td>
             <td>{{ vacina.proximaDose }}</td>
-            <td>{{ vacina.status }}</td>
+            <td [ngClass]="vacina.statusClass">{{ vacina.status }}</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <button mat-button class="detalhes-btn">Ver detalhes</button>
+    <button mat-button class="detalhes-btn" routerLink="/vacinas-detalhes">Ver detalhes</button>
   </div>
 </div>
 
