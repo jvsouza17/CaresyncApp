@@ -15,21 +15,21 @@ import { VacinasDetalheComponent } from './componentes/vacinas-detalhe/vacinas-d
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [UsuarioAutenticadoGuard],
+  { path: '', component: HomeComponent, pathMatch: 'full',
     children: [{ path: '', component: HomeComponent }],
   },
   { path: 'login', component: LoginComponent, canActivate: [UsuarioNaoAutenticadoGuard]},  // Rota para o componente de login
 
   { path: 'cadastro', component: CadastroComponent, canActivate: [UsuarioNaoAutenticadoGuard]},  // Rota para o componente de cadastro
-  { path: 'home', component: HomeComponent, canActivate: [UsuarioAutenticadoGuard]},
-  { path: 'consultas', component: ConsultasComponent, canActivate: [UsuarioAutenticadoGuard]},
-  { path: 'exames', component: ExamesComponent, canActivate: [UsuarioAutenticadoGuard]},
-  { path: 'agendar-consulta', component: AgendarConsultaComponent, canActivate: [UsuarioAutenticadoGuard]},
-  { path: 'meus-agendamentos', component: MeusAgendamentosComponent, canActivate: [UsuarioAutenticadoGuard]},
-  { path: 'exames-detalhes', component: ExameDetalheComponent, canActivate: [UsuarioAutenticadoGuard]},
-  { path: 'cartao-vacinas', component: CartaoVacinasComponent, canActivate: [UsuarioAutenticadoGuard]},
-  { path: 'vacinas-detalhes', component: VacinasDetalheComponent, canActivate: [UsuarioAutenticadoGuard]},
-  { path: 'perfil', component: PerfilComponent, canActivate: [UsuarioAutenticadoGuard]},
+  { path: 'home', component: HomeComponent},
+  { path: 'consultas', component: ConsultasComponent},
+  { path: 'exames', component: ExamesComponent},
+  { path: 'agendar-consulta', component: AgendarConsultaComponent},
+  { path: 'meus-agendamentos', component: MeusAgendamentosComponent},
+  { path: 'exames-detalhes', component: ExameDetalheComponent},
+  { path: 'cartao-vacinas', component: CartaoVacinasComponent},
+  { path: 'vacinas-detalhes', component: VacinasDetalheComponent},
+  { path: 'perfil', component: PerfilComponent},
   { path: '**', redirectTo: '/login'},  // Rota coringa redireciona para login em caso de rota não encontrada
 ];
 

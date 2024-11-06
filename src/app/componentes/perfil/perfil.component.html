@@ -1,74 +1,92 @@
 <app-navigation-bar></app-navigation-bar>
+
 <div class="container">
   <h2>PERFIL</h2>
-  <form [formGroup]="formulario" (ngSubmit)="salvar()">
+  <div class="form-content">
 
-    <!-- Nome Completo -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Nome Completo</mat-label>
-      <input matInput type="text" formControlName="nomeCompleto" readonly />
-    </mat-form-field>
+    <!-- Coluna esquerda: Campos de texto -->
+    <div class="form-left">
+      <form [formGroup]="formulario" (ngSubmit)="salvar()">
+        <!-- Nome Completo -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Nome Completo</mat-label>
+          <input matInput type="text" formControlName="nomeCompleto" readonly />
+        </mat-form-field>
 
-    <!-- E-mail -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>E-mail</mat-label>
-      <input matInput type="email" formControlName="email" />
-    </mat-form-field>
+        <!-- E-mail -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="email" formControlName="email" />
+        </mat-form-field>
 
-    <!-- Data de Nascimento -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Data de nascimento</mat-label>
-      <input matInput type="text" formControlName="dataNascimento" readonly/>
-    </mat-form-field>
+        <!-- Agrupando Data de nascimento e Sexo -->
+        <div class="form-group-inline">
+          <!-- Data de Nascimento -->
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput type="text" formControlName="dataNascimento" readonly />
+          </mat-form-field>
 
-    <!-- Sexo -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Sexo</mat-label>
-      <input matInput type="text" formControlName="sexo" readonly />
-    </mat-form-field>
+          <!-- Sexo -->
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Sexo</mat-label>
+            <input matInput type="text" formControlName="sexo" readonly />
+          </mat-form-field>
+        </div>
 
-    <!-- Telefone -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Telefone</mat-label>
-      <input matInput type="tel" formControlName="telefone" />
-    </mat-form-field>
+        <!-- Agrupando Telefone e CEP -->
+        <div class="form-group-inline">
+          <!-- Telefone -->
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Telefone</mat-label>
+            <input matInput type="tel" formControlName="telefone" />
+          </mat-form-field>
 
-    <!-- CEP -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>CEP</mat-label>
-      <input matInput type="text" formControlName="cep" />
-    </mat-form-field>
+          <!-- CEP -->
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>CEP</mat-label>
+            <input matInput type="text" formControlName="cep" />
+          </mat-form-field>
+        </div>
 
-    <!-- Cidade -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Cidade</mat-label>
-      <input matInput type="text" formControlName="cidade" />
-    </mat-form-field>
+        <!-- Agrupando Cidade e Número -->
+        <div class="form-group-inline">
+          <!-- Cidade -->
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Cidade</mat-label>
+            <input matInput type="text" formControlName="cidade" />
+          </mat-form-field>
 
-    <!-- Número -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Número</mat-label>
-      <input matInput type="text" formControlName="numero" />
-    </mat-form-field>
+          <!-- Número -->
+          <mat-form-field appearance="outline" class="half-width">
+            <mat-label>Número</mat-label>
+            <input matInput type="text" formControlName="numero" />
+          </mat-form-field>
+        </div>
 
-    <!-- Endereço -->
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Endereço</mat-label>
-      <input matInput type="text" formControlName="endereco" />
-    </mat-form-field>
+        <!-- Endereço -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Endereço</mat-label>
+          <input matInput type="text" formControlName="endereco" />
+        </mat-form-field>
 
-    <!-- Foto de Perfil -->
-    <div class="profile-picture">
-      <img *ngIf="fotoPreview" [src]="fotoPreview" alt="Foto de perfil" class="foto-preview" />
+        <!-- Botão Salvar -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid" class="save-button">
+          Salvar
+        </button>
+      </form>
+    </div>
+
+    <!-- Coluna direita: Foto de Perfil -->
+    <div class="form-right">
+      <div class="profile-picture">
+        <!-- Foto será definida no CSS com a imagem padrão -->
+      </div>
       <label class="upload-label">
         <input type="file" (change)="onFileChange($event)" accept="image/*" hidden />
         <button mat-raised-button color="primary" type="button">Alterar foto do perfil</button>
       </label>
     </div>
 
-    <!-- Botão Salvar -->
-    <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid" class="save-button">
-      Salvar
-    </button>
-  </form>
+  </div>
 </div>

@@ -16,6 +16,8 @@
   border-radius: 12px;
   width: 80%;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative; /* Adicionando position relative para o contêiner */
+  padding-bottom: 50px; /* Garantir que haja espaço para o botão sem sobrepor outros elementos */
 }
 
 .paciente-info {
@@ -76,14 +78,27 @@ table.dataTable > tbody > tr > td {
   color: #4caf50;
 }
 
-.detalhes-btn {
-  color: #26606b;
-  font-weight: bold;
-  text-decoration: underline;
-  background: none;
-  border: none;
-  cursor: pointer;
+.ver-detalhes-btn {
+  background-color: #094D59; /* Cor de fundo igual ao botão de voltar */
+  color: white; /* Cor do texto igual ao botão de voltar */
+  padding: 10px 20px; /* Tamanho do botão igual */
+  border: none; /* Sem borda, igual ao botão de voltar */
+  border-radius: 4px; /* Arredondamento das bordas igual */
+  cursor: pointer; /* Indicação de que é um botão clicável */
+  font-size: 16px; /* Tamanho da fonte igual ao botão de voltar */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Efeito de transição igual */
+  position: absolute; /* Colocando o botão em posição absoluta dentro do contêiner */
+  bottom: 20px; /* Distância do fundo do contêiner */
+  left: 20px; /* Distância da esquerda do contêiner */
+  z-index: 10; /* Garantir que o botão fique acima dos outros elementos */
 }
+
+.ver-detalhes-btn:hover {
+  background-color: white; /* Cor de fundo no hover igual ao botão de voltar */
+  color: #094D59; /* Cor do texto no hover igual ao botão de voltar */
+}
+
+
 
 ::ng-deep div.dt-container .dt-paging .dt-paging-button {
   background-color: #26606b;
