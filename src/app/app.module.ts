@@ -42,6 +42,7 @@ import { PrescricaoDialogComponent } from './componentes/prescricao-dialog/presc
 import { CartaoVacinasComponent } from './componentes/cartao-vacinas/cartao-vacinas.component';
 import { VacinasDetalheComponent } from './componentes/vacinas-detalhe/vacinas-detalhe.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { ConsultasDetalheComponent } from './componentes/consultas-detalhe/consultas-detalhe.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,7 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
     CartaoVacinasComponent,
     VacinasDetalheComponent,
     PerfilComponent,
+    ConsultasDetalheComponent,
   ],
   imports: [
     BrowserModule,

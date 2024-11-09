@@ -1,0 +1,31 @@
+.consulta-detalhe-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.paciente-info-flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.consulta-info, .observacoes-container {
+  margin-top: 20px;
+}
+
+.observacoes h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+.consulta-info p, .observacoes p {
+  margin: 8px 0;
+}

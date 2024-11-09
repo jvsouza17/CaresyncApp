@@ -28,6 +28,10 @@ td, th {
   border-bottom: 1px solid #ddd;
 }
 
+tbody tr:hover{
+  cursor: pointer;
+}
+
 p {
   color: #666;
   font-style: italic;

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class ConsultaService {
 
   constructor(private http: HttpClient) { }
 
@@ -19,4 +19,9 @@ export class UserService {
     // getConsultas(): Observable<any> {
     //   return this.http.get(`${environment.apiUrl}/listar-consultas`);
     // }
+
+    // rota para obter os dados da consulta clicada
+    getConsultaDetalhes(): Observable<any> {
+      return this.http.get(`${environment.apiUrl}/consulta`);
+    }
 }

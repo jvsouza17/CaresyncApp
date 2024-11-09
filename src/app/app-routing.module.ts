@@ -13,6 +13,7 @@ import { ExameDetalheComponent } from './componentes/exames-detalhe/exames-detal
 import { CartaoVacinasComponent } from './componentes/cartao-vacinas/cartao-vacinas.component';
 import { VacinasDetalheComponent } from './componentes/vacinas-detalhe/vacinas-detalhe.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { ConsultasDetalheComponent } from './componentes/consultas-detalhe/consultas-detalhe.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [UsuarioAutenticadoGuard],
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'cartao-vacinas', component: CartaoVacinasComponent, canActivate: [UsuarioAutenticadoGuard]},
   { path: 'vacinas-detalhes', component: VacinasDetalheComponent, canActivate: [UsuarioAutenticadoGuard]},
   { path: 'perfil', component: PerfilComponent, canActivate: [UsuarioAutenticadoGuard]},
+  { path: 'consultas-detalhes', component: ConsultasDetalheComponent, canActivate: [UsuarioAutenticadoGuard]},
   { path: '**', redirectTo: '/login'},  // Rota coringa redireciona para login em caso de rota não encontrada
 ];
 

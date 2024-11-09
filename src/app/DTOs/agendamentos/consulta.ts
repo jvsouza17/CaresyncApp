@@ -1,4 +1,4 @@
-export class Agendamento {
+export class Consulta {
   nomePaciente?: string;
   numeroSUS?: string;
   sexo?: string;
@@ -9,7 +9,6 @@ export class Agendamento {
   localidade?: string;
   endereco?: string;
   tipo?: string;
-  observacoes?: string;
-  consulta?: string;
   medico?: string;
+  observacoes?: string;
 }

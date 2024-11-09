@@ -1,0 +1,38 @@
+<app-navigation-bar></app-navigation-bar>
+
+<div class="consulta-detalhe-container">
+  <div class="header">
+    <h2>Detalhes do Agendamento</h2>
+    <div class="paciente-info-flex">
+      <p><strong>Nome do paciente:</strong> {{ user.nomePaciente }}</p>
+      <p class="data-nascimento"><strong>Data de nascimento:</strong> {{ user.dataNascimento }}</p>
+    </div>
+  </div>
+
+  <!-- <div class="consulta-info">
+    <p><strong>Médico:</strong> {{ user.medico }}</p>
+    <p><strong>Especialidade:</strong> {{ user.especialidade }}</p>
+    <p><strong>Tipo:</strong> {{ user.tipo }}</p>
+    <p><strong>Data:</strong> {{ user.dataConsulta }}</p>
+    <p><strong>Horário:</strong> {{ user.horario }}</p>
+    <p><strong>Local:</strong> {{ user.localidade }}</p>
+    <p><strong>Endereço:</strong> {{ user.endereco }}</p>
+  </div> -->
+
+  <div class="consulta-info">
+    <p><strong>Médico: </strong>Dr. Thiago</p>
+    <p><strong>Especialidade: </strong>Pediatra</p>
+    <p><strong>Tipo: </strong>Rotina</p>
+    <p><strong>Data: </strong>30/11/2024 </p>
+    <p><strong>Horário: </strong>10:30</p>
+    <p><strong>Local: </strong>Samambaia</p>
+    <p><strong>Endereço: </strong>QR X CONJUNTO Y</p>
+  </div>
+
+  <div class="observacoes-container">
+    <div class="observacoes">
+      <h3>Observações:</h3>
+      <p>{{ user.observacoes }}</p>
+    </div>
+  </div>
+</div>

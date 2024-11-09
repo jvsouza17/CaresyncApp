@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Config } from 'datatables.net';
 import { DataTableDirective } from 'angular-datatables';
-import { Agendamento } from '../../DTOs/agendamentos/agendamento';
+import { Consulta } from '../../DTOs/agendamentos/consulta';
 import { UserService } from '../../services/user/user.service';
 
 
@@ -13,11 +13,11 @@ import { UserService } from '../../services/user/user.service';
 })
 
 export class MeusAgendamentosComponent {
-  agendamentos: Agendamento[] = [
-    { consulta: 'Pediatria', medico: 'Dra. Marcela', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
-    { consulta: 'Oftalmologia', medico: 'Dr. João', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
-    { consulta: 'Dentista', medico: 'Dr. Carlos', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
-    { consulta: 'Endocrinologia', medico: 'Dr. Tiago', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
+  agendamentos: Consulta[] = [
+    { especialidade: 'Pediatria', medico: 'Dra. Marcela', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
+    { especialidade: 'Oftalmologia', medico: 'Dr. João', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
+    { especialidade: 'Dentista', medico: 'Dr. Carlos', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
+    { especialidade: 'Endocrinologia', medico: 'Dr. Tiago', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
   ];
 
   @ViewChild(DataTableDirective)
