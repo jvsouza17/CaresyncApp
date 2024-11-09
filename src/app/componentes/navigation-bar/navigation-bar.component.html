@@ -6,12 +6,12 @@
     <li><a routerLink="/cartao-vacinas">CARTÃO DE VACINAS</a></li>
 
     <!-- Item com Submenu -->
-    <li>
-      <a mat-menu-item [matMenuTriggerFor]="menu">MEU PERFIL</a>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/perfil">Perfil</button>
-        <button mat-menu-item (click)="logout()">Logout</button>
-      </mat-menu>
+    <li class="profile-menu">
+      <a href="#" class="profile-link">MEU PERFIL</a>
+      <ul class="dropdown-menu">
+        <li><a routerLink="/perfil">Perfil</a></li>
+        <li><a href="#" (click)="logout()">Logout</a></li>
+      </ul>
     </li>
   </ul>
 </nav>

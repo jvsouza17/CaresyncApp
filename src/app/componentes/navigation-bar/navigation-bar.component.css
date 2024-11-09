@@ -35,3 +35,39 @@
   .nav-links li a:hover {
     color: #00be75;
   }
+
+  .profile-menu {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    padding: 5px 0;
+    min-width: 150px;
+    z-index: 1000;
+  }
+
+  .dropdown-menu li {
+    padding: 5px 15px;
+  }
+
+  .dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+  }
+
+  .profile-menu:hover .dropdown-menu,
+  .profile-link:focus + .dropdown-menu {
+    display: block;
+  }

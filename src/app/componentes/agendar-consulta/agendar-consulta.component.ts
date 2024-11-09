@@ -28,9 +28,10 @@ export class AgendarConsultaComponent {
   ){}
 
   ngOnInit() {
-    this.getDadosFixos().subscribe(() => {
-      this.criarForms();
-    });
+    // this.getDadosFixos().subscribe(() => {
+    //   this.criarForms();
+    // });
+    this.criarForms();
   }
 
   criarForms() {
