@@ -38,12 +38,12 @@ export class PerfilComponent  {
       CPF: [{ value: '05240644152', disabled: true }],
       dataNascimento: [{ value: '01/01/1999', disabled: true }],
       sexo: [{ value: 'Masculino', disabled: true }],
-      email: ['', [Validators.required, Validators.email]],
-      telefone: ['', Validators.required],
-      cep: ['', Validators.required],
-      cidade: ['', Validators.required],
-      numero: ['', Validators.required],
-      endereco: ['', Validators.required]
+      email: ['', [Validators.email]],
+      telefone: [''],
+      CEP: [''],
+      cidade: [''],
+      UF: [''],
+      endereco: ['']
     });
   }
 

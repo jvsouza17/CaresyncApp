@@ -71,3 +71,9 @@
   .profile-link:focus + .dropdown-menu {
     display: block;
   }
+
+  .active-link {
+    color: #26606b; /* Cor de destaque */
+    font-weight: bold;
+    border-bottom: 2px solid #00be75; /* Linha de destaque */
+  }
