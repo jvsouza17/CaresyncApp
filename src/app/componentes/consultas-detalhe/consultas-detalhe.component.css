@@ -1,31 +1,85 @@
 .consulta-detalhe-container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
+  width: 50%;;
+  margin: 40px auto;
+  padding: 15px;
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header {
-  margin-bottom: 20px;
-}
-
-.paciente-info-flex {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.consulta-info, .observacoes-container {
-  margin-top: 20px;
+.header h2 {
+  font-size: 1.8em;
+  color: #005f73;
+  margin: 0;
 }
 
-.observacoes h3 {
-  margin-top: 10px;
-  font-size: 1.2em;
+.paciente-info {
+  display: flex;
+  gap: 10px;
+}
+
+.paciente-info p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #005f73;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
 }
 
 .consulta-info p, .observacoes p {
-  margin: 8px 0;
+  margin: 4px 0;
+  color: #005f73;
 }
+
+.observacoes h3 {
+  font-size: 1.2em;
+  color: #005f73;
+  margin-bottom: 5px;
+}
+
+.consulta-info p strong, .observacoes h3 {
+  color: #005f73;
+}
+
+.observacoes-container {
+  padding: 8px;
+}
+
+
+.consulta-info {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+
+  background-image: url("../../../assets/images/consulta-detalhe.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 120px;
+}
+
+.consulta-info-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
