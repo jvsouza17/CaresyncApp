@@ -43,13 +43,12 @@
   .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
     background-color: #fff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     list-style: none;
     padding: 5px 0;
-    min-width: 150px;
+    min-width: 100px;
+    width: 100px;
     z-index: 1000;
   }
 

@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
+import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -81,7 +81,8 @@ import { ConsultasDetalheComponent } from './componentes/consultas-detalhe/consu
     MatDatepickerModule,
     MatDialogTitle,
     MatDialogContent,
-    MatMenuModule
+    MatMenuModule,
+    CommonModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

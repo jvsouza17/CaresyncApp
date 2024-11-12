@@ -27,7 +27,7 @@ export class CartaoVacinasComponent {
 
   ngOnInit(): void {
     this.dtOptions = {
-      order: [[1, 'asc']],
+      order: [[3, 'desc']],
       ordering: true,
       dom: 'rfBtip',
       pagingType: 'full',

@@ -26,13 +26,13 @@ export class LoginComponent {
     criarForms() {
       this.formulario = this.formBuilder.group({
       login: ['', [Validators.required, Validators.email]],
-      senha: ['', [Validators.required]]
+      password: ['', [Validators.required]]
       })
     }
     formularioValido() {
       if(this.formulario.valid){
           this.user.login = this.formulario.get('login')?.value;
-          this.user.password = this.formulario.get('senha')?.value;
+          this.user.password = this.formulario.get('password')?.value;
           this.authenticationService.logar(this.user);
       }
     }

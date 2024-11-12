@@ -22,16 +22,16 @@
 
           <mat-form-field class="example-full-width-login">
             <mat-label>Senha</mat-label>
-            <input matInput formControlName="senha" type="password" placeholder="" />
+            <input matInput formControlName="password" type="password" placeholder="" />
           </mat-form-field>
 
-          <div class="mensagem_erro" *ngIf="formulario.get('senha')?.errors?.['required'] && formulario.get('senha')?.touched">
+          <div class="mensagem_erro" *ngIf="formulario.get('password')?.errors?.['required'] && formulario.get('password')?.touched">
             Senha é obrigatória!
           </div>
 
           <button (click)="formularioValido()" class="submit-button">ENTRAR</button>
         </form>
-        
+
         <div fxLayout="row" fxLayoutAlign="center" class="link-container">
           <a href="#" class="link">Esqueci a senha</a>
           <span class="separator">|</span>

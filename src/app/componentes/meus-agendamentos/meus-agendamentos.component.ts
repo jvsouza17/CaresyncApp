@@ -5,14 +5,12 @@ import { DataTableDirective } from 'angular-datatables';
 import { Consulta } from '../../DTOs/agendamentos/consulta';
 import { UserService } from '../../services/user/user.service';
 import { ConsultaService } from '../../services/consulta/consulta.service';
-import { DateBRPipe } from '../../pipes/date/date-br.pipe';
 
 
 @Component({
   selector: 'app-meus-agendamentos',
   templateUrl: './meus-agendamentos.component.html',
   styleUrl: './meus-agendamentos.component.css',
-  providers: [DateBRPipe]
 })
 
 export class MeusAgendamentosComponent {
@@ -24,13 +22,17 @@ export class MeusAgendamentosComponent {
   dtTrigger: Subject<any> = new Subject<any>();
 
   constructor(private consultaService: ConsultaService) { }
-  ngOnInit(): void {
+  ngOnInit() {
     this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 5,
+      order: [[2, 'asc']],
+      ordering: true,
+      dom: 'rfBtip',
+      pagingType: 'full',
+      pageLength: 10,
+      processing: true,
       language: {
         url: '//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json'
-      }
+      },
     };
     this.dtTrigger.next(null);
     this.getAgendamentos();
@@ -43,6 +45,7 @@ export class MeusAgendamentosComponent {
   getAgendamentos(){
     this.consultaService.getConsultas().subscribe((agendamentos: Consulta[]) => {
       this.agendamentos = agendamentos;
+      this.dtTrigger.next(null);
       console.log(this.agendamentos);
     });
   }

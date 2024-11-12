@@ -16,11 +16,12 @@
       <tr routerLink="/consultas-detalhes" *ngFor="let agendamento of agendamentos">
         <td>{{ agendamento.especialidade }}</td>
         <td>{{ agendamento.nomeMedico }}</td>
-        <td>{{ agendamento.dataConsulta }}</td>
+        <td>{{ agendamento.dataConsulta | date:'dd/MM/yyyy' }}</td>
         <td>{{ agendamento.hora }}</td>
         <td>{{ agendamento.endereco }}</td>
         <td>{{ agendamento.local }}</td>
       </tr>
+
     </tbody>
   </table>
   <p>Selecione a consulta para ver mais detalhes</p>
