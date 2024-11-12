@@ -4,11 +4,11 @@ export class Consulta {
   sexo?: string;
   dataNascimento?: string;
   dataConsulta?: string;
-  horario?: string;
+  hora?: string;
   especialidade?: string;
-  localidade?: string;
+  local?: string;
   endereco?: string;
   tipo?: string;
-  medico?: string;
+  nomeMedico?: string;
   observacoes?: string;
 }

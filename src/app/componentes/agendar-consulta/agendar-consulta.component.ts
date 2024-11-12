@@ -6,6 +6,8 @@ import { provideMomentDateAdapter } from '@angular/material-moment-adapter';
 import { UserService } from '../../services/user/user.service';
 import { map, Observable } from 'rxjs';
 import { Consulta } from '../../DTOs/agendamentos/consulta';
+import { ConsultaService } from '../../services/consulta/consulta.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,13 +27,14 @@ export class AgendarConsultaComponent {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
+    private consultaService: ConsultaService,
+    private router: Router
   ){}
 
   ngOnInit() {
-    // this.getDadosFixos().subscribe(() => {
-    //   this.criarForms();
-    // });
-    this.criarForms();
+    this.getDadosFixos().subscribe(() => {
+      this.criarForms();
+    });
   }
 
   criarForms() {
@@ -74,16 +77,19 @@ export class AgendarConsultaComponent {
       this.user.sexo = formValues.sexo;
       this.user.dataNascimento = formValues.dataNascimento;
       this.user.dataConsulta = formValues.dataConsulta;
-      this.user.horario = formValues.horario;
+      this.user.hora = formValues.horario;
       this.user.especialidade = formValues.especialidade;
-      this.user.localidade = formValues.localidade;
+      this.user.local = formValues.localidade;
       this.user.endereco = formValues.endereco;
       this.user.tipo = formValues.tipo;
       this.user.observacoes = formValues.observacoes;
 
       console.log(this.user)
       console.log(this.formulario)
-      // this.consultaService.agendarConsulta(this.user)
+      this.consultaService.agendarConsulta(this.user).subscribe((result)=>{
+        console.log(result);
+        this.router.navigate(['/meus-agendamentos'])
+      })
     }
   }
 }
