@@ -2,81 +2,83 @@
 <div class="container">
   <h2>AGENDAMENTO</h2>
   <div *ngIf="formulario">
-  <form [formGroup]="formulario">
-    <div class="form-row">
-      <mat-form-field class="form-field">
-        <mat-label>Nome do Paciente</mat-label>
-        <input matInput formControlName="nomePaciente" readonly>
+    <form [formGroup]="formulario">
+      <div class="form-row">
+        <mat-form-field class="form-field">
+          <mat-label>Nome do Paciente</mat-label>
+          <input matInput formControlName="nomePaciente" readonly>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>Nº do SUS</mat-label>
+          <input matInput formControlName="numeroSUS" readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="form-field">
+          <mat-label>Sexo</mat-label>
+          <input matInput formControlName="sexo" readonly>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dataNascimento" readonly>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="form-field">
+          <mat-label>Especialidade</mat-label>
+          <input matInput formControlName="especialidade" required>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>Localidade</mat-label>
+          <input matInput formControlName="localidade" required>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="form-field">
+          <mat-label>Tipo</mat-label>
+          <mat-select formControlName="tipo" required>
+            <mat-option value="rotina">Rotina</mat-option>
+            <mat-option value="retorno">Retorno</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>Endereço</mat-label>
+          <input matInput formControlName="endereco" required>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field class="form-field">
+          <mat-label>Data</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="dataConsulta" required>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>Horário</mat-label>
+          <input matInput formControlName="horario" required>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="form-field full-width">
+        <mat-label>Observações</mat-label>
+        <textarea matInput formControlName="observacoes" rows="4"></textarea>
       </mat-form-field>
 
-      <mat-form-field class="form-field">
-        <mat-label>Nº do SUS</mat-label>
-        <input matInput formControlName="numeroSUS" readonly>
-      </mat-form-field>
-    </div>
-
-    <div class="form-row">
-      <mat-form-field class="form-field">
-        <mat-label>Sexo</mat-label>
-        <input matInput formControlName="sexo" readonly>
-      </mat-form-field>
-
-      <mat-form-field class="form-field">
-        <mat-label>Data de Nascimento</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="dataNascimento" readonly>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-    </div>
-
-    <div class="form-row">
-      <mat-form-field class="form-field">
-        <mat-label>Especialidade</mat-label>
-        <input matInput formControlName="especialidade" required>
-      </mat-form-field>
-
-      <mat-form-field class="form-field">
-        <mat-label>Localidade</mat-label>
-        <input matInput formControlName="localidade" required>
-      </mat-form-field>
-    </div>
-
-    <div class="form-row">
-      <mat-form-field class="form-field">
-        <mat-label>Tipo</mat-label>
-        <mat-select formControlName="tipo" required>
-          <mat-option value="rotina">Rotina</mat-option>
-          <mat-option value="retorno">Retorno</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field class="form-field">
-        <mat-label>Endereço</mat-label>
-        <input matInput formControlName="endereco" required>
-      </mat-form-field>
-    </div>
-
-    <div class="form-row">
-      <mat-form-field class="form-field">
-        <mat-label>Data</mat-label>
-        <input matInput [matDatepicker]="picker2" formControlName="dataConsulta" required>
-        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-        <mat-datepicker #picker2></mat-datepicker>
-      </mat-form-field>
-
-      <mat-form-field class="form-field">
-        <mat-label>Horário</mat-label>
-        <input matInput formControlName="horario" required>
-      </mat-form-field>
-    </div>
-
-
-    <mat-form-field class="form-field full-width">
-      <mat-label>Observações</mat-label>
-      <textarea matInput formControlName="observacoes" rows="4"></textarea>
-    </mat-form-field>
-
-    <button (click)="formularioValido()" mat-raised-button color="primary" type="submit">Agendar</button>
-  </form>
+      <button (click)="formularioValido()" mat-raised-button type="submit">Agendar</button>
+    </form>
+  </div>
 </div>
-</div>
+
+
+
