@@ -4,28 +4,26 @@ import { Config } from 'datatables.net';
 import { DataTableDirective } from 'angular-datatables';
 import { Consulta } from '../../DTOs/agendamentos/consulta';
 import { UserService } from '../../services/user/user.service';
+import { ConsultaService } from '../../services/consulta/consulta.service';
+import { DateBRPipe } from '../../pipes/date/date-br.pipe';
 
 
 @Component({
   selector: 'app-meus-agendamentos',
   templateUrl: './meus-agendamentos.component.html',
-  styleUrl: './meus-agendamentos.component.css'
+  styleUrl: './meus-agendamentos.component.css',
+  providers: [DateBRPipe]
 })
 
 export class MeusAgendamentosComponent {
-  agendamentos: Consulta[] = [
-    { especialidade: 'Pediatria', medico: 'Dra. Marcela', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
-    { especialidade: 'Oftalmologia', medico: 'Dr. João', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
-    { especialidade: 'Dentista', medico: 'Dr. Carlos', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
-    { especialidade: 'Endocrinologia', medico: 'Dr. Tiago', dataConsulta: '12/01/2024', horario: '10:00', endereco: 'UPA N. Bandeirante', localidade: 'N. Bandeirante' },
-  ];
+  agendamentos: Consulta[] = [];
 
   @ViewChild(DataTableDirective)
   dtElement!: DataTableDirective;
   dtOptions: Config = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
-  constructor(private userService: UserService) { }
+  constructor(private consultaService: ConsultaService) { }
   ngOnInit(): void {
     this.dtOptions = {
       pagingType: 'full_numbers',
@@ -35,13 +33,18 @@ export class MeusAgendamentosComponent {
       }
     };
     this.dtTrigger.next(null);
+    this.getAgendamentos();
   }
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }
 
-  // getAgendamentos(){
-  // }
+  getAgendamentos(){
+    this.consultaService.getConsultas().subscribe((agendamentos: Consulta[]) => {
+      this.agendamentos = agendamentos;
+      console.log(this.agendamentos);
+    });
+  }
 }
 

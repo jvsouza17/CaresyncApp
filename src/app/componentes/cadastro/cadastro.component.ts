@@ -58,7 +58,7 @@ export class CadastroComponent {
       sexo: ['', [Validators.required]],
       numeroSUS: ['', [Validators.required]],
       dataNascimento: ['', [Validators.required]],
-      CPF: ['', [Validators.required,]],
+      CPF: ['', [Validators.required]],
       endereco: ['', [Validators.required]],
       CEP: ['', [Validators.required]],
       cidade: ['', [Validators.required]],

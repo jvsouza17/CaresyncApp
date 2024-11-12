@@ -13,12 +13,6 @@
           <input matInput type="text" formControlName="nomeCompleto" readonly />
         </mat-form-field>
 
-        <!-- E-mail -->
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>E-mail</mat-label>
-          <input matInput type="email" formControlName="email" />
-        </mat-form-field>
-
         <!-- Agrupando Data de nascimento e Sexo -->
         <div class="form-group-inline">
           <!-- Data de Nascimento -->
@@ -26,7 +20,7 @@
             <mat-label>Data de nascimento</mat-label>
             <input matInput type="text" formControlName="dataNascimento" readonly />
           </mat-form-field>
-
+          
           <!-- Sexo -->
           <mat-form-field appearance="outline" class="half-width">
             <mat-label>Sexo</mat-label>
@@ -34,20 +28,40 @@
           </mat-form-field>
         </div>
 
-        <!-- Agrupando Telefone e CEP -->
+     <!-- NúmeroSUS -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nº do CNS</mat-label>
+      <input matInput type="text" formControlName="numeroSUS" readonly />
+    </mat-form-field>
+
+    <!-- CPF -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>CPF</mat-label>
+      <input matInput type="text" formControlName="CPF" readonly (input)="formatCpf()" [value]="cpfValue"/>
+    </mat-form-field>
+        
+        
+          
+<!--         Agrupando telefone e e-mail -->
         <div class="form-group-inline">
           <!-- Telefone -->
           <mat-form-field appearance="outline" class="half-width">
             <mat-label>Telefone</mat-label>
             <input matInput type="tel" formControlName="telefone" />
           </mat-form-field>
+          
+          <!-- E-mail -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="email" formControlName="email" />
+        </mat-form-field>
+        </div>
 
-          <!-- CEP -->
+                  <!-- CEP -->
           <mat-form-field appearance="outline" class="half-width">
             <mat-label>CEP</mat-label>
             <input matInput type="text" formControlName="cep" />
           </mat-form-field>
-        </div>
 
         <!-- Agrupando Cidade e Número -->
         <div class="form-group-inline">
@@ -59,8 +73,8 @@
 
           <!-- Número -->
           <mat-form-field appearance="outline" class="half-width">
-            <mat-label>Número</mat-label>
-            <input matInput type="text" formControlName="numero" />
+            <mat-label>UF</mat-label>
+            <input matInput type="text" formControlName="UF" />
           </mat-form-field>
         </div>
 

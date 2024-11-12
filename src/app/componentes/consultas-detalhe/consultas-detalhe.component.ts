@@ -20,18 +20,18 @@ export class ConsultasDetalheComponent {
   }
 
   carregarDetalhesConsulta() {
-    this.consultaService.getConsultaDetalhes().subscribe((response) => {
-      this.user.nomePaciente = response.nomePaciente
-      this.user.dataNascimento = response.dataNascimento
-      this.user.medico = response.medico
-      this.user.especialidade = response.especialidade
-      this.user.tipo = response.tipo
-      this.user.dataConsulta = response.dataConsulta
-      this.user.horario = response.horario
-      this.user.localidade = response.localidade
-      this.user.endereco = response.endereco
-      this.user.observacoes = response.observacoes
-    })
+    // this.consultaService.getConsultaDetalhes().subscribe((response) => {
+    //   this.user.nomePaciente = response.nomePaciente
+    //   this.user.dataNascimento = response.dataNascimento
+    //   this.user.nomeMedico = response.medico
+    //   this.user.especialidade = response.especialidade
+    //   this.user.tipo = response.tipo
+    //   this.user.dataConsulta = response.dataConsulta
+    //   this.user.hora = response.horario
+    //   this.user.local = response.localidade
+    //   this.user.endereco = response.endereco
+    //   this.user.observacoes = response.observacoes
+    // })
   }
 
 }
