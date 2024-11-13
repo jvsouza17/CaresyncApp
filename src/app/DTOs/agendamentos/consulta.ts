@@ -1,4 +1,5 @@
 export class Consulta {
+  id_consulta?: string;
   nomePaciente?: string;
   numeroSUS?: string;
   sexo?: string;

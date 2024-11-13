@@ -5,6 +5,7 @@ import { DataTableDirective } from 'angular-datatables';
 import { Consulta } from '../../DTOs/agendamentos/consulta';
 import { UserService } from '../../services/user/user.service';
 import { ConsultaService } from '../../services/consulta/consulta.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class MeusAgendamentosComponent {
   dtOptions: Config = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
-  constructor(private consultaService: ConsultaService) { }
+  constructor(private consultaService: ConsultaService, private router: Router) { }
   ngOnInit() {
     this.dtOptions = {
       order: [[2, 'asc']],
@@ -48,6 +49,12 @@ export class MeusAgendamentosComponent {
       this.dtTrigger.next(null);
       console.log(this.agendamentos);
     });
+  }
+
+  verDetalhesConsulta(idConsulta: Consulta["id_consulta"]) {
+    console.log(idConsulta)
+    this.router.navigate(['/consultas-detalhes', idConsulta]);
+
   }
 }
 

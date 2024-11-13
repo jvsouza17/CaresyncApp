@@ -25,7 +25,7 @@ export class ConsultaService {
     }
 
     // rota para obter os dados da consulta clicada
-    getConsultaDetalhes(): Observable<any> {
-      return this.http.get(`${environment.apiUrl}/consulta`);
+    getConsultaDetalhes(id: String): Observable<any> {
+      return this.http.get(`${environment.apiUrl}/consulta/listar-consultas/${id}`);
     }
 }

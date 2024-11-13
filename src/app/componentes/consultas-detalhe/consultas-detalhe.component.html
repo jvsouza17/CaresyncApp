@@ -5,23 +5,23 @@
     <h2>Detalhes do Agendamento</h2>
     <div class="paciente-info">
       <p><strong>Nome do paciente:</strong> {{ user.nomePaciente }}</p>
-      <p><strong>Data de nascimento:</strong> {{ user.dataNascimento }}</p>
+      <p><strong>Data de nascimento:</strong> {{ user.dataNascimento | date:'dd/MM/yyyy' }}</p>
     </div>
   </div>
 
-<!--   <div class="consulta-info card">
+  <div class="consulta-info card">
     <div class="consulta-info-text">
-      <p><strong>Médico:</strong> {{ user.medico }}</p>
+      <p><strong>Médico:</strong> {{ user.nomeMedico }}</p>
       <p><strong>Especialidade:</strong> {{ user.especialidade }}</p>
       <p><strong>Tipo:</strong> {{ user.tipo }}</p>
-      <p><strong>Data:</strong> {{ user.dataConsulta }}</p>
-      <p><strong>Horário:</strong> {{ user.horario }}</p>
-      <p><strong>Local:</strong> {{ user.localidade }}</p>
+      <p><strong>Data:</strong> {{ user.dataConsulta | date:'dd/MM/yyyy' }}</p>
+      <p><strong>Horário:</strong> {{ user.hora }}</p>
+      <p><strong>Local:</strong> {{ user.local }}</p>
       <p><strong>Endereço:</strong> {{ user.endereco }}</p>
     </div>
-  </div> -->
-  
-  <div class="consulta-info card">
+  </div>
+
+  <!-- <div class="consulta-info card">
     <div class="consulta-info-text">
       <p><strong>Médico:</strong> Dr. Thiago</p>
       <p><strong>Especialidade:</strong> Pediatra</p>
@@ -31,7 +31,7 @@
       <p><strong>Local:</strong> Samambaia</p>
       <p><strong>Endereço:</strong> QR X CONJUNTO Y</p>
     </div>
-  </div>
+  </div> -->
 
   <div class="observacoes-container card">
     <h3 style="color: #005f73">Observações:</h3>

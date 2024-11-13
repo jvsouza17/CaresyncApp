@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr routerLink="/consultas-detalhes" *ngFor="let agendamento of agendamentos">
+      <tr *ngFor="let agendamento of agendamentos" (click)="verDetalhesConsulta(agendamento.id_consulta!)">
         <td>{{ agendamento.especialidade }}</td>
         <td>{{ agendamento.nomeMedico }}</td>
         <td>{{ agendamento.dataConsulta | date:'dd/MM/yyyy' }}</td>

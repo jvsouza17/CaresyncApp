@@ -24,8 +24,8 @@ export class TokenInterceptor implements HttpInterceptor {
             });
             return next.handle(request).pipe(catchError((error: any) => {
                   if (error instanceof HttpErrorResponse && error.status === 403) {
-                      this.authenticationService.logout();
-                      console.log("Token expirado, necessário autenticar novamente!");
+                      // this.authenticationService.logout();
+                      // console.log("Token expirado, necessário autenticar novamente!");
                   }
                   return throwError(() => new Error(error.message));
               })
