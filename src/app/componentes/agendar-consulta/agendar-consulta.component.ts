@@ -88,7 +88,7 @@ export class AgendarConsultaComponent {
       console.log(this.formulario)
       this.consultaService.agendarConsulta(this.user).subscribe((result)=>{
         console.log(result);
-        this.router.navigate(['/meus-agendamentos'])
+        this.router.navigate(['/minhas-consultas'])
       })
     }
   }

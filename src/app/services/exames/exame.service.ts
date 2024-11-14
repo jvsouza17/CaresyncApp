@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AgendamentoExames } from '../../DTOs/exames/agendamentoExames';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +10,11 @@ import { Injectable } from '@angular/core';
 export class ExameService {
 
   constructor(private http: HttpClient) { }
+
+  // agendar exames
+  agendarExame(exame: AgendamentoExames): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/exame/agendar`, exame);
+  }
 
   // listar exames do usuário logado
   // getExames(){

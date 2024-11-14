@@ -32,10 +32,7 @@ export class CartaoVacinasComponent {
       dom: 'rfBtip',
       pagingType: 'full',
       pageLength: 10,
-      processing: true,
-      language: {
-        url: '//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json'
-      }
+      processing: true
     };
     this.dtTrigger.next(null);
   }

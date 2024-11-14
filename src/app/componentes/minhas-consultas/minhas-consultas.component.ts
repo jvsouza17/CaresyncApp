@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-meus-agendamentos',
-  templateUrl: './meus-agendamentos.component.html',
-  styleUrl: './meus-agendamentos.component.css',
+  selector: 'app-minhas-consultas',
+  templateUrl: './minhas-consultas.component.html',
+  styleUrl: './minhas-consultas.component.css',
 })
 
-export class MeusAgendamentosComponent {
+export class MinhasConsultasComponent {
   agendamentos: AgendamentoConsultas[] = [];
 
   @ViewChild(DataTableDirective)
@@ -30,10 +30,7 @@ export class MeusAgendamentosComponent {
       dom: 'rfBtip',
       pagingType: 'full',
       pageLength: 10,
-      processing: true,
-      language: {
-        url: '//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json'
-      },
+      processing: true
     };
     this.dtTrigger.next(null);
     this.getAgendamentos();

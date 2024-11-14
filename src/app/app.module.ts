@@ -19,7 +19,6 @@ import { TelefoneMaskPipe } from './pipes/telefone-mask.pipe';
 import { HomeComponent } from './componentes/home/home.component';
 import { NavigationBarComponent } from './componentes/navigation-bar/navigation-bar.component';
 import { ConsultasComponent } from './componentes/consultas/consultas.component';
-import { ExamesComponent } from './componentes/exames/exames.component';
 import { DataTablesModule } from 'angular-datatables';
 import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
@@ -28,7 +27,6 @@ import {provideNativeDateAdapter} from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { AgendarConsultaComponent } from './componentes/agendar-consulta/agendar-consulta.component';
 import { DateBRPipe } from './pipes/date/date-br.pipe';
-import { MeusAgendamentosComponent } from './componentes/meus-agendamentos/meus-agendamentos.component';
 import { TokenInterceptor } from './services/interceptors/token.interceptor';
 import { ExameDetalheComponent } from './componentes/exames-detalhe/exames-detalhe.component';
 import { MatMenuModule } from '@angular/material/menu';
@@ -44,6 +42,9 @@ import { VacinasDetalheComponent } from './componentes/vacinas-detalhe/vacinas-d
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ConsultasDetalheComponent } from './componentes/consultas-detalhe/consultas-detalhe.component';
 import { AgendarExameComponent } from './componentes/agendar-exame/agendar-exame.component';
+import { MinhasConsultasComponent } from './componentes/minhas-consultas/minhas-consultas.component';
+import { MeusExamesComponent } from './componentes/meus-exames/meus-exames.component';
+import { ExamesComponent } from './componentes/exames/exames.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,10 +56,10 @@ import { AgendarExameComponent } from './componentes/agendar-exame/agendar-exame
     HomeComponent,
     NavigationBarComponent,
     ConsultasComponent,
-    ExamesComponent,
+    MeusExamesComponent,
     AgendarConsultaComponent,
     DateBRPipe,
-    MeusAgendamentosComponent,
+    MinhasConsultasComponent,
     ExameDetalheComponent,
     PrescricaoDialogComponent,
     CartaoVacinasComponent,
@@ -66,6 +67,7 @@ import { AgendarExameComponent } from './componentes/agendar-exame/agendar-exame
     PerfilComponent,
     ConsultasDetalheComponent,
     AgendarExameComponent,
+    ExamesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+<app-navigation-bar></app-navigation-bar>
+
+<!-- Container principal dos Exames -->
+<div class="exam-container mt-5">
+  <div class="exam-card shadow-sm">
+    <div class=" d-flex justify-content-between align-items-center p-4">
+      <!-- Container Title -->
+      <h3 class="mb-0">HISTÓRICO E RESULTADOS</h3>
+
+      <!-- Patient Information -->
+      <div class="patient-info text-right">
+        <p class="mb-1"> NOME: {{ paciente.nome }}</p>
+        <p class="mb-0">DATA DE NASCIMENTO: {{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</p>
+      </div>
+    </div>
+
+    <!-- Exam Table -->
+    <div class="table-responsive p-4">
+      <table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>EXAME</th>
+            <th>HORA</th>
+            <th>DATA</th>
+            <th>RESULTADO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr routerLink='/exames-detalhes' *ngFor="let exame of exames">
+            <td >{{ exame.nome }}</td>
+            <td>{{ exame.hora }}</td>
+            <td>{{ exame.data | date: 'dd/MM/yyyy' }}</td>
+            <td>{{ exame.resultado }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 ::ng-deep body {
-  color: #26606b;
+  color: #26606b !important;
   font-family: "Raleway", sans-serif !important;
 }
 
@@ -7,139 +7,131 @@
   font-size: 25px !important;
 }
 
-.exam-container {
+.home-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  width: 100%;
-}
-
-.patient-info {
-  display: flex;
-  gap: 25px;
-  font-weight: 200;
-}
-
-.exam-card {
-  background-color: #ffffff;
-  border-radius: 12px;
+  background-color:rgba(255, 255, 255, 0.838);
+  padding: 40px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 60px;
+  height: auto; /* Alterado para auto para melhor responsividade */
   width: 80%;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+  .content {
+    max-width: 50%;
+  }
+
+  .content h1 {
+    font-size: 32px;
+    color: #325256;
+  }
+
+  .content p {
+    font-size: 18px;
+    color: #325256;
+    margin-top: 10px;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .consulta-btn {
+    background-color: #26606b;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    height: 60px;
+    text-align: center;
+    margin: auto;
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
 }
 
-/* Header do Card */
-.card-header {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
-  border-radius: 12px 12px 0 0;
-}
+  .consulta-btn:hover {
+    background-color: #4ab68a;
+    transform: scale(1.05);
+  }
 
-.text-primary {
-  color: #4caf50;
-}
+  .agendamentos-btn:hover {
+    opacity: 0.9;
+  }
 
-/* Informação do Paciente */
-.patient-info p {
-  margin: 0;
-  font-size: 14px;
-  color: #555555;
-}
+  .imagem-paciente-medico{
+    flex: 1; /* Permite que a div ocupe o espaço restante */
+  min-width: 300px; /* Define uma largura mínima para a div */
+  min-height: 400px; /* Define uma largura mínima para a div */
+  height: auto; /* Mantém a altura automática */
+  background-image: url("../../../assets/images/exame.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  }
 
-/* Estilização da Tabela */
-.table {
-  margin: 0;
-}
+  .image img {
+    width: 300px;
+    height: auto;
+  }
 
-table.dataTable thead th {
-  background-color: #61ca9f;
-  color: #ffffff;
-  text-align: center;
-  font-weight: 400;
-}
+  .home-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.838);;
+  padding: 40px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 60px;
+  height: auto; /* Alterado para auto para melhor responsividade */
+  width: 80%;
+  position: relative;
+  }
 
-table.dataTable > tbody > tr > td {
-  text-align: center;
-}
-.table{
-  border-collapse: collapse;
-  border: #ffffff00;
-}
+  .content {
+    max-width: 50%;
+  }
 
-.table-striped tbody tr:nth-of-type(odd) {
-  background-color: #f2f2f2;
-}
+  .content h1 {
+    font-size: 36px;
+    color: #26606b;
+    margin-top: 0;
+  }
 
-.table-bordered > :not(caption) > * {
-  border-width: var(--bs-border-width) 0;
-}
-tbody, td, tfoot, th, thead, tr {
-  /* border-color: inherit; */
-  /* border-style: solid; */
-  border-width: 0;
-}
+  .content p {
+    font-size: 18px;
+    color: #26606b;
+    margin-top: 10px;
+  }
 
-.table-hover tbody tr:hover {
-  background-color: #e9ecef;
-}
+  @media (max-width: 768px) {
+    .home-container {
+        flex-direction: column; /* Altera direção para coluna em telas menores */
+        text-align: center;
+        padding: 20px; /* Reduzir padding */
+    }
 
-/* Responsividade da Tabela */
-.table-responsive {
-  overflow-x: auto;
-  border-radius: 0 0 12px 12px;
-}
+    .content {
+        max-width: 100%; /* Permite que o conteúdo ocupe toda a largura */
+        margin-bottom: 20px;
+    }
 
+    .content h1 {
+        font-size: 28px; /* Tamanho do título reduzido */
+    }
 
-::ng-deep div.dt-container .dt-paging .dt-paging-button {
-  background-color: #26606b;
-  color: #ffffff !important;
-}
-::ng-deep div.dt-container .dt-paging .dt-paging-button:hover {
-  background-color: #26606b !important;
-  color: #ffffff !important;
-}
+    .content p {
+        font-size: 16px; /* Tamanho do texto reduzido */
+    }
 
-::ng-deep button{
-  font-family: "Raleway", sans-serif !important;
-}
-
-::ng-deep .dataTables_wrapper .dataTables_filter {
-  margin-bottom: 1rem !important;
-  text-align: right !important;
-}
-
-::ng-deep .dt-search{
-  margin-bottom: 25px;
-}
-
-::ng-deep .dt-search input{
-  border-radius: 10px !important;
-  transition: box-shadow 0.3s ease;
-  margin-top: auto ! important;
-}
-
-::ng-deep .dt-column-order{
-  color: #26606b;
-}
-
-::ng-deep .dt-search input:focus {
-  border: none;
-  outline: none; /* Remove a borda de foco padrão do navegador */
-  box-shadow: 0 0 5px 2px rgba(0, 189, 126, 0.5); /* Adiciona um leve brilho verde */
-}
-
-::ng-deep .dt-paging .paging_full {
-  display: flex !important;
-  align-items: center !important;
-}
-
-::ng-deep nav{
-  display: flex !important;
-  align-items: center !important;
-  margin: auto !important;
-}
-
-tr:hover{
-  cursor: pointer;
-}
-
+    .consulta-btn {
+        width: 80%; /* Aumenta largura do botão em telas menores */
+        font-size: 18px; /* Reduz tamanho da fonte */
+    }
+  }

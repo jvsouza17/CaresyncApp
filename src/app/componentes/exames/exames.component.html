@@ -1,39 +1,23 @@
 <app-navigation-bar></app-navigation-bar>
 
-<!-- Container principal dos Exames -->
-<div class="exam-container mt-5">
-  <div class="exam-card shadow-sm">
-    <div class=" d-flex justify-content-between align-items-center p-4">
-      <!-- Container Title -->
-      <h3 class="mb-0">HISTÓRICO E RESULTADOS</h3>
-
-      <!-- Patient Information -->
-      <div class="patient-info text-right">
-        <p class="mb-1"> NOME: {{ paciente.nome }}</p>
-        <p class="mb-0">DATA DE NASCIMENTO: {{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</p>
-      </div>
-    </div>
-
-    <!-- Exam Table -->
-    <div class="table-responsive p-4">
-      <table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
-        <thead class="table-light">
-          <tr>
-            <th>EXAME</th>
-            <th>HORA</th>
-            <th>DATA</th>
-            <th>RESULTADO</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr routerLink='/exames-detalhes' *ngFor="let exame of exames">
-            <td >{{ exame.nome }}</td>
-            <td>{{ exame.hora }}</td>
-            <td>{{ exame.data | date: 'dd/MM/yyyy' }}</td>
-            <td>{{ exame.resultado }}</td>
-          </tr>
-        </tbody>
-      </table>
+<div class="home-container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <div class="imagem-paciente-medico">
+    <img />
+  </div>
+  <div class="content" fxFlex="70" fxFlex.lt-md="100">
+    <h1>MARQUE OU VERIFIQUE SEUS EXAMES COM FACILIDADE</h1>
+    <br>
+    <p>
+      Estamos aqui para garantir que sua experiência com nossos serviços seja
+      simples e eficiente. Agora, você pode marcar um novo exame ou verificar
+      seus exames agendados com apenas alguns cliques.
+    </p>
+    <br>
+    <div class="buttons">
+      <button routerLink="/agendar-exame" class="consulta-btn">Agendar exame</button>
+      <button routerLink="/meus-exames" class="consulta-btn">Meus agendamentos</button>
     </div>
   </div>
+
 </div>
+
