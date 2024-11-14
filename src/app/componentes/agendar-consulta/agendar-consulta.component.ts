@@ -5,7 +5,7 @@ import { MY_FORMATS } from '../../pipes/date/date-br.pipe';
 import { provideMomentDateAdapter } from '@angular/material-moment-adapter';
 import { UserService } from '../../services/user/user.service';
 import { map, Observable } from 'rxjs';
-import { Consulta } from '../../DTOs/agendamentos/consulta';
+import { AgendamentoConsultas } from '../../DTOs/agendamentos/agendamentoConsultas';
 import { ConsultaService } from '../../services/consulta/consulta.service';
 import { Router } from '@angular/router';
 
@@ -22,7 +22,7 @@ export class AgendarConsultaComponent {
 
   formulario!: FormGroup;
   dadosFixos: any = {};
-  user!: Consulta;
+  user!: AgendamentoConsultas;
 
   constructor(
     private formBuilder: FormBuilder,

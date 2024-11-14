@@ -43,6 +43,7 @@ import { CartaoVacinasComponent } from './componentes/cartao-vacinas/cartao-vaci
 import { VacinasDetalheComponent } from './componentes/vacinas-detalhe/vacinas-detalhe.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { ConsultasDetalheComponent } from './componentes/consultas-detalhe/consultas-detalhe.component';
+import { AgendarExameComponent } from './componentes/agendar-exame/agendar-exame.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,7 @@ import { ConsultasDetalheComponent } from './componentes/consultas-detalhe/consu
     VacinasDetalheComponent,
     PerfilComponent,
     ConsultasDetalheComponent,
+    AgendarExameComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Consulta } from '../../DTOs/agendamentos/consulta';
+import { AgendamentoConsultas } from '../../DTOs/agendamentos/agendamentoConsultas';
 import { ConsultaService } from '../../services/consulta/consulta.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ConsultasDetalheComponent {
 
-  user: Consulta = {};
+  user: AgendamentoConsultas = {};
   idConsulta = this.route.snapshot.paramMap.get('id')
 
   constructor(private route: ActivatedRoute, private consultaService: ConsultaService) {}

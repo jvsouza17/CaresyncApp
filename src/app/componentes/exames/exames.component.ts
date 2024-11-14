@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ExameService } from '../../services/exames/exame.service';
-import { Exames } from '../../DTOs/exames/exames';
+import { AgendamentoExames } from '../../DTOs/exames/agendamentoExames';
 import { Subject } from 'rxjs';
 import { Config } from 'datatables.net';
 import { DataTableDirective } from 'angular-datatables';
@@ -13,7 +13,7 @@ import { DataTableDirective } from 'angular-datatables';
 })
 export class ExamesComponent {
 
-  // exames!: Exames[];
+  // exames!: AgendamentoExames[];
 
   paciente = {
     nome: 'João da Silva',

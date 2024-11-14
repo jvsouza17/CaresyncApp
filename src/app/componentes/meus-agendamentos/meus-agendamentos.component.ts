@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Config } from 'datatables.net';
 import { DataTableDirective } from 'angular-datatables';
-import { Consulta } from '../../DTOs/agendamentos/consulta';
+import { AgendamentoConsultas } from '../../DTOs/agendamentos/agendamentoConsultas';
 import { UserService } from '../../services/user/user.service';
 import { ConsultaService } from '../../services/consulta/consulta.service';
 import { Router } from '@angular/router';
@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 
 export class MeusAgendamentosComponent {
-  agendamentos: Consulta[] = [];
+  agendamentos: AgendamentoConsultas[] = [];
 
   @ViewChild(DataTableDirective)
   dtElement!: DataTableDirective;
@@ -44,14 +44,14 @@ export class MeusAgendamentosComponent {
   }
 
   getAgendamentos(){
-    this.consultaService.getConsultas().subscribe((agendamentos: Consulta[]) => {
+    this.consultaService.getConsultas().subscribe((agendamentos: AgendamentoConsultas[]) => {
       this.agendamentos = agendamentos;
       this.dtTrigger.next(null);
       console.log(this.agendamentos);
     });
   }
 
-  verDetalhesConsulta(idConsulta: Consulta["id_consulta"]) {
+  verDetalhesConsulta(idConsulta: AgendamentoConsultas["id_consulta"]) {
     console.log(idConsulta)
     this.router.navigate(['/consultas-detalhes', idConsulta]);
 

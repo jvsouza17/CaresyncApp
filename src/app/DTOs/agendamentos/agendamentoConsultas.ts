@@ -1,4 +1,4 @@
-export class Consulta {
+export class AgendamentoConsultas {
   id_consulta?: string;
   nomePaciente?: string;
   numeroSUS?: string;

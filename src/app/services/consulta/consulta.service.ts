@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { Observable } from 'rxjs';
-import { Consulta } from '../../DTOs/agendamentos/consulta';
+import { AgendamentoConsultas } from '../../DTOs/agendamentos/agendamentoConsultas';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class ConsultaService {
   ) { }
 
     // rota para agendar consulta corrigida para receber os dados enviados no formulário da rota /agendar-consulta
-    agendarConsulta(consulta: Consulta): Observable<any> {
+    agendarConsulta(consulta: AgendamentoConsultas): Observable<any> {
       return this.http.post(`${environment.apiUrl}/consulta/agendar`, consulta);
     }
 
