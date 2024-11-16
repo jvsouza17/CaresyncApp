@@ -24,19 +24,19 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [UsuarioNaoAutenticadoGuard]},  // Rota para o componente de login
 
   { path: 'cadastro', component: CadastroComponent, canActivate: [UsuarioNaoAutenticadoGuard]},  // Rota para o componente de cadastro
-  { path: 'home', component: HomeComponent},
-  { path: 'consultas', component: ConsultasComponent},
-  { path: 'exames', component: ExamesComponent},
-  { path: 'meus-exames', component: MeusExamesComponent},
-  { path: 'agendar-consulta', component: AgendarConsultaComponent},
-  { path: 'agendar-exame', component: AgendarExameComponent},
-  { path: 'minhas-consultas', component: MinhasConsultasComponent},
-  { path: 'exames-detalhes', component: ExameDetalheComponent},
-  { path: 'cartao-vacinas', component: CartaoVacinasComponent},
-  { path: 'vacinas-detalhes', component: VacinasDetalheComponent},
-  { path: 'perfil', component: PerfilComponent},
-  { path: 'consultas-detalhes', component: ConsultasDetalheComponent},
-  { path: 'consultas-detalhes/:id', component: ConsultasDetalheComponent},
+  { path: 'home', component: HomeComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'consultas', component: ConsultasComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'exames', component: ExamesComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'meus-exames', component: MeusExamesComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'agendar-consulta', component: AgendarConsultaComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'agendar-exame', component: AgendarExameComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'minhas-consultas', component: MinhasConsultasComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'exames-detalhes', component: ExameDetalheComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'cartao-vacinas', component: CartaoVacinasComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'vacinas-detalhes', component: VacinasDetalheComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'perfil', component: PerfilComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'consultas-detalhes', component: ConsultasDetalheComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'consultas-detalhes/:id', component: ConsultasDetalheComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
   { path: '**', redirectTo: '/login'},  // Rota coringa redireciona para login em caso de rota não encontrada
 ];
 
