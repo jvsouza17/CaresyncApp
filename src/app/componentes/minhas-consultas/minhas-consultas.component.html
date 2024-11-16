@@ -1,7 +1,7 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="container">
   <h2>AGENDAMENTOS</h2>
-  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered">
     <thead>
       <tr>
         <th>Consulta</th>
@@ -21,7 +21,6 @@
         <td>{{ agendamento.endereco }}</td>
         <td>{{ agendamento.local }}</td>
       </tr>
-
     </tbody>
   </table>
   <p>Selecione a consulta para ver mais detalhes</p>

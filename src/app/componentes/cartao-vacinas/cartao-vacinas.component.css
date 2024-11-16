@@ -3,13 +3,19 @@
   font-family: "Raleway", sans-serif !important;
 }
 
+.pacient-info {
+  display: flex;
+  gap: 25px;
+  font-weight: 200;
+}
+
 .vacina-container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   width: 100%;
-}
+} 
 
 .vacina-card {
   background-color: #ffffff;
@@ -18,26 +24,28 @@
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.paciente-info {
-  display: flex;
-  gap: 25px;
-  font-weight: 200;
-}
-
 h2, h3 {
   color: #26606b;
   margin-bottom: 10px;
 }
 
-.paciente-info p {
+
+.patient-info {
+  display: flex;
+  gap: 25px;
+  font-weight: 200;
+}
+
+.patient-info p {
   margin: 0;
-  font-size: 14px;
+  font-size: 14px !important;
   color: #555555;
 }
 
 /* Tabela de Vacinas */
 .table {
   margin: 0;
+  margin-bottom: 15px;
 }
 
 table.dataTable thead th {
@@ -83,6 +91,8 @@ table.dataTable > tbody > tr > td {
   background: none;
   border: none;
   cursor: pointer;
+  margin-left: 15px;
+  margin-bottom: 10px;
 }
 
 ::ng-deep div.dt-container .dt-paging .dt-paging-button {
@@ -98,44 +108,139 @@ table.dataTable > tbody > tr > td {
 ::ng-deep button {
   font-family: "Raleway", sans-serif !important;
 }
-
-::ng-deep .dataTables_wrapper .dataTables_filter {
-  margin-bottom: 1rem !important;
-  text-align: right !important;
+/* Estilo da tabela geral */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 20px;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-::ng-deep .dt-search {
-  margin-bottom: 25px;
+/* Cabeçalho da tabela */
+table thead th {
+  background-color: #61ca9f;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+  text-transform: uppercase;
+  border-right: none; /* Remove a borda vertical entre as colunas */
 }
 
-::ng-deep .dt-search input {
-  border-radius: 10px !important;
-  transition: box-shadow 0.3s ease;
-  margin-top: auto !important;
+/* Corpo da tabela */
+table tbody td {
+  text-align: center;
+  padding: 10px;
+  color: #555;
+  transition: background-color 0.3s ease;
+  border-right: none; /* Remove a borda vertical entre as colunas */
 }
 
-::ng-deep .dt-column-order {
-  color: #26606b;
-}
-
-::ng-deep .dt-search input:focus {
-  border: none;
-  outline: none;
-  box-shadow: 0 0 5px 2px rgba(0, 189, 126, 0.5);
-}
-
-::ng-deep .dt-paging .paging_full {
-  display: flex !important;
-  align-items: center !important;
-}
-
-::ng-deep nav {
-  display: flex !important;
-  align-items: center !important;
-  margin: auto !important;
-}
-
-tr:hover {
+/* Hover nas linhas */
+table tbody tr:hover {
+  background-color: #f1f1f1;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+/* Bordas horizontais */
+table th, table td {
+  border-bottom: 1px solid #ddd; /* Mantém a borda apenas horizontal */
+}
+
+/* Rodapé da tabela */
+table tfoot {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsividade */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Estilo da paginação */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: #61ca9f;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover na paginação */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: #4caf87;
+  color: #f1f1f1;
+  transform: translateY(-2px);
+}
+
+/* Botão ativo da paginação */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: #4caf87;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Botão desabilitado da paginação */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+  background-color: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/* Estilo da busca */
+::ng-deep .dataTables_filter input {
+  border-radius: 10px;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  margin-right: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+::ng-deep .dataTables_filter input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 189, 126, 0.5);
+}
+
+/* Ajuste de bordas e espaçamentos */
+table, th, td {
+  border: none;
+}
+/* Barra de pesquisa minimalista */
+::ng-deep .search-container {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  margin-left: auto !important;
+}
+
+::ng-deep .dt-input {
+  border: 1px solid #ddd !important;
+  padding: 8px 12px !important;
+  border-radius: 15px !important;
+  font-size: 14px !important;
+  width: 200px !important;
+  transition: all 0.3s ease !important;
+  outline: none !important;
+  background-color: #f9f9f900 !important;
+}
+
+::ng-deep .dt-input:focus {
+  border-color: #61ca9f !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 5px rgba(0, 189, 126, 0.5) !important;
+}

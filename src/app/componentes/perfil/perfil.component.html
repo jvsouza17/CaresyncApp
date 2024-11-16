@@ -6,9 +6,9 @@
 
     <!-- Coluna esquerda: Campos de texto -->
     <div class="form-left">
-      <form [formGroup]="formulario" (ngSubmit)="salvar()">
+      <form [formGroup]="formulario" (ngSubmit)="salvar()" fxLayout="column" fxLayoutGap="5px" class="labels">
         <!-- Nome Completo -->
-        <mat-form-field appearance="outline" class="full-width">
+        <mat-form-field class="example-full-width" fxFlex="60" style="width: 100%;">
           <mat-label>Nome Completo</mat-label>
           <input matInput type="text" formControlName="nomeCompleto" readonly />
         </mat-form-field>
@@ -16,26 +16,26 @@
         <!-- Agrupando Data de nascimento e Sexo -->
         <div class="form-group-inline">
           <!-- Data de Nascimento -->
-          <mat-form-field appearance="outline" class="half-width">
+          <mat-form-field class="example-full-width" fxFlex="60">
             <mat-label>Data de nascimento</mat-label>
             <input matInput type="text" formControlName="dataNascimento" readonly />
           </mat-form-field>
 
           <!-- Sexo -->
-          <mat-form-field appearance="outline" class="half-width">
+          <mat-form-field class="example-full-width" fxFlex="40">
             <mat-label>Sexo</mat-label>
             <input matInput type="text" formControlName="sexo" readonly />
           </mat-form-field>
         </div>
 
      <!-- NúmeroSUS -->
-    <mat-form-field appearance="outline" class="full-width">
+     <mat-form-field class="example-full-width" fxFlex="60" style="width: 100%;">
       <mat-label>Nº do CNS</mat-label>
       <input matInput type="text" formControlName="numeroSUS" readonly />
     </mat-form-field>
 
     <!-- CPF -->
-    <mat-form-field appearance="outline" class="full-width">
+    <mat-form-field class="example-full-width" fxFlex="60" style="width: 100%;">
       <mat-label>CPF</mat-label>
       <input matInput type="text" formControlName="CPF" readonly (input)="formatCpf()" [value]="cpfValue"/>
     </mat-form-field>
@@ -43,44 +43,72 @@
 
 
       <!-- Agrupando telefone e e-mail -->
-        <div class="form-group-inline">
-          <!-- E-mail -->
-          <mat-form-field appearance="outline" class="half-width">
-            <mat-label>E-mail</mat-label>
-            <input matInput type="email" formControlName="email" />
-          </mat-form-field>
-
-          <!-- Telefone -->
-          <mat-form-field appearance="outline" class="half-width">
-            <mat-label>Telefone</mat-label>
-            <input matInput type="tel" formControlName="telefone" />
-          </mat-form-field>
-        </div>
-
-        <!-- Cidade -->
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Cidade</mat-label>
-          <input matInput type="text" formControlName="cidade" />
+      <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" class="double-information">
+        <mat-form-field class="example-full-width" fxFlex="60">
+          <mat-label>E-mail</mat-label>
+          <input formControlName="email" matInput placeholder="Digite seu e-mail">
         </mat-form-field>
 
-        <!-- Agrupando Cidade e Número -->
-        <div class="form-group-inline">
-          <!-- CEP -->
-          <mat-form-field appearance="outline" class="half-width">
-            <mat-label>CEP</mat-label>
-            <input matInput type="text" formControlName="CEP" />
+        <mat-form-field class="example-full-width" fxFlex="40">
+          <mat-label>Telefone</mat-label>
+          <input matInput placeholder="Digite seu telefone" formControlName="telefone" [value]="telefoneValue">
+        </mat-form-field>
+      </div>
+
+        <div fxLayout="row" fxLayoutGap="5px" fxLayout.lt-sm="column" class="double-information">
+          <mat-form-field class="example-full-width" fxFlex="60">
+            <mat-label>Cidade</mat-label>
+            <input formControlName="cidade" matInput placeholder="Digite sua cidade">
           </mat-form-field>
-          <!-- Número -->
-          <mat-form-field appearance="outline" class="half-width">
+
+          <mat-form-field fxFlex="40">
             <mat-label>UF</mat-label>
-            <input matInput type="text" formControlName="UF" />
+            <mat-select formControlName="UF">
+                <mat-option value="AC">AC</mat-option>
+                <mat-option value="AL">AL</mat-option>
+                <mat-option value="AM">AM</mat-option>
+                <mat-option value="AP">AP</mat-option>
+                <mat-option value="BA">BA</mat-option>
+                <mat-option value="CE">CE</mat-option>
+                <mat-option value="DF">DF</mat-option>
+                <mat-option value="ES">ES</mat-option>
+                <mat-option value="GO">GO</mat-option>
+                <mat-option value="MA">MA</mat-option>
+                <mat-option value="MG">MG</mat-option>
+                <mat-option value="MS">MS</mat-option>
+                <mat-option value="MT">MT</mat-option>
+                <mat-option value="PA">PA</mat-option>
+                <mat-option value="PB">PB</mat-option>
+                <mat-option value="PE">PE</mat-option>
+                <mat-option value="PI">PI</mat-option>
+                <mat-option value="PR">PR</mat-option>
+                <mat-option value="RJ">RJ</mat-option>
+                <mat-option value="RN">RN</mat-option>
+                <mat-option value="RO">RO</mat-option>
+                <mat-option value="RR">RR</mat-option>
+                <mat-option value="RS">RS</mat-option>
+                <mat-option value="SC">SC</mat-option>
+                <mat-option value="SE">SE</mat-option>
+                <mat-option value="TO">TO</mat-option>
+                <mat-option value="SP">SP</mat-option>
+              </mat-select>
           </mat-form-field>
         </div>
 
+        <!-- Agrupando Cidade e Número -->
+          <!-- CEP -->
+          <mat-form-field class="example-full-width" fxFlex="100" style="width: 100%;">
+            <mat-label>CEP</mat-label>
+            <input formControlName="CEP" matInput placeholder="Digite seu CEP">
+          </mat-form-field>
+          <!-- Número -->
+       
+
         <!-- Endereço -->
-        <mat-form-field appearance="outline" class="full-width">
+        
+        <mat-form-field class="example-full-width" fxFlex="100" style="width: 100%;">
           <mat-label>Endereço</mat-label>
-          <input matInput type="text" formControlName="endereco" />
+          <input formControlName="endereco" matInput placeholder="Digite seu endereço">
         </mat-form-field>
 
         <!-- <div class="form-group-inline">
@@ -97,9 +125,11 @@
         </div> -->
 
         <!-- Botão Salvar -->
-        <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid" class="save-button">
-          Salvar
-        </button>
+         <div class="div-consulta-btn">
+          <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid" class="consulta-btn">
+            Salvar
+          </button>
+         </div>
       </form>
     </div>
 
@@ -110,7 +140,7 @@
       </div>
       <label class="upload-label">
         <input type="file" (change)="onFileChange($event)" accept="image/*" hidden />
-        <button mat-raised-button color="primary" type="button">Alterar foto do perfil</button>
+        <button mat-raised-button color="primary" type="button" >Alterar foto do perfil</button>
       </label>
     </div>
 
