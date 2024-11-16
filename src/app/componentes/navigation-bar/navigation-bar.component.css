@@ -25,17 +25,32 @@
   dl, ol, ul {
     margin: 0 0 0 0;
   }
-
   .nav-links li a {
-    text-decoration: none;
-    color: #325256;
-    font-size: 18px;
+    position: relative; /* Necessário para posicionar o ::after */
+    text-decoration: none; /* Remove sublinhado padrão */
+    color: #26606b; /* Cor padrão do texto */
+    transition: color 0.3s ease; /* Suave transição de cor */
   }
-
+  
+  .nav-links li a::after {
+    content: ""; /* Cria o elemento decorativo */
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Espaçamento entre o texto e a linha */
+    width: 0;
+    height: 2px; /* Altura da linha */
+    background-color: #00be75; /* Cor da linha */
+    transition: width 0.3s ease; /* Transição suave para a linha */
+  }
+  
   .nav-links li a:hover {
     color: #00be75;
   }
-
+  
+  .nav-links li a:hover::after {
+    width: 100%; /* Expande a linha até a largura total do link */
+  }
+  
   .profile-menu {
     position: relative;
   }
@@ -73,6 +88,5 @@
 
   .active-link {
     color: #26606b; /* Cor de destaque */
-    font-weight: bold;
     border-bottom: 2px solid #00be75; /* Linha de destaque */
   }

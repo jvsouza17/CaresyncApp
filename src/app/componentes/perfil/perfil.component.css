@@ -225,8 +225,8 @@ h2 {
   margin: auto;
   margin-top: 20px;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  height: 60px;
-  width: 260px; /* Largura padrão do botão */
+  height: 40px;
+  width: 120px; /* Largura padrão do botão */
   text-align: center;
   float: right;
 }
@@ -237,8 +237,31 @@ h2 {
 }
 
 .div-consulta-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
+  background-color: #00be75;
+}
+
+.btn-foto{
+  background-color: #26606b !important;
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease !important;
+  height: 40px;
+  width: 180px; /* Largura padrão do botão */
+  text-align: center;
+}
+
+.btn-foto:hover {
+  background-color: #17373d !important;
+  transform: scale(1.05);
+}
+
+::ng-deep .mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input{
+  font-family: "Raleway", sans-serif;
 }

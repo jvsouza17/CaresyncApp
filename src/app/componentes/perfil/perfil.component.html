@@ -126,7 +126,7 @@
 
         <!-- Botão Salvar -->
          <div class="div-consulta-btn">
-          <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid" class="consulta-btn">
+          <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid" class="consulta-btn" style="float: right;">
             Salvar
           </button>
          </div>
@@ -140,7 +140,7 @@
       </div>
       <label class="upload-label">
         <input type="file" (change)="onFileChange($event)" accept="image/*" hidden />
-        <button mat-raised-button color="primary" type="button" >Alterar foto do perfil</button>
+        <button mat-raised-button color="primary" type="button" class="btn-foto">Alterar foto do perfil</button>
       </label>
     </div>
 
