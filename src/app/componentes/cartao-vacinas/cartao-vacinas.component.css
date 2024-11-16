@@ -1,0 +1,336 @@
+::ng-deep body {
+  color: #26606b;
+  font-family: "Raleway", sans-serif !important;
+}
+
+.vacina-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.vacina-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 80%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.paciente-info {
+  display: flex;
+  gap: 25px;
+  font-weight: 200;
+}
+
+h2, h3 {
+  color: #26606b;
+  margin-bottom: 10px;
+}
+
+.paciente-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #555555;
+}
+
+/* Tabela de Vacinas */
+.table {
+  margin: 0;
+}
+
+table.dataTable thead th {
+  background-color: #61ca9f;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 400;
+}
+
+table.dataTable > tbody > tr > td {
+  text-align: center;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f2f2;
+}
+
+.table-bordered > :not(caption) > * {
+  border-width: 0;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 0 0 12px 12px;
+}
+
+.pendente {
+  color: red;
+}
+
+.completa {
+  color: #4caf50;
+}
+
+.detalhes-btn {
+  color: #26606b;
+  font-weight: bold;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+::ng-deep div.dt-container .dt-paging .dt-paging-button {
+  background-color: #26606b;
+  color: #ffffff !important;
+}
+
+::ng-deep div.dt-container .dt-paging .dt-paging-button:hover {
+  background-color: #26606b !important;
+  color: #ffffff !important;
+}
+
+::ng-deep button {
+  font-family: "Raleway", sans-serif !important;
+}
+
+::ng-deep .dataTables_wrapper .dataTables_filter {
+  margin-bottom: 1rem !important;
+  text-align: right !important;
+}
+
+::ng-deep .dt-search {
+  margin-bottom: 25px;
+}
+
+::ng-deep .dt-search input {
+  border-radius: 10px !important;
+  transition: box-shadow 0.3s ease;
+  margin-top: auto !important;
+}
+
+::ng-deep .dt-column-order {
+  color: #26606b;
+}
+
+::ng-deep .dt-search input:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(0, 189, 126, 0.5);
+}
+
+::ng-deep .dt-paging .paging_full {
+  display: flex !important;
+  align-items: center !important;
+}
+
+::ng-deep nav {
+  display: flex !important;
+  align-items: center !important;
+  margin: auto !important;
+}
+
+tr:hover {
+  cursor: pointer;
+}
+
+/* Estilização da Tabela */
+/* Geral da tabela */
+.table {
+  margin: 0;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Estilo para o cabeçalho */
+table.dataTable thead th {
+  background-color: #88d4c6; 
+  color: #ffffff;
+  text-align: center;
+  font-weight: 600; 
+  padding: 12px; /* Melhor espaçamento */
+  border-bottom: 2px solid #ddd;
+}
+
+/* Corpo da tabela */
+table.dataTable > tbody > tr > td {
+  text-align: center;
+  padding: 10px; /* Espaçamento interno */
+  color: #555; /* Texto mais suave */
+}
+
+/* Efeito hover */
+.table-hover tbody tr:hover {
+  background-color: #f0f0f0; /* Cinza claro */
+  transition: background-color 0.3s ease; /* Suavidade no hover */
+}
+
+/* Bordas */
+.table-bordered > :not(caption) > * {
+  border: 1px solid #ddd; /* Bordas suaves */
+}
+
+tbody, td, tfoot, th, thead, tr {
+  border-width: 0;
+}
+
+/* Bordas arredondadas */
+.table {
+  border-radius: 8px; /* Bordas arredondadas para o conjunto */
+  overflow: hidden; /* Garante que as bordas aplicadas ao hover não transbordem */
+}
+
+/* Responsividade */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 8px; /* Ajustado para combinar */
+}
+
+/* Sombras suaves */
+.table {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto responsivo no cabeçalho */
+table.dataTable thead th {
+  white-space: nowrap; /* Evita quebra de linha */
+}
+
+::ng-deep .mat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.mat-header-row {
+  background-color: #4CAF50;
+  color: #fff;
+  font-weight: 600;
+}
+
+.mat-row {
+  transition: background-color 0.3s ease;
+}
+
+.mat-row:hover {
+  background-color: #f0f0f0;
+}
+
+.mat-cell {
+  text-align: center;
+  padding: 10px;
+}
+
+/* Estilos para os botões de paginação */
+/* Estilos para os botões de paginação */
+::ng-deep div.dt-container .dt-paging .dt-paging-button {
+  background-color: #26606b !important;
+  color: #ffffff !important;
+  transition: background-color 0.3s ease, transform 0.3s ease !important; /* Garantir transições suaves */
+}
+
+/* Hover */
+::ng-deep div.dt-container .dt-paging .dt-paging-button:hover {
+  background-color: #4caf87 !important; /* Cor ao passar o mouse */
+  color: #f1f1f1 !important;
+  transform: translateY(-2px) !important; /* Elevação no hover */
+}
+
+/* Foco */
+::ng-deep div.dt-container .dt-paging .dt-paging-button:focus {
+  background-color: #4caf87 !important;
+  color: #f1f1f1 !important;
+  transform: translateY(-2px) !important; /* Elevação no foco */
+}
+
+/* Para os botões desabilitados */
+::ng-deep div.dt-container .dt-paging .dt-paging-button.disabled {
+  background-color: #e0e0e0 !important;
+  color: #9e9e9e !important;
+  cursor: not-allowed !important;
+}
+
+
+
+/* Estilo para o botão de pesquisa */
+::ng-deep .dataTables_wrapper .dataTables_filter {
+  margin-bottom: 1rem !important;
+  text-align: right !important;
+}
+
+::ng-deep .dt-search {
+  margin-bottom: 25px;
+}
+
+::ng-deep .dt-search input {
+  border-radius: 10px !important;
+  transition: box-shadow 0.3s ease;
+  margin-top: auto !important;
+}
+
+::ng-deep .dt-column-order {
+  color: #26606b;
+}
+
+::ng-deep .dt-search input:focus {
+  border: none;
+  outline: none; /* Remove a borda de foco padrão do navegador */
+  box-shadow: 0 0 5px 2px rgba(0, 189, 126, 0.5); /* Adiciona um leve brilho verde */
+}
+
+::ng-deep .dt-paging .paging_full {
+  display: flex !important;
+  align-items: center !important;
+}
+
+::ng-deep nav {
+  display: flex !important;
+  align-items: center !important;
+  margin: auto !important;
+}
+
+tr:hover {
+  cursor: pointer;
+}
+
+/* Estilo padrão dos botões de paginação */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: #61ca9f !important; /* Cor de fundo padrão */
+  color: #ffffff !important; /* Cor do texto padrão */
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 6px 12px !important;
+  margin: 0 4px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* Estilo ao passar o mouse */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: #4caf87 !important; /* Cor de fundo ao passar o mouse */
+  color: #f1f1f1 !important; /* Cor do texto ao passar o mouse */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Botão ativo */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: #4caf87 !important; /* Cor do botão ativo */
+  color: #ffffff !important;
+  font-weight: bold !important;
+}
+
+/* Botão desabilitado */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+  background-color: #e0e0e0 !important; /* Cor de fundo desabilitado */
+  color: #9e9e9e !important; /* Cor do texto desabilitado */
+  cursor: not-allowed !important;
+}
