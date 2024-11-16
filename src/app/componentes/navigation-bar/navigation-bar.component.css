@@ -36,19 +36,19 @@
     content: ""; /* Cria o elemento decorativo */
     position: absolute;
     left: 0;
-    bottom: -3px; /* Espaçamento entre o texto e a linha */
+    bottom: -2px; /* Espaçamento entre o texto e a linha */
     width: 0;
     height: 2px; /* Altura da linha */
     background-color: #00be75; /* Cor da linha */
     transition: width 0.3s ease; /* Transição suave para a linha */
   }
   
-  .nav-links li a:hover {
-    color: #00be75;
+  .nav-links li a:hover:not(.active-link)::after {
+    width: 100%; /* Linha aparece somente no hover */
   }
   
-  .nav-links li a:hover::after {
-    width: 100%; /* Expande a linha até a largura total do link */
+  .nav-links li a:hover:not(.active-link) {
+    color: #00be75 !important; /* Cor somente no hover, se não for ativo */
   }
   
   .profile-menu {
@@ -87,6 +87,6 @@
   }
 
   .active-link {
-    color: #26606b; /* Cor de destaque */
+    color: #00be75 !important; /* Cor de destaque */
     border-bottom: 2px solid #00be75; /* Linha de destaque */
   }

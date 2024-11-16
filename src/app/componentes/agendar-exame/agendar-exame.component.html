@@ -1,35 +1,47 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="container">
-  <h2>AGENDAMENTO DE EXAME</h2>
+  <div class="title">
+    <h3 class="mb-0">AGENDAMENTO DE CONSULTA</h3>
+  </div>
+  <div class="subtitle">Informações Pessoais</div>
   <div *ngIf="formulario">
     <form [formGroup]="formulario">
       <div class="form-row">
-        <mat-form-field class="form-field">
+        <mat-form-field class="example-full-width nome-paciente" fxFlex="60">
           <mat-label>Nome do Paciente</mat-label>
-          <input matInput formControlName="nomePaciente" readonly>
-        </mat-form-field>
-
-
-      <mat-form-field class="form-field">
-        <mat-label>Nº do CNS</mat-label>
-        <input matInput formControlName="numeroSUS" readonly>
-      </mat-form-field>
-    </div>
-
-      <div class="form-row">
-        <mat-form-field class="form-field">
-          <mat-label>Sexo</mat-label>
-          <input matInput formControlName="sexo" readonly>
+          <input matInput formControlName="nomePaciente" readonly />
         </mat-form-field>
 
         <mat-form-field class="form-field">
-          <mat-label>Data de Nascimento</mat-label>
-          <input matInput [matDatepicker]="picker" formControlName="dataNascimento" readonly>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+          <mat-label>Nº do CNS</mat-label>
+          <input matInput formControlName="numeroSUS" readonly />
         </mat-form-field>
       </div>
 
+      <div class="form-group-inline data-nasc-sexo">
+        <!-- Data de Nascimento -->
+        <mat-form-field class="example-full-width data-nasc" fxFlex="60">
+          <mat-label>Data de nascimento</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="dataNascimento"
+            readonly
+          />
+        </mat-form-field>
+
+        <!-- Sexo -->
+        <mat-form-field class="example-full-width" fxFlex="100">
+          <mat-label>Sexo</mat-label>
+          <input matInput type="text" formControlName="sexo" readonly />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="form-field endereco">
+        <mat-label>Endereço</mat-label>
+        <input matInput formControlName="endereco" required />
+      </mat-form-field>
+      <div class="subtitle">Detalhes da Consulta</div>
       <div class="form-row">
         <mat-form-field class="form-field">
           <mat-label>Exame</mat-label>
@@ -76,7 +88,17 @@
         <textarea matInput formControlName="observacoes" rows="4"></textarea>
       </mat-form-field>
 
-      <button (click)="formularioValido()" mat-raised-button type="submit">Agendar</button>
+      <div class="div-consulta-btn">
+        <button
+          (click)="formularioValido()"
+          mat-raised-button
+          type="submit"
+          class="consulta-btn"
+          style="float: right;"
+        >
+          Agendar
+        </button>
+        </div>
     </form>
   </div>
 </div>

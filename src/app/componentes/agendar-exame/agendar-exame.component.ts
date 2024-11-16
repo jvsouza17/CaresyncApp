@@ -31,8 +31,8 @@ export class AgendarExameComponent {
 
   ngOnInit() {
     this.getDadosFixos().subscribe(() => {
-      this.criarForms();
     });
+    this.criarForms();
   }
 
   criarForms() {
