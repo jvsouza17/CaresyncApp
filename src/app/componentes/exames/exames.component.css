@@ -89,6 +89,7 @@ tbody, td, tfoot, th, thead, tr {
   border-radius: 0 0 12px 12px;
 }
 
+
 ::ng-deep div.dt-container .dt-paging .dt-paging-button {
   background-color: #26606b;
   color: #ffffff !important;
@@ -137,3 +138,8 @@ tbody, td, tfoot, th, thead, tr {
   align-items: center !important;
   margin: auto !important;
 }
+
+tr:hover{
+  cursor: pointer;
+}
+

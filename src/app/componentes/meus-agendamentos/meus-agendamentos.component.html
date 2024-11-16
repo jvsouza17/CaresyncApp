@@ -1,0 +1,27 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="container">
+  <h2>AGENDAMENTOS</h2>
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th>Consulta</th>
+        <th>Médico</th>
+        <th>Dia</th>
+        <th>Hora</th>
+        <th>Endereço</th>
+        <th>Localidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let agendamento of agendamentos">
+        <td>{{ agendamento.consulta }}</td>
+        <td>{{ agendamento.medico }}</td>
+        <td>{{ agendamento.dataConsulta }}</td>
+        <td>{{ agendamento.horario }}</td>
+        <td>{{ agendamento.endereco }}</td>
+        <td>{{ agendamento.localidade }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Selecione a consulta para ver mais detalhes</p>
+</div>

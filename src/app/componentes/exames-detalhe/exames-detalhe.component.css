@@ -1,0 +1,47 @@
+.exame-detalhe-container {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #2f4f4f;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.exame-info, .paciente-info, .observacoes {
+  margin-bottom: 20px;
+}
+
+.exame-info p, .paciente-info p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.observacoes h3, .observacoes h4 {
+  margin: 10px 0;
+  color: #2f4f4f;
+}
+
+.observacoes p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.prescricao-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.prescricao-button:hover {
+  background-color: #45a049;
+}

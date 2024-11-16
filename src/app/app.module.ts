@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AuthContainerComponent } from './componentes/auth-container/auth-container.component';
 import { CadastroComponent } from './componentes/cadastro/cadastro.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CpfMaskPipe } from './pipes/cpf-mask.pipe';
 import { TelefoneMaskPipe } from './pipes/telefone-mask.pipe';
 import { HomeComponent } from './componentes/home/home.component';
@@ -25,7 +25,20 @@ import {FormsModule} from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {provideNativeDateAdapter} from '@angular/material/core';
-
+import { DatePipe } from '@angular/common';
+import { AgendarConsultaComponent } from './componentes/agendar-consulta/agendar-consulta.component';
+import { DateBRPipe } from './pipes/date/date-br.pipe';
+import { MeusAgendamentosComponent } from './componentes/meus-agendamentos/meus-agendamentos.component';
+import { TokenInterceptor } from './services/interceptors/token.interceptor';
+import { ExameDetalheComponent } from './componentes/exames-detalhe/exames-detalhe.component';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogTitle,
+  MatDialogContent,
+} from '@angular/material/dialog';
+import { PrescricaoDialogComponent } from './componentes/prescricao-dialog/prescricao-dialog.component';
+import { CartaoVacinasComponent } from './componentes/cartao-vacinas/cartao-vacinas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +50,13 @@ import {provideNativeDateAdapter} from '@angular/material/core';
     HomeComponent,
     NavigationBarComponent,
     ConsultasComponent,
-    ExamesComponent
+    ExamesComponent,
+    AgendarConsultaComponent,
+    DateBRPipe,
+    MeusAgendamentosComponent,
+    ExameDetalheComponent,
+    PrescricaoDialogComponent,
+    CartaoVacinasComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,11 +72,14 @@ import {provideNativeDateAdapter} from '@angular/material/core';
     MatSelectModule,
     FormsModule,
     MatDatepickerModule,
+    MatDialogTitle,
+    MatDialogContent
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     provideAnimationsAsync(),
     provideNativeDateAdapter(),
-
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,34 @@
+.container {
+  background-color: white;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #2b7a78;
+}
+
+table {
+  width: 100%;
+  margin: 20px 0;
+}
+
+th {
+  background-color: #88d4c6;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px;
+}
+
+td, th {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+p {
+  color: #666;
+  font-style: italic;
+}

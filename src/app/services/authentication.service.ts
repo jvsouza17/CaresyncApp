@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment.development';
 import { UserLogin } from '../DTOs/user-login';
+import { UserCadastro } from '../DTOs/user-cadastro';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,10 @@ export class AuthenticationService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    
+
   ) { }
 
-  login(user: UserLogin){
+  logar(user: UserLogin){
     this.token = localStorage.getItem('token');
     this.currentUser = localStorage.getItem('currentUser');
 
@@ -29,22 +30,38 @@ export class AuthenticationService {
     }
   }
 
-  logarUsuario(user: UserLogin) {
-    return this.http.post(`${environment.apiUrl}/auth/login`, user).subscribe((response: any) => {
-      // if(!response.token){
-      //   throw new Error("Erro ao realizar requisição!")
-      // }
-      localStorage.setItem('token', response.token);
-      localStorage.setItem('currentUser', user.login)
-      this.router.navigate(['/home']);
-    });
+  cadastrar(user: UserCadastro) {
+    this.cadastrarUsuario(user);
   }
 
+  logarUsuario(user: UserLogin) {
+    try {
+      return this.http.post(`${environment.apiUrl}/auth/login`, user).subscribe((response: any) => {
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('currentUser', user.login)
+        this.router.navigate(['/home']);
+      });
+    } catch (error) {
+      return console.error(error);
+    }
+  }
+
+  cadastrarUsuario(user: UserCadastro) {
+    console.log(user)
+    try {
+      return this.http.post(`${environment.apiUrl}/auth/cadastro`, user).subscribe((response: any) => {
+        console.log(response);
+        this.router.navigate(['/login']);
+      })
+    } catch (error) {
+      return console.log(error);
+    }
+  }
   logout() {
     localStorage.clear();
-    this.router.navigate(['login']);
+    this.router.navigate(['/login']);
   }
-  
+
   getCurrentUser()  {
     let currentUser = localStorage.getItem('currentUser');
     return currentUser ? currentUser : null;
@@ -69,6 +86,8 @@ export class AuthenticationService {
     let token = localStorage.getItem('token');
     return token ? true : false;
   }
+
+
 }
 
 
