@@ -1,11 +1,18 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="container">
-  <h2>DETALHES DAS VACINAS</h2>
-  <div class="info">
-    <span>NOME DO PACIENTE</span>
-    <span>DATA NASC.: 01/01/1999</span>
+  <div class="d-flex justify-content-between align-items-center p-4">
+    <h3 class="mb-0">DETALHES DE VACINAÇÃO</h3>
+    <div class="patient-info text-right">
+      <p class="mb-1">PACIENTE:</p>
+      <p class="mb-0">DATA DE NASC.:</p>
+    </div>
   </div>
-  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <table
+    datatable
+    [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"
+    class="table table-bordered"
+  >
     <thead>
       <tr>
         <th>VACINA</th>
@@ -25,7 +32,7 @@
       </tr>
     </tbody>
   </table>
-  <div class="back-button">
-    <button routerLink="/cartao-vacinas">Voltar</button>
-  </div>
+  <button routerLink="/cartao-vacinas" mat-button class="detalhes-btn">
+    Voltar
+  </button>
 </div>

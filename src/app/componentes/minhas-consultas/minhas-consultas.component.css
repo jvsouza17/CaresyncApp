@@ -7,33 +7,135 @@
   border-radius: 8px;
 }
 
+::ng-deep body {
+  font-family: "Raleway", sans-serif !important;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 h2 {
-  font-size: 1.8em;
-  color: #2b7a78;
+  color: #2b7a78 !important;
+  float: left;
+  font-weight: 300 !important;
 }
 
-table {
+/* Estilo da tabela geral */
+.table {
   width: 100%;
-  margin: 20px 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-top: 20px;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-th {
-  background-color: #88d4c6;
+/* Cabeçalho da tabela */
+table thead th {
+  background-color: #61ca9f;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+  text-transform: uppercase;
+  border-right: none; /* Remove a borda vertical entre as colunas */
+}
+
+/* Corpo da tabela */
+table tbody td {
+  text-align: center;
+  padding: 10px;
+  color: #555;
+  transition: background-color 0.3s ease;
+  border-right: none; /* Remove a borda vertical entre as colunas */
+}
+
+/* Hover nas linhas */
+table tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Bordas horizontais */
+table th, table td {
+  border-bottom: 1px solid #ddd; /* Mantém a borda apenas horizontal */
+}
+
+/* Rodapé da tabela */
+table tfoot {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsividade */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Estilo da paginação */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button {
+  background-color: #61ca9f;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover na paginação */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background-color: #4caf87;
+  color: #f1f1f1;
+  transform: translateY(-2px);
+}
+
+/* Botão ativo da paginação */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: #4caf87;
   color: #ffffff;
   font-weight: bold;
-  padding: 10px;
 }
 
-td, th {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+/* Botão desabilitado da paginação */
+::ng-deep .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+  background-color: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
 }
 
-tbody tr:hover{
-  cursor: pointer;
+/* Estilo da busca */
+::ng-deep .dataTables_filter input {
+  border-radius: 10px;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  margin-right: 20px;
+  transition: box-shadow 0.3s ease;
 }
 
-p {
-  color: #666;
-  font-style: italic;
+::ng-deep .dataTables_filter input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 189, 126, 0.5);
+}
+
+/* Ajuste de bordas e espaçamentos */
+table, th, td {
+  border: none;
+}
+
+/* Estilo de texto para o título */
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
 }

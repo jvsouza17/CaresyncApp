@@ -69,7 +69,7 @@
   min-width: 300px; /* Define uma largura mínima para a div */
   min-height: 400px; /* Define uma largura mínima para a div */
   height: auto; /* Mantém a altura automática */
-  background-image: url("../../../assets/images/exame.jpg");
+  background-image: url("../../../assets/images/exame.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;

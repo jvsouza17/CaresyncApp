@@ -106,3 +106,10 @@
       font-size: 18px; /* Reduz tamanho da fonte */
   }
 }
+
+.buttons-agendar{
+  display: flex;
+  margin: auto;
+  gap: 10px;
+  align-items: center;
+}

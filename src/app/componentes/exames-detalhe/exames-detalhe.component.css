@@ -1,11 +1,14 @@
+::ng-deep body {
+  color: #26606b !important;
+  font-family: "Raleway", sans-serif !important;
+}
+
 .exame-detalhe-container {
   background-color: #f2f2f2;
   border-radius: 8px;
   padding: 20px;
-  max-width: 600px;
+  max-width: 60%;
   margin: 20px auto;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .header {
@@ -13,12 +16,21 @@
   justify-content: space-between; /* Espaço entre eles */
   align-items: center; /* Alinha verticalmente */
   margin-bottom: 20px; /* Espaçamento abaixo do cabeçalho */
+  width: 100%;
 }
 
 h2 {
   color: #094D59;
-  font-size: 24px;
   margin: 0; /* Remove margem padrão do título */
+  white-space: nowrap;
+  font-weight: 300;
+}
+
+.subtitle{
+  color: #094D59;
+  margin: 0; /* Remove margem padrão do título */
+  font-weight: 300 !important;
+  font-size: 25px !important;
 }
 
 .exame-info,
@@ -34,10 +46,20 @@ h2 {
 }
 
 .paciente-info-flex {
-  font-size: 14px;
   display: flex; /* Flexbox para alinhar lado a lado */
-  justify-content: space-between; /* Espaço entre nome e data */
-  align-items: center; /* Alinha verticalmente */
+  float: right;
+}
+
+.paciente-info-flex-div{
+width: 100%;
+}
+
+.paciente-info-flex p {
+  margin-left: 15px;
+}
+
+strong {
+  font-weight: 500;
 }
 
 .data-nascimento {
@@ -55,21 +77,50 @@ h2 {
   color: #094D59;;
 }
 
-.prescricao-button {
-  background-color: #094D59; /* Cor de fundo */
-  color: #094D59; /* Cor do texto */
+.prescricao-button { 
+  background-color: #26606b;
+  color: white;
   padding: 10px 20px;
+  font-size: 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 15px;
   cursor: pointer;
-  font-size: 16px;
-  display: block;
-  margin: 0 auto;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transição para cor do texto */
+  margin: auto;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  height: 60px;
+  width: 230px; /* Largura padrão do botão */
+  text-align: center;
 }
 
 .prescricao-button:hover {
-  background-color: white; /* Cor de fundo ao passar o mouse */
-  color: #094D59; /* A cor do texto permanece branca ao passar o mouse */
+  background-color: #4ab68a;
+  transform: scale(1.05);
 }
 
+.consulta-btn {
+  background-color: #26606b;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  height: 60px;
+  width: 260px; /* Largura padrão do botão */
+  text-align: center;
+}
+
+.consulta-btn:hover {
+  background-color: #4ab68a;
+  transform: scale(1.05);
+}
+
+.div-consulta-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

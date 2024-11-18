@@ -7,16 +7,16 @@
       <!-- Container Title -->
       <h3 class="mb-0">CARTÃO DE VACINAS</h3>
 
-      <!-- Informações do Paciente -->
-      <div class="paciente-info text-right">
-        <p class="mb-1"><strong>Nome do Paciente:</strong> {{ nomePaciente }}</p>
-        <p class="mb-0"><strong>Data Nasc.:</strong> {{ dataNascimento }}</p>
+      <!-- Patient Information -->
+      <div class="patient-info text-right">
+        <p class="mb-1"> NOME: {{ nomePaciente }}</p>
+        <p class="mb-0">DATA DE NASCIMENTO: {{ dataNascimento }}</p>
       </div>
     </div>
 
     <!-- Tabela de Vacinas -->
     <div class="table-responsive p-4">
-      <table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+      <table datatable [dtOptions]="dtOptions" class="table table-bordered">
         <thead class="table-light">
           <tr>
             <th>VACINA</th>

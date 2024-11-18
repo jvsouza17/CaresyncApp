@@ -2,31 +2,45 @@
 
 <div class="exame-detalhe-container">
   <div class="header">
-    <h2>Histórico e resultados</h2>
-    <div class="paciente-info-flex">
-      <p><strong>Nome do paciente:</strong> {{ nomePaciente }}</p>
-      <p class="data-nascimento"><strong>Data de nascimento:</strong> {{ dataNascimento }}</p>
+    <div>
+      <h2>HISTÓRICO E RESULTADOS</h2>
+    </div>
+    <div class="paciente-info-flex-div">
+      <div class="paciente-info-flex">
+        <p><strong>PACIENTE:</strong> {{ nomePaciente }}</p>
+        <p class="data-nascimento">
+          <strong>DATA DE NASC.:</strong> {{ dataNascimento }}
+        </p>
+      </div>
     </div>
   </div>
 
   <div class="exame-info">
-    <p><strong>Especialidade:</strong> {{ especialidade }}</p>
-    <p><strong>Data exame:</strong> {{ dataExame }}</p>
-    <p><strong>Local:</strong> {{ local }}</p>
-    <p><strong>Endereço:</strong> {{ endereco }}</p>
-    <p><strong>Médico:</strong> {{ medico }}</p>
-    <p><strong>Motivo do exame:</strong> {{ motivoExame }}</p>
+    <p><strong>ESPECIALIDADE:</strong> {{ especialidade }}</p>
+    <p><strong>DATA DO EXAME:</strong> {{ dataExame }}</p>
+    <p><strong>LOCAL:</strong> {{ local }}</p>
+    <p><strong>ENDEREÇO:</strong> {{ endereco }}</p>
+    <p><strong>MÉDICO:</strong> {{ medico }}</p>
+    <p><strong>MOTIVO DO EXAME:</strong> {{ motivoExame }}</p>
   </div>
 
   <div class="observacoes-container">
     <div class="observacoes">
-      <h3>Observações:</h3>
+      <div class="subtitle">OBSERVAÇÕES:</div>
       <p>{{ observacoes }}</p>
-      <h4>Reavaliação:</h4>
+      <div class="subtitle">REAVALIAÇÕES:</div>
       <p>{{ reavaliacao }}</p>
     </div>
   </div>
 
-  <button mat-button (click)="abrirModal()" class="prescricao-button" style="color: white;">Prescrições médicas</button>
+  <div class="div-consulta-btn">
+    <button
+      mat-button
+      (click)="abrirModal()"
+      class="consulta-btn"
+      style="color: white"
+    >
+      Prescrições médicas
+    </button>
+  </div>
 </div>
-
