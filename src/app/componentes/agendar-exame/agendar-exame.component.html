@@ -1,7 +1,7 @@
 <app-navigation-bar></app-navigation-bar>
 <div class="container">
   <div class="title">
-    <h3 class="mb-0">AGENDAMENTO DE CONSULTA</h3>
+    <h3 class="mb-0">AGENDAMENTO DE EXAME</h3>
   </div>
   <div class="subtitle">Informações Pessoais</div>
   <div *ngIf="formulario">
@@ -22,12 +22,9 @@
         <!-- Data de Nascimento -->
         <mat-form-field class="example-full-width data-nasc" fxFlex="60">
           <mat-label>Data de nascimento</mat-label>
-          <input
-            matInput
-            type="text"
-            formControlName="dataNascimento"
-            readonly
-          />
+          <input matInput [matDatepicker]="picker" formControlName="dataNascimento" readonly>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <!-- Sexo -->
@@ -72,7 +69,7 @@
       <div class="form-row">
         <mat-form-field class="form-field">
           <mat-label>Data</mat-label>
-          <input matInput [matDatepicker]="picker2" formControlName="dataConsulta" required>
+          <input matInput [matDatepicker]="picker2" formControlName="dataExame" required>
           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
@@ -89,16 +86,10 @@
       </mat-form-field>
 
       <div class="div-consulta-btn">
-        <button
-          (click)="formularioValido()"
-          mat-raised-button
-          type="submit"
-          class="consulta-btn"
-          style="float: right;"
-        >
+        <button (click)="formularioValido()" mat-raised-button type="submit" class="consulta-btn" style="float: right;">
           Agendar
         </button>
-        </div>
+      </div>
     </form>
   </div>
 </div>

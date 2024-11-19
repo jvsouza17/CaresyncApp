@@ -22,12 +22,9 @@
         <!-- Data de Nascimento -->
         <mat-form-field class="example-full-width data-nasc" fxFlex="60">
           <mat-label>Data de nascimento</mat-label>
-          <input
-            matInput
-            type="text"
-            formControlName="dataNascimento"
-            readonly
-          />
+          <input matInput [matDatepicker]="picker" formControlName="dataNascimento" readonly>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <!-- Sexo -->

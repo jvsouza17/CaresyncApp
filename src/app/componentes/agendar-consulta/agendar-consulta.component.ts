@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MY_FORMATS } from '../../pipes/date/date-br.pipe';
 import { provideMomentDateAdapter } from '@angular/material-moment-adapter';
 import { UserService } from '../../services/user/user.service';
@@ -14,10 +14,11 @@ import { Router } from '@angular/router';
   selector: 'app-agendar-consulta',
   templateUrl: './agendar-consulta.component.html',
   styleUrl: './agendar-consulta.component.css',
-  providers: [{ provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
+  providers: [
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
-    provideMomentDateAdapter(MY_FORMATS)]
-})
+    provideMomentDateAdapter(MY_FORMATS)],
+  })
 export class AgendarConsultaComponent {
 
   formulario!: FormGroup;
@@ -28,8 +29,9 @@ export class AgendarConsultaComponent {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private consultaService: ConsultaService,
-    private router: Router
-  ){}
+    private router: Router,
+    private dateAdapter: DateAdapter<any>
+  ){this.dateAdapter.setLocale('pt-BR');}
 
   ngOnInit() {
     this.getDadosFixos().subscribe(() => {
