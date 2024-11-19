@@ -4,16 +4,18 @@ import { NavigationBarComponent } from '../navigation-bar/navigation-bar.compone
 import { AuthenticationService } from '../../services/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
+import { DataTablesModule } from 'angular-datatables';
 
-fdescribe('ExameDetalheComponent', () => {
+describe('ExameDetalheComponent', () => {
   let component: ExameDetalheComponent;
   let fixture: ComponentFixture<ExameDetalheComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ExameDetalheComponent, NavigationBarComponent, ],  // Inclua o NavigationBarComponent
+      declarations: [ExameDetalheComponent, NavigationBarComponent],  // Inclua o NavigationBarComponent
       providers: [AuthenticationService],
       imports: [
+        DataTablesModule,
         RouterTestingModule,
         HttpClientModule
         // Inclua os módulos necessários que o NavigationBarComponent utiliza,

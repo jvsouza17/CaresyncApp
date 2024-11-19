@@ -5,7 +5,7 @@ import { MY_FORMATS } from '../../pipes/date/date-br.pipe';
 import { provideMomentDateAdapter } from '@angular/material-moment-adapter';
 import { UserService } from '../../services/user/user.service';
 import { map, Observable } from 'rxjs';
-import { AgendamentoConsultas } from '../../DTOs/agendamentos/agendamentoConsultas';
+import { AgendamentoConsultas } from '../../DTOs/consultas/agendamentoConsultas';
 import { ConsultaService } from '../../services/consulta/consulta.service';
 import { Router } from '@angular/router';
 

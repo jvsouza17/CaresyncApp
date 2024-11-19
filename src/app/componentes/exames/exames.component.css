@@ -40,7 +40,7 @@
     gap: 10px;
     align-items: center;
   }
-  .consulta-btn {
+  .exame-btn {
     background-color: #26606b;
     color: white;
     padding: 10px 20px;
@@ -55,7 +55,7 @@
     white-space: nowrap; /* Impede que o texto quebre em várias linhas */
 }
 
-  .consulta-btn:hover {
+  .exame-btn:hover {
     background-color: #4ab68a;
     transform: scale(1.05);
   }

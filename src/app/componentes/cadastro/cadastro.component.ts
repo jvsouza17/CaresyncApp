@@ -84,24 +84,6 @@ export class CadastroComponent {
     this.telefoneValue = this.telefoneMaskPipe.transform(telefone);  // Aplica a máscara de Telefone usando o pipe
     this.formulario.get('telefone')?.setValue(this.telefoneValue, { emitEvent: false });  // Atualiza o campo com o valor formatado
   }
-
-  // mapFormToUser() {
-  //   this.user.nome = this.formulario.get('nome')?.value;
-  //   this.user.sobrenome = this.formulario.get('sobrenome')?.value;
-  //   this.user.sexo = this.formulario.get('sexo')?.value;
-  //   this.user.numeroSUS = this.formulario.get('numeroSUS')?.value;
-  //   this.user.dataNascimento = this.formulario.get('dataNascimento')?.value;
-  //   this.user.CPF = this.formulario.get('CPF')?.value;
-  //   this.user.endereco = this.formulario.get('endereco')?.value;
-  //   this.user.CEP = this.formulario.get('CEP')?.value;
-  //   this.user.cidade = this.formulario.get('cidade')?.value;
-  //   this.user.UF = this.formulario.get('UF')?.value;
-  //   this.user.email = this.formulario.get('email')?.value;
-  //   this.user.telefone = this.formulario.get('telefone')?.value;
-  //   this.user.senha = this.formulario.get('senha')?.value;
-  // }
-
-
     formularioValido() {
       if(this.formulario.valid){
           this.user.nome = this.formulario.get('nome')?.value;
@@ -118,9 +100,9 @@ export class CadastroComponent {
           this.user.telefone = this.formulario.get('telefone')?.value;
           this.user.senha = this.formulario.get('senha')?.value;
           this.authenticationService.cadastrar(this.user);
-      } else {
-        console.log(this.formulario);
-        throw new Error("Preencha os campos obrigatórios para continuar!");
+      // } else {
+      //   console.log(this.formulario);
+      //   throw new Error("Preencha os campos obrigatórios para continuar!");
       }
     }
 }

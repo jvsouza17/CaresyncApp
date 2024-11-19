@@ -1,7 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AgendamentoConsultas } from '../../DTOs/agendamentos/agendamentoConsultas';
+import { AgendamentoConsultas } from '../../DTOs/consultas/agendamentoConsultas';
 import { ConsultaService } from '../../services/consulta/consulta.service';
 import { ActivatedRoute } from '@angular/router';
 

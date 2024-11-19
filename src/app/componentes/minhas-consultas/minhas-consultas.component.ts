@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Config } from 'datatables.net';
 import { DataTableDirective } from 'angular-datatables';
-import { AgendamentoConsultas } from '../../DTOs/agendamentos/agendamentoConsultas';
+import { AgendamentoConsultas } from '../../DTOs/consultas/agendamentoConsultas';
 import { UserService } from '../../services/user/user.service';
 import { ConsultaService } from '../../services/consulta/consulta.service';
 import { Router } from '@angular/router';

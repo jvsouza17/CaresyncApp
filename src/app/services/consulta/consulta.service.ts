@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { Observable } from 'rxjs';
-import { AgendamentoConsultas } from '../../DTOs/agendamentos/agendamentoConsultas';
+import { AgendamentoConsultas } from '../../DTOs/consultas/agendamentoConsultas';
 import { Router } from '@angular/router';
 
 @Injectable({

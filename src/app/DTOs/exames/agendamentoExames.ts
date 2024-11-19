@@ -15,4 +15,5 @@ export class AgendamentoExames {
     nomeMedico?: String;
     observacoes?: String;
     reavaliacao?: String;
+    prescricoesMedicas?: String;
 }
