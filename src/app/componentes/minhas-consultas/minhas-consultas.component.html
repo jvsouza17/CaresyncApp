@@ -12,12 +12,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let agendamento of agendamentos" (click)="verDetalhesConsulta(agendamento.id_consulta!)">
-        <td>{{ agendamento.especialidade }}</td>
-        <td>{{ agendamento.nomeMedico }}</td>
-        <td>{{ agendamento.dataConsulta | date:'dd/MM/yyyy' }}</td>
-        <td>{{ agendamento.hora }}</td>
-        <td>{{ agendamento.local }}</td>
+      <tr *ngFor="let consulta of consultas" (click)="verDetalhesConsulta(consulta.id_consulta)">
+        <td>{{ consulta.especialidade }}</td>
+        <td>{{ consulta.nomeMedico }}</td>
+        <td>{{ consulta.dataConsulta | date:'dd/MM/yyyy' }}</td>
+        <td>{{ consulta.hora }}</td>
+        <td>{{ consulta.local }}</td>
       </tr>
     </tbody>
   </table>

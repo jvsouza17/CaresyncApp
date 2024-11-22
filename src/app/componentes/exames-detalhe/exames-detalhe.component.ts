@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PrescricaoDialogComponent } from '../prescricao-dialog/prescricao-dialog.component';
+import { ActivatedRoute } from '@angular/router';
+import { ExameService } from '../../services/exames/exame.service';
+import { AgendamentoExames } from '../../DTOs/exames/agendamentoExames';
 
 @Component({
   selector: 'app-exame-detalhe',
@@ -8,24 +11,29 @@ import { PrescricaoDialogComponent } from '../prescricao-dialog/prescricao-dialo
   styleUrls: ['./exames-detalhe.component.css']
 })
 export class ExameDetalheComponent {
-  // Propriedades para interpolação
-  especialidade: string = 'Pediatria';
-  dataExame: string = '12/01/2025';
-  local: string = 'UPA Núcleo Bandeirante';
-  endereco: string = 'Avenida Conjunto N° 10';
-  medico: string = 'Luiz Henrique André Rosa da Silva';
-  motivoExame: string = 'Queixa de dores abdominais intensas, com suspeita de complicações intestinais.';
-  nomePaciente: string = 'Nome do Paciente';
-  dataNascimento: string = '01/01/1999';
-  observacoes: string = `
-    Paciente se queixou de dores abdominais. Foi feita a solicitação de uma tomografia na parte do abdômen.
-    O exame de imagem revelou inflamação significativa na região do intestino delgado, compatível com um quadro de infecção intestinal aguda.
-    Não foram observadas obstruções intestinais ou perfurações, mas há sinais de espessamento das paredes intestinais, comum em processos infecciosos.
-    Não há evidência de abscessos ou outros sinais de complicações graves.
-  `;
-  reavaliacao: string = 'Agendar retorno após 7 dias para revisão dos sintomas e possível ajuste do tratamento, caso necessário.';
+  user: AgendamentoExames = {};
+  idExame = this.route.snapshot.paramMap.get('id')
 
-  constructor(public dialog: MatDialog) {}
+  constructor(private route: ActivatedRoute, private exameService: ExameService, public dialog: MatDialog) {}
+
+  ngOnInit(){
+    this.carregarDetalhesExame();
+  }
+
+  carregarDetalhesExame() {
+    this.exameService.getExameDetalhes(this.idExame!).subscribe((response) => {
+      console.log(response);
+      this.user.nomePaciente = response.nomePaciente
+      this.user.dataNascimento = response.dataNascimento
+      this.user.nomeMedico = response.nomeMedico
+      this.user.nomeExame = response.nomeExame
+      this.user.data = response.data
+      this.user.hora = response.hora
+      this.user.local = response.local
+      this.user.endereco = response.endereco
+      this.user.observacoes = response.observacoes
+    })
+  }
 
   abrirModal(): void {
     this.dialog.open(PrescricaoDialogComponent, {

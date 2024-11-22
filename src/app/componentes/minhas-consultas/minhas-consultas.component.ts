@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 
 export class MinhasConsultasComponent {
-  agendamentos: AgendamentoConsultas[] = [];
+  consultas: AgendamentoConsultas[] = [];
 
   @ViewChild(DataTableDirective)
   dtElement!: DataTableDirective;
@@ -33,18 +33,18 @@ export class MinhasConsultasComponent {
       processing: true
     };
     this.dtTrigger.next(null);
-    this.getAgendamentos();
+    this.getAgendamentosConsultas();
   }
 
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }
 
-  getAgendamentos(){
-    this.consultaService.getConsultas().subscribe((agendamentos: AgendamentoConsultas[]) => {
-      this.agendamentos = agendamentos;
+  getAgendamentosConsultas(){
+    this.consultaService.getConsultas().subscribe((consultas: AgendamentoConsultas[]) => {
+      this.consultas = consultas;
       this.dtTrigger.next(null);
-      console.log(this.agendamentos);
+      console.log(this.consultas);
     });
   }
 

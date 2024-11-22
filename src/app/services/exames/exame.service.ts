@@ -17,12 +17,12 @@ export class ExameService {
   }
 
   // listar exames do usuário logado
-  // getExames(){
-  //   return this.http.get<exames[]>('https://api.example.com/exames');
-  // }
+  getExames(): Observable<AgendamentoExames[]>{
+    return this.http.get<AgendamentoExames[]>(`${environment.apiUrl}/exame/listar-exames`);
+  }
 
   // listar detalhes do exame clicado, capturar por id na rota?
-  //  getExameDetalhes(){
-  //   return this.http.get<exame>('https://api.example.com/exame/:id');
-  // }
+   getExameDetalhes(id: AgendamentoExames['id_exame']): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/exame/listar-exames/${id}`);
+  }
 }

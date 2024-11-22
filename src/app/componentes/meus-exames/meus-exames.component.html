@@ -9,28 +9,30 @@
 
       <!-- Patient Information -->
       <div class="patient-info text-right">
-        <p class="mb-1"> NOME: {{ paciente.nome }}</p>
-        <p class="mb-0">DATA DE NASCIMENTO: {{ paciente.dataNascimento | date: 'dd/MM/yyyy' }}</p>
+        <p class="mb-1"> NOME: {{ dadosFixos.nomePaciente }}</p>
+        <p class="mb-0">DATA DE NASCIMENTO: {{ dadosFixos.dataNascimento | date: 'dd/MM/yyyy' }}</p>
       </div>
     </div>
 
     <!-- Exam Table -->
     <div class="table-responsive p-4">
-      <table datatable [dtOptions]="dtOptions" class="table table-bordered">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered">
         <thead class="table-light">
           <tr>
             <th>EXAME</th>
             <th>HORA</th>
             <th>DATA</th>
+            <th>LOCAL</th>
             <th>RESULTADO</th>
           </tr>
         </thead>
         <tbody>
-          <tr routerLink='/exames-detalhes' *ngFor="let exame of exames">
-            <td >{{ exame.nome }}</td>
+          <tr *ngFor="let exame of exames" (click)="verDetalhesExame(exame.id_exame)">
+            <td>{{ exame.nomeExame }}</td>
             <td>{{ exame.hora }}</td>
             <td>{{ exame.data | date: 'dd/MM/yyyy' }}</td>
-            <td>{{ exame.resultado }}</td>
+            <td>{{ exame.local }}</td>
+            <td>{{ exame.resultado ? exame.resultado : 'Pendente' }}</td>
           </tr>
         </tbody>
       </table>

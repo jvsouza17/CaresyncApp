@@ -7,28 +7,26 @@
     </div>
     <div class="paciente-info-flex-div">
       <div class="paciente-info-flex">
-        <p><strong>PACIENTE:</strong> {{ nomePaciente }}</p>
+        <p><strong>PACIENTE:</strong> {{ user.nomePaciente }}</p>
         <p class="data-nascimento">
-          <strong>DATA DE NASC.:</strong> {{ dataNascimento }}
-        </p>
+          <strong>DATA DE NASC.:</strong> {{ user.dataNascimento | date:'dd/MM/yyyy' }}</p>
       </div>
     </div>
   </div>
 
   <div class="exame-info">
-    <p><strong>ESPECIALIDADE:</strong> {{ especialidade }}</p>
-    <p><strong>DATA DO EXAME:</strong> {{ dataExame }}</p>
-    <p><strong>LOCAL:</strong> {{ local }}</p>
-    <p><strong>MÉDICO:</strong> {{ medico }}</p>
-    <p><strong>MOTIVO DO EXAME:</strong> {{ motivoExame }}</p>
+    <p><strong>NOME DO EXAME:</strong> {{ user.nomeExame }}</p>
+    <p><strong>DATA DO EXAME:</strong> {{ user.data | date: 'dd/MM/yyyy'}}</p>
+    <p><strong>LOCAL:</strong> {{ user.local }}</p>
+    <p><strong>MÉDICO:</strong> {{ user.nomeMedico }}</p>
   </div>
 
   <div class="observacoes-container">
     <div class="observacoes">
       <div class="subtitle">OBSERVAÇÕES:</div>
-      <p>{{ observacoes }}</p>
+      <p>{{ user.observacoes }}</p>
       <div class="subtitle">REAVALIAÇÕES:</div>
-      <p>{{ reavaliacao }}</p>
+      <p>{{ user.reavaliacao }}</p>
     </div>
   </div>
 

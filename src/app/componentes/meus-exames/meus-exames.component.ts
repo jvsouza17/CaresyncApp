@@ -1,9 +1,11 @@
+import { UserService } from './../../services/user/user.service';
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ExameService } from '../../services/exames/exame.service';
 import { AgendamentoExames } from '../../DTOs/exames/agendamentoExames';
-import { Subject } from 'rxjs';
+import { map, Subject } from 'rxjs';
 import { Config } from 'datatables.net';
 import { DataTableDirective } from 'angular-datatables';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,35 +15,18 @@ import { DataTableDirective } from 'angular-datatables';
 })
 export class MeusExamesComponent {
 
-  // exames!: AgendamentoExames[];
-
-  paciente = {
-    nome: 'João da Silva',
-    dataNascimento: '1990-05-15'  // data de nascimento
-  };
-
-  // Dados dos exames
-  exames = [
-    { nome: 'Hemograma Completo', hora: '08:30', data: new Date('2024-10-10'), resultado: 'Normal' },
-    { nome: 'Raio-X de Tórax', hora: '10:00', data: new Date('2024-10-11'), resultado: 'Normal' },
-    { nome: 'ECG', hora: '09:00', data: new Date('2024-10-12'), resultado: 'Alterado' },
-    { nome: 'Hemograma Completo', hora: '08:30', data: new Date('2024-10-10'), resultado: 'Normal' },
-    { nome: 'Raio-X de Tórax', hora: '10:00', data: new Date('2024-10-11'), resultado: 'Normal' },
-    { nome: 'ECG', hora: '09:00', data: new Date('2024-10-12'), resultado: 'Alterado' },
-    { nome: 'Hemograma Completo', hora: '08:30', data: new Date('2024-10-10'), resultado: 'Normal' },
-    { nome: 'Raio-X de Tórax', hora: '10:00', data: new Date('2024-10-11'), resultado: 'Normal' },
-    { nome: 'ECG', hora: '09:00', data: new Date('2024-10-12'), resultado: 'Alterado' }
-  ];
-
-  @ViewChild(DataTableDirective)
-  dtElement!: DataTableDirective;
+  exames: AgendamentoExames[] = [];
+  dadosFixos: any = {};
   dtOptions: Config = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
-  constructor(private exameService: ExameService){
+  constructor(private exameService: ExameService, private router: Router, private userService: UserService){}
 
-  }
   ngOnInit() {
+    this.tableWithData();
+  }
+
+  tableWithData() {
     this.dtOptions = {
       order: [[2, 'asc']],
       ordering: true,
@@ -49,18 +34,35 @@ export class MeusExamesComponent {
       pagingType: 'full',
       pageLength: 10,
       processing: true
-    }
-    this.dtTrigger.next(null)
-  }
-  ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
+    };
+    this.getDadosFixos().subscribe(() => {
+      this.getAgendamentosExames();
+    });
   }
 
-  // getExames() {
-  //   this.exameService.getExames().subscribe(result: => {
-  //     this.exames = result;
-  //   })
-  // }
+  getDadosFixos() {
+    return this.userService.getUser().pipe(
+      map((response) => {
+        this.dadosFixos = {
+          nomePaciente: `${response.nome} ${response.sobrenome}`,
+          dataNascimento: response.dataNascimento,
+        };
+        console.log(this.dadosFixos);
+      })
+    );
+  }
 
+  getAgendamentosExames() {
+    this.exameService.getExames().subscribe((exames: AgendamentoExames[]) => {
+      this.exames = exames;
+      console.log(this.exames);
+      this.dtTrigger.next(null);
+    });
+  }
+
+  verDetalhesExame(idExame: AgendamentoExames["id_exame"]) {
+    console.log(idExame)
+    this.router.navigate(['/exames-detalhes', idExame]);
+  }
 
 }

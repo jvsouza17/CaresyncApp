@@ -45,12 +45,12 @@ export class AgendarConsultaComponent {
       numeroSUS: [{ value: this.dadosFixos.numeroSUS, disabled: true }],
       sexo: [{ value: this.dadosFixos.sexo, disabled: true }],
       dataNascimento: [{ value: this.dadosFixos.dataNascimento, disabled: true }],
+      endereco: [{ value: this.dadosFixos.endereco, disabled: true }],
       especialidade: ['', Validators.required],
       localidade: ['', Validators.required],
       dataConsulta: ['', Validators.required],
       horario: ['', Validators.required],
       tipo: ['', Validators.required],
-      endereco: ['', Validators.required],
       observacoes: ['']
     });
   }
@@ -61,7 +61,8 @@ export class AgendarConsultaComponent {
           nomePaciente: `${response.nome} ${response.sobrenome}`,
           numeroSUS: response.numeroSUS,
           sexo: response.sexo,
-          dataNascimento: response.dataNascimento
+          dataNascimento: response.dataNascimento,
+          endereco: response.endereco
         };
         console.log(this.dadosFixos);
       })
@@ -74,15 +75,15 @@ export class AgendarConsultaComponent {
 
     // Obtém todos os valores do formulário, inclusive os campos desabilitados
       const formValues = this.formulario.getRawValue();
-      this.user.nomePaciente = formValues.nomePaciente;
-      this.user.numeroSUS = formValues.numeroSUS;
-      this.user.sexo = formValues.sexo;
-      this.user.dataNascimento = formValues.dataNascimento;
+      // this.user.nomePaciente = formValues.nomePaciente;
+      // this.user.numeroSUS = formValues.numeroSUS;
+      // this.user.sexo = formValues.sexo;
+      // this.user.dataNascimento = formValues.dataNascimento;
+      this.user.endereco = formValues.endereco;
       this.user.dataConsulta = formValues.dataConsulta;
       this.user.hora = formValues.horario;
       this.user.especialidade = formValues.especialidade;
       this.user.local = formValues.localidade;
-      this.user.endereco = formValues.endereco;
       this.user.tipo = formValues.tipo;
       this.user.observacoes = formValues.observacoes;
 

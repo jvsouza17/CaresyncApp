@@ -41,12 +41,11 @@ export class AgendarExameComponent {
       numeroSUS: [{ value: this.dadosFixos.numeroSUS, disabled: true }],
       sexo: [{ value: this.dadosFixos.sexo, disabled: true }],
       dataNascimento: [{ value: this.dadosFixos.dataNascimento, disabled: true }],
+      endereco: [{ value: this.dadosFixos.endereco, disabled: true }],
       nomeExame: ['', Validators.required],
       localidade: ['', Validators.required],
       dataExame: ['', Validators.required],
       horario: ['', Validators.required],
-      tipo: ['', Validators.required],
-      endereco: ['', Validators.required],
       observacoes: ['']
     });
   }
@@ -57,7 +56,8 @@ export class AgendarExameComponent {
           nomePaciente: `${response.nome} ${response.sobrenome}`,
           numeroSUS: response.numeroSUS,
           sexo: response.sexo,
-          dataNascimento: response.dataNascimento
+          dataNascimento: response.dataNascimento,
+          endereco: response.endereco
         };
         console.log(this.dadosFixos);
       })
@@ -65,29 +65,31 @@ export class AgendarExameComponent {
   }
 
   formularioValido(){
-    // if(this.formulario.valid){
-    //   this.user = {};
+    if(this.formulario.valid){
+      this.user = {};
 
-    // // Obtém todos os valores do formulário, inclusive os campos desabilitados
-    //   const formValues = this.formulario.getRawValue();
-    //   this.user.nomePaciente = formValues.nomePaciente;
-    //   this.user.numeroSUS = formValues.numeroSUS;
-    //   this.user.sexo = formValues.sexo;
-    //   this.user.dataNascimento = formValues.dataNascimento;
-    //   this.user.dataConsulta = formValues.dataConsulta;
-    //   this.user.hora = formValues.horario;
-    //   this.user.especialidade = formValues.especialidade;
-    //   this.user.local = formValues.localidade;
-    //   this.user.endereco = formValues.endereco;
-    //   this.user.tipo = formValues.tipo;
-    //   this.user.observacoes = formValues.observacoes;
+      console.log(this.user)
+      console.log(this.formulario)
 
-    //   console.log(this.user)
-    //   console.log(this.formulario)
-    //   this.consultaService.agendarConsulta(this.user).subscribe((result)=>{
-    //     console.log(result);
-    //     this.router.navigate(['/minhas-consultas'])
-    //   })
-    // }
+    // Obtém todos os valores do formulário, inclusive os campos desabilitados
+      const formValues = this.formulario.getRawValue();
+      // this.user.nomePaciente = formValues.nomePaciente;
+      // this.user.numeroSUS = formValues.numeroSUS;
+      // this.user.sexo = formValues.sexo;
+      // this.user.dataNascimento = formValues.dataNascimento;
+      this.user.endereco = formValues.endereco;
+      this.user.nomeExame = formValues.nomeExame;
+      this.user.local = formValues.localidade;
+      this.user.data = formValues.dataExame;
+      this.user.hora = formValues.horario;
+      this.user.observacoes = formValues.observacoes;
+
+      console.log(this.user)
+      console.log(this.formulario)
+      this.exameService.agendarExame(this.user).subscribe((result)=>{
+        console.log(result);
+        this.router.navigate(['/meus-exames'])
+      })
+    }
   }
 }
