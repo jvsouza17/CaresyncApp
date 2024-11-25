@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { Subject } from 'rxjs';
+import { map, Subject } from 'rxjs';
 import { Config } from 'datatables.net';
 import { DataTableDirective } from 'angular-datatables';
 import { AgendamentoConsultas } from '../../DTOs/consultas/agendamentoConsultas';
@@ -16,28 +16,40 @@ import { Router } from '@angular/router';
 
 export class MinhasConsultasComponent {
   consultas: AgendamentoConsultas[] = [];
-
-  @ViewChild(DataTableDirective)
-  dtElement!: DataTableDirective;
+  dadosFixos: any = {};
   dtOptions: Config = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
-  constructor(private consultaService: ConsultaService, private router: Router) { }
+  constructor(private consultaService: ConsultaService, private router: Router, private userService: UserService) { }
   ngOnInit() {
+    this.tableWithData();
+  }
+
+
+  tableWithData() {
     this.dtOptions = {
-      order: [[2, 'asc']],
+      order: [[2, 'desc']],
       ordering: true,
       dom: 'rfBtip',
       pagingType: 'full',
       pageLength: 10,
       processing: true
     };
-    this.dtTrigger.next(null);
-    this.getAgendamentosConsultas();
+    this.getDadosFixos().subscribe(() => {
+      this.getAgendamentosConsultas();
+    });
   }
 
-  ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
+  getDadosFixos() {
+    return this.userService.getUser().pipe(
+      map((response) => {
+        this.dadosFixos = {
+          nomePaciente: `${response.nome} ${response.sobrenome}`,
+          dataNascimento: response.dataNascimento,
+        };
+        console.log(this.dadosFixos);
+      })
+    );
   }
 
   getAgendamentosConsultas(){
@@ -52,6 +64,10 @@ export class MinhasConsultasComponent {
     console.log(idConsulta)
     this.router.navigate(['/consultas-detalhes', idConsulta]);
 
+  }
+
+  ngOnDestroy(): void {
+    this.dtTrigger.unsubscribe();
   }
 }
 

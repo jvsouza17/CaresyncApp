@@ -1,3 +1,52 @@
+::ng-deep body {
+  color: #26606b;
+  font-family: "Raleway", sans-serif !important;
+}
+
+::ng-deep p {
+  font-size: 25px !important;
+}
+
+.consulta-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.patient-info {
+  display: flex;
+  gap: 25px;
+  font-weight: 200;
+}
+
+.consulta-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 80%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Header do Card */
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  border-radius: 12px 12px 0 0;
+}
+
+.text-primary {
+  color: #4caf50;
+}
+
+/* Informação do Paciente */
+.patient-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #555555;
+}
+
 .container {
   background-color: white;
   margin: 40px auto;
@@ -17,6 +66,7 @@ h2 {
   color: #2b7a78 !important;
   float: left;
   font-weight: 300 !important;
+  margin-bottom: 20px;
 }
 
 /* Estilo da tabela geral */
@@ -138,4 +188,34 @@ h2 {
   font-weight: 600;
   color: #333;
   margin-bottom: 20px;
+}
+
+
+/* Barra de pesquisa minimalista */
+::ng-deep .search-container {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  margin-left: auto !important;
+}
+
+::ng-deep .dt-input {
+  border: 1px solid #ddd !important;
+  padding: 8px 12px !important;
+  border-radius: 15px !important;
+  font-size: 14px !important;
+  width: 200px !important;
+  transition: all 0.3s ease !important;
+  outline: none !important;
+  background-color: #f9f9f900 !important;
+}
+
+::ng-deep .dt-input:focus {
+  border-color: #61ca9f !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 5px rgba(0, 189, 126, 0.5) !important;
+}
+
+.help {
+  margin: 10px;
 }

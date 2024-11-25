@@ -1,25 +1,39 @@
 <app-navigation-bar></app-navigation-bar>
-<div class="container">
-  <h2>AGENDAMENTOS</h2>
-  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Consulta</th>
-        <th>Médico</th>
-        <th>Dia</th>
-        <th>Hora</th>
-        <th>Localidade</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let consulta of consultas" (click)="verDetalhesConsulta(consulta.id_consulta)">
-        <td>{{ consulta.especialidade }}</td>
-        <td>{{ consulta.nomeMedico }}</td>
-        <td>{{ consulta.dataConsulta | date:'dd/MM/yyyy' }}</td>
-        <td>{{ consulta.hora }}</td>
-        <td>{{ consulta.local }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <p>Selecione a consulta para ver mais detalhes</p>
+<div class="consulta-container mt-5">
+  <div class="consulta-card shadow-sm">
+    <div class="d-flex justify-content-between align-items-center p-4">
+      <!-- Container Title -->
+      <h3 class="mb-0">AGENDAMENTO DE CONSULTAS</h3>
+
+      <!-- Patient Information -->
+      <div class="patient-info text-right">
+        <p class="mb-1">NOME: {{ dadosFixos.nomePaciente }}</p>
+        <p class="mb-0">DATA DE NASCIMENTO: {{ dadosFixos.dataNascimento | date: 'dd/MM/yyyy' }}</p>
+      </div>
+    </div>
+
+    <div class="table-responsive p-4">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Consulta</th>
+            <th>Médico</th>
+            <th>Dia</th>
+            <th>Hora</th>
+            <th>Localidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let consulta of consultas" (click)="verDetalhesConsulta(consulta.id_consulta)">
+            <td>{{ consulta.especialidade }}</td>
+            <td>{{ consulta.nomeMedico }}</td>
+            <td>{{ consulta.dataConsulta | date:'dd/MM/yyyy' }}</td>
+            <td>{{ consulta.hora }}</td>
+            <td>{{ consulta.local }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <small class="help">Selecione a consulta para ver mais detalhes</small>
+  </div>
 </div>
