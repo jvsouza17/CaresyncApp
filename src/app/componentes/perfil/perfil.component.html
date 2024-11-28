@@ -5,12 +5,12 @@
   <div class="form-content">
 
     <!-- Coluna esquerda: Campos de texto -->
-    <div class="form-left">
+    <div class="form-left" *ngIf="formulario">
       <form [formGroup]="formulario" (ngSubmit)="salvar()" fxLayout="column" fxLayoutGap="5px" class="labels">
         <!-- Nome Completo -->
         <mat-form-field class="example-full-width" fxFlex="60" style="width: 100%;">
           <mat-label>Nome Completo</mat-label>
-          <input matInput type="text" formControlName="nomeCompleto" readonly />
+          <input matInput type="text" formControlName="nomePaciente" readonly />
         </mat-form-field>
 
         <!-- Agrupando Data de nascimento e Sexo -->
@@ -51,7 +51,7 @@
 
         <mat-form-field class="example-full-width" fxFlex="40">
           <mat-label>Telefone</mat-label>
-          <input matInput placeholder="Digite seu telefone" formControlName="telefone" [value]="telefoneValue">
+          <input matInput placeholder="Digite seu telefone" formControlName="telefone" (input)="formatTelefone()" [value]="telefoneValue">
         </mat-form-field>
       </div>
 
@@ -102,10 +102,10 @@
             <input formControlName="CEP" matInput placeholder="Digite seu CEP">
           </mat-form-field>
           <!-- Número -->
-       
+
 
         <!-- Endereço -->
-        
+
         <mat-form-field class="example-full-width" fxFlex="100" style="width: 100%;">
           <mat-label>Endereço</mat-label>
           <input formControlName="endereco" matInput placeholder="Digite seu endereço">
@@ -125,8 +125,11 @@
         </div> -->
 
         <!-- Botão Salvar -->
-         <div class="div-consulta-btn">
-          <button mat-raised-button color="primary" type="submit" [disabled]="formulario.invalid" class="consulta-btn" style="float: right;">
+         <div class="div-perfil-btn">
+          <button mat-raised-button color="primary" type="submit" [ngClass]="{
+            'mat-mdc-raised-button-invalido': !formulario.dirty,
+            'mat-mdc-raised-button': formulario.dirty
+          }" class="perfil-btn">
             Salvar
           </button>
          </div>
@@ -134,15 +137,15 @@
     </div>
 
     <!-- Coluna direita: Foto de Perfil -->
-    <div class="form-right">
-      <div class="profile-picture">
-        <!-- Foto será definida no CSS com a imagem padrão -->
-      </div>
-      <label class="upload-label">
-        <input type="file" (change)="onFileChange($event)" accept="image/*" hidden />
-        <button mat-raised-button color="primary" type="button" class="btn-foto">Alterar foto do perfil</button>
-      </label>
+  <!-- <div class="form-right">
+    <div class="profile-picture" [style.background-image]="'url(' + [imagemPreview] + ')'">
     </div>
+
+    <label class="upload-label">
+      <input #fileInput type="file" (change)="onFileChange($event)" accept="image/*" hidden />
+      <button mat-raised-button color="primary" type="button" (click)="triggerFileInput()">Alterar foto do perfil</button>
+    </label>
+  </div> -->
 
   </div>
 </div>

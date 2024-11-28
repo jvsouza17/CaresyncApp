@@ -1,11 +1,11 @@
 export class Vacina {
-    nome?: String;
-    dataAplicacao?: String;
-    proximaDose?: String;
-    status?: String;
-    lote?: String;
-    labProdut?: String;
-    unidade?: String;
-    assinatura?: String;
-    statusClass?: String;
+    nome?: string;
+    dataAplicacao?: string;
+    proximaDose?: string;
+    status?: string;
+    lote?: string;
+    labProdut?: string;
+    unidade?: string;
+    assinatura?: string;
+    statusClass?: string;
 }

@@ -76,11 +76,6 @@ h2 {
   transition: background-color 0.3s ease;
 }
 
-.save-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
 .save-button:hover {
   background-color: #1f4c56;
 }
@@ -161,8 +156,13 @@ h2 {
   font-size: larger !important;
 }
 
-::ng-deep .mat-mdc-raised-button:not(:disabled) {
+::ng-deep .mat-mdc-raised-button {
   background-color: #4ab68a !important;
+  color: white !important;
+}
+
+::ng-deep .mat-mdc-raised-button-invalido {
+  background-color: gray !important;
   color: white !important;
 }
 
@@ -214,7 +214,7 @@ h2 {
   background: #4ab68a; /* Cor do "polegar" ao passar o mouse */
 }
 
-.consulta-btn {
+.perfil-btn {
   background-color: #26606b;
   color: white;
   padding: 10px 20px;
@@ -228,17 +228,38 @@ h2 {
   height: 40px;
   width: 120px; /* Largura padrão do botão */
   text-align: center;
-  float: right;
 }
 
-.consulta-btn:hover {
+.perfil-btn:hover {
   background-color: #4ab68a;
   transform: scale(1.05);
 }
 
-.div-consulta-btn {
+.div-perfil-btn {
   width: 100%;
-  background-color: #00be75;
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo */
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../../../assets/images/default-image.png');
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-foto {
+  cursor: pointer;
 }
 
 .btn-foto{

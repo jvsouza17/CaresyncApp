@@ -47,7 +47,6 @@ export class AuthenticationService {
   }
 
   cadastrarUsuario(user: UserCadastro) {
-    console.log(user)
     try {
       return this.http.post(`${environment.apiUrl}/auth/cadastro`, user).subscribe((response: any) => {
         console.log(response);

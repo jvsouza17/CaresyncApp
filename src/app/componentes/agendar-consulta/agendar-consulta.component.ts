@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MY_FORMATS } from '../../pipes/date/date-br.pipe';
@@ -31,7 +31,7 @@ export class AgendarConsultaComponent {
     private consultaService: ConsultaService,
     private router: Router,
     private dateAdapter: DateAdapter<any>
-  ){this.dateAdapter.setLocale('pt-BR');}
+  ){this.dateAdapter.setLocale('pt-BR')}
 
   ngOnInit() {
     this.getDadosFixos().subscribe(() => {
@@ -54,6 +54,7 @@ export class AgendarConsultaComponent {
       observacoes: ['']
     });
   }
+
   getDadosFixos() {
     return this.userService.getUser().pipe(
       map((response) => {
