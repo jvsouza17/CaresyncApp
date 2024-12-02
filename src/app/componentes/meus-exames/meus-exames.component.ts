@@ -1,10 +1,9 @@
 import { UserService } from './../../services/user/user.service';
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ExameService } from '../../services/exames/exame.service';
 import { AgendamentoExames } from '../../DTOs/exames/agendamentoExames';
 import { map, Subject } from 'rxjs';
 import { Config } from 'datatables.net';
-import { DataTableDirective } from 'angular-datatables';
 import { Router } from '@angular/router';
 
 
@@ -53,7 +52,7 @@ export class MeusExamesComponent {
   }
 
   getAgendamentosExames() {
-    this.exameService.getExames().subscribe((exames: AgendamentoExames[]) => {
+    this.exameService.getExames().subscribe((exames) => {
       this.exames = exames;
       console.log(this.exames);
       this.dtTrigger.next(null);

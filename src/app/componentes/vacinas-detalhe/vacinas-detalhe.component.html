@@ -2,17 +2,13 @@
 <div class="container">
   <div class="d-flex justify-content-between align-items-center p-4">
     <h3 class="mb-0">DETALHES DE VACINAÇÃO</h3>
+
     <div class="patient-info text-right">
-      <p class="mb-1">PACIENTE:</p>
-      <p class="mb-0">DATA DE NASC.:</p>
+      <p class="mb-1">PACIENTE: {{ dadosFixos.nomePaciente }}</p>
+      <p class="mb-0">DATA DE NASC.: {{ dadosFixos.dataNascimento | date: 'dd/MM/yyyy' }}</p>
     </div>
   </div>
-  <table
-    datatable
-    [dtOptions]="dtOptions"
-    [dtTrigger]="dtTrigger"
-    class="table table-bordered"
-  >
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered">
     <thead>
       <tr>
         <th>VACINA</th>
@@ -24,7 +20,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let vacina of vacinas">
-        <td>{{ vacina.nome }}</td>
+        <td>{{ vacina.nomeVacina }}</td>
         <td>{{ vacina.lote }}</td>
         <td>{{ vacina.labProdut }}</td>
         <td>{{ vacina.unidade }}</td>

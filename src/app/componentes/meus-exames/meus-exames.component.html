@@ -32,7 +32,7 @@
             <td>{{ exame.hora }}</td>
             <td>{{ exame.data | date: 'dd/MM/yyyy' }}</td>
             <td>{{ exame.local }}</td>
-            <td>{{ exame.resultado ? exame.resultado : 'Pendente' }}</td>
+            <td [ngClass]="exame.resultado === null ? 'pendente' : 'concluida'">{{ exame.resultado ? exame.resultado : 'Pendente' }}</td>
           </tr>
         </tbody>
       </table>

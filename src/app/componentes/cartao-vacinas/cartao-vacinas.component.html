@@ -1,22 +1,20 @@
 <app-navigation-bar></app-navigation-bar>
 
 <!-- Container principal das Vacinas -->
-<div class="vacina-container mt-5">
-  <div class="vacina-card shadow-sm">
+  <div class="container">
     <div class="d-flex justify-content-between align-items-center p-4">
       <!-- Container Title -->
       <h3 class="mb-0">CARTÃO DE VACINAS</h3>
 
       <!-- Patient Information -->
       <div class="patient-info text-right">
-        <p class="mb-1"> NOME: {{ nomePaciente }}</p>
-        <p class="mb-0">DATA DE NASCIMENTO: {{ dataNascimento }}</p>
+        <p class="mb-1">PACIENTE: {{ dadosFixos.nomePaciente }}</p>
+        <p class="mb-0">DATA DE NASC.: {{ dadosFixos.dataNascimento | date: 'dd/MM/yyyy' }}</p>
       </div>
     </div>
 
     <!-- Tabela de Vacinas -->
-    <div class="table-responsive p-4">
-      <table datatable [dtOptions]="dtOptions" class="table table-bordered">
+      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered">
         <thead class="table-light">
           <tr>
             <th>VACINA</th>
@@ -27,17 +25,16 @@
         </thead>
         <tbody>
           <tr *ngFor="let vacina of vacinas" [ngClass]="vacina.statusClass">
-            <td>{{ vacina.nome }}</td>
-            <td>{{ vacina.dataAplicacao }}</td>
-            <td>{{ vacina.proximaDose }}</td>
-            <td [ngClass]="vacina.statusClass">{{ vacina.status }}</td>
+            <td>{{ vacina.nomeVacina }}</td>
+            <td>{{ vacina.dataAplicacao}}</td>
+            <td>{{ vacina.dataRetorno}}</td>
+            <td [ngClass]="vacina.status === 'Pendente' ? 'pendente' : (vacina.status === 'Concluída' ? 'concluida' : 'agendada')">{{ vacina.status }}</td>
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <button mat-button class="detalhes-btn" routerLink="/vacinas-detalhes">Ver detalhes</button>
+      <button mat-button class="detalhes-btn" routerLink="/vacinas-detalhes">Ver detalhes</button>
   </div>
-</div>
+
+
 
 

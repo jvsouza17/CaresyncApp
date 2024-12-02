@@ -92,8 +92,16 @@ table thead th {
   border-right: none; /* Remove a borda vertical entre as colunas */
 }
 
+.pendente {
+  color: red;
+}
+
+.concluida {
+  color: #4caf50;
+}
+
 /* Corpo da tabela */
-table tbody td {
+table tbody {
   text-align: center;
   padding: 10px;
   color: #555;

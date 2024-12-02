@@ -85,14 +85,6 @@ table.dataTable > tbody > tr > td {
   border-radius: 0 0 12px 12px;
 }
 
-.pendente {
-  color: red;
-}
-
-.completa {
-  color: #4caf50;
-}
-
 .detalhes-btn {
   color: #26606b;
   font-weight: bold;

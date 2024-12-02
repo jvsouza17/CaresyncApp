@@ -60,7 +60,7 @@ table thead th {
 }
 
 /* Corpo da tabela */
-table tbody td {
+table tbody {
   text-align: center;
   padding: 10px;
   color: #555;
@@ -93,6 +93,14 @@ table tfoot {
   overflow-x: auto;
   border-radius: 8px;
   margin-top: 20px;
+}
+
+.pendente {
+  color: red;
+}
+
+.concluida {
+  color: #4caf50;
 }
 
 /* Estilo da paginação */

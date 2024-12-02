@@ -1,7 +1,8 @@
 export class Vacina {
-    nome?: string;
+    nomeVacina?: string;
     dataAplicacao?: string;
-    proximaDose?: string;
+    horaAplicacao?: string;
+    dataRetorno?: string;
     status?: string;
     lote?: string;
     labProdut?: string;
