@@ -67,6 +67,7 @@ export class CadastroComponent {
       telefone: ['', [Validators.required]],
       senha: ['', [Validators.required]],
       confirmSenha: ['', [Validators.required]],
+      aceitarTermos: ['', [Validators.requiredTrue]],
     }, { validators: this.passwordMatchValidator }
     );
   }

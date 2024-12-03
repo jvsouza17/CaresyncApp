@@ -163,6 +163,14 @@
   margin: 30px auto;
 }
 
+.valido{
+  background-color: #4ab68a;
+}
+
+.invalido{
+  background-color: gray;
+}
+
 .button{
   display: flex;
   transform: translateX(100%) ;

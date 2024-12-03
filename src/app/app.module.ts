@@ -45,6 +45,8 @@ import { AgendarExameComponent } from './componentes/agendar-exame/agendar-exame
 import { MinhasConsultasComponent } from './componentes/minhas-consultas/minhas-consultas.component';
 import { MeusExamesComponent } from './componentes/meus-exames/meus-exames.component';
 import { ExamesComponent } from './componentes/exames/exames.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,7 +88,8 @@ import { ExamesComponent } from './componentes/exames/exames.component';
     MatDialogTitle,
     MatDialogContent,
     MatMenuModule,
-    CommonModule
+    CommonModule,
+    MatCheckboxModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
