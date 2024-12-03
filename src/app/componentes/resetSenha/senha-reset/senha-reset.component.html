@@ -1,0 +1,38 @@
+<div class="reset-container">
+  <h2>Redefinir senha</h2>
+  <form [formGroup]="senhaForm" (ngSubmit)="onSubmitSenha()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" placeholder="Digite seu e-mail">
+      <mat-error *ngIf="senhaForm.get('email')?.invalid && senhaForm.get('email')?.touched">
+        Por favor, insira um e-mail válido.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Código</mat-label>
+      <input matInput formControlName="codigo" type="text" placeholder="Digite o código recebido no e-mail">
+      <mat-error *ngIf="senhaForm.get('codigo')?.invalid && senhaForm.get('codigo')?.touched">
+        Por favor, insira o código recebido.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Nova Senha</mat-label>
+      <input matInput formControlName="novaSenha" type="password" placeholder="Digite a nova senha">
+      <mat-error *ngIf="senhaForm.get('novaSenha')?.invalid && senhaForm.get('novaSenha')?.touched">
+        A senha é obrigatória.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Confirmar Nova Senha</mat-label>
+      <input matInput formControlName="confirmarSenha" type="password" placeholder="Confirme a nova senha">
+      <mat-error *ngIf="senhaForm.hasError('passwordMismatch') && senhaForm.get('confirmarSenha')?.touched">
+        As senhas não coincidem!
+      </mat-error>
+    </mat-form-field>
+
+    <button type="submit" [disabled]="senhaForm.invalid">Redefinir Senha</button>
+  </form>
+</div>

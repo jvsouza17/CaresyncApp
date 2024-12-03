@@ -1,0 +1,25 @@
+<div class="reset-container">
+  <h2>Redefinir senha</h2>
+  <h6>Um código será enviado para o seu endereço de e-mail para redefinir sua senha. Seu endereço de IP pode ser registrado para fins de segurança.</h6>
+  <form [formGroup]="emailForm" (ngSubmit)="onSubmitEmail()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Insira seu email">
+      <mat-error *ngIf="emailForm.get('email')?.invalid && emailForm.get('email')?.touched">
+        Por favor, insira um email válido.
+      </mat-error>
+    </mat-form-field>
+    <button *ngIf="!showCodeInput" color="primary" type="submit" [disabled]="emailForm.invalid">Enviar</button>
+  </form>
+
+  <form *ngIf="showCodeInput" [formGroup]="codeForm" (ngSubmit)="onSubmitCode()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Código</mat-label>
+      <input matInput formControlName="code" placeholder="Insira o código recebido no email">
+      <mat-error *ngIf="codeForm.get('code')?.invalid && codeForm.get('code')?.touched">
+        Por favor, insira o código recebido.
+      </mat-error>
+    </mat-form-field>
+    <button color="primary" type="submit" [disabled]="codeForm.invalid">Verificar Código</button>
+  </form>
+</div>

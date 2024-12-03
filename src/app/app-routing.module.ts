@@ -16,6 +16,8 @@ import { AgendarExameComponent } from './componentes/agendar-exame/agendar-exame
 import { MinhasConsultasComponent } from './componentes/minhas-consultas/minhas-consultas.component';
 import { MeusExamesComponent } from './componentes/meus-exames/meus-exames.component';
 import { ExamesComponent } from './componentes/exames/exames.component';
+import { EmailResetComponent } from './componentes/resetSenha/email-reset/email-reset.component';
+import { SenhaResetComponent } from './componentes/resetSenha/senha-reset/senha-reset.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full',  canActivate: [UsuarioAutenticadoGuard],
@@ -37,6 +39,8 @@ const routes: Routes = [
   { path: 'cartao-vacinas', component: CartaoVacinasComponent, canActivate: [UsuarioAutenticadoGuard]},
   { path: 'vacinas-detalhes', component: VacinasDetalheComponent, canActivate: [UsuarioAutenticadoGuard]},
   { path: 'perfil', component: PerfilComponent, canActivate: [UsuarioAutenticadoGuard]},
+  { path: 'reset-codigo', component: EmailResetComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
+  { path: 'reset-senha', component: SenhaResetComponent, canActivate: [UsuarioNaoAutenticadoGuard]},
   { path: '**', redirectTo: '/login'},  // Rota coringa redireciona para login em caso de rota não encontrada
 ];
 

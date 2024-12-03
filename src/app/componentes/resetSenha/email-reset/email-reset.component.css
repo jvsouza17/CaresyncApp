@@ -1,0 +1,59 @@
+.reset-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #26606b;
+  margin-bottom: 20px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-label,
+.mat-form-field,
+.mat-input-element {
+  color: #26606b !important;
+  font-family: "Raleway", sans-serif !important;
+  font-size: larger !important;
+}
+
+mat-error {
+  color: red;
+  font-size: 12px;
+}
+
+button {
+  background-color: #26606b;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #4ab68a;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
