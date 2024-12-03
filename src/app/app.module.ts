@@ -46,6 +46,8 @@ import { MinhasConsultasComponent } from './componentes/minhas-consultas/minhas-
 import { MeusExamesComponent } from './componentes/meus-exames/meus-exames.component';
 import { ExamesComponent } from './componentes/exames/exames.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { EmailResetComponent } from './componentes/resetSenha/email-reset/email-reset.component';
+import { SenhaResetComponent } from './componentes/resetSenha/senha-reset/senha-reset.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ConsultasDetalheComponent,
     AgendarExameComponent,
     ExamesComponent,
+    EmailResetComponent,
+    SenhaResetComponent,
   ],
   imports: [
     BrowserModule,
