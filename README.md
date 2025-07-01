@@ -1,27 +1,71 @@
 # CaresyncApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+O **CareSync** é um projeto desenvolvido com o objetivo de modernizar a gestão de postos de saúde, centralizando informações e otimizando processos que, tradicionalmente, ainda são realizados de forma manual. A proposta é oferecer uma solução tecnológica que:
 
-## Development server
+- Centraliza o histórico médico e agendamentos dos pacientes.
+- Melhora a comunicação entre profissionais de saúde e pacientes.
+- Garante segurança e conformidade com a LGPD.
+- Reduz erros e otimiza processos administrativos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Objetivo
 
-## Code scaffolding
+O CareSync nasceu da necessidade de transformar o atendimento nos postos de saúde, minimizando perdas de dados, atrasos e erros que impactam pacientes, profissionais e administradores. O sistema é dividido em duas frentes:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **CareSync Pro:** Plataforma para gestores administrarem registros de pacientes, profissionais e agendamentos.
+- **CareSync App:** Aplicativo para pacientes visualizarem diagnósticos, consultas, vacinas e exames de forma prática e integrada.
 
-## Build
+Este repositório refere-se ao **CareSync App**, desenvolvido em Angular.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tecnologias utilizadas
 
-## Running unit tests
+- **Angular** (front-end principal)
+- **Angular Material** (componentes de UI)
+- **Bootstrap** (estilização)
+- **angular-datatables** (exibição de dados tabulares)
+- **RxJS** (programação reativa)
+- **Consumo de API REST** (integração com back-end em Java Spring Boot)
+- **MySQL** (banco de dados, via back-end)
+- **TypeScript** (linguagem principal)
+- **Pipes personalizados**
+- **DTOs (Data Transfer Objects)**
+- **Proteção de rotas**
+- **Injeção de dependências via services**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Funcionalidades implementadas
 
-## Running end-to-end tests
+- Cadastro, login e logout com interceptor para token JWT.
+- Reset de senha intuitivo.
+- Formulários reativos com validações.
+- Pipes nativos e personalizados para transformação de dados.
+- Interface moderna, responsiva e consistente com Angular Material.
+- Exibição eficiente de dados com angular-datatables.
+- Proteção de rotas para acesso seguro.
+- Agendamento de consultas e exames para pacientes e profissionais.
+- Consumo de dados via API REST.
+- Organização do código com services e DTOs para tipagem forte e segurança.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Como rodar o projeto
 
-## Further help
+1. Instale as dependências:
+   ```sh
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. Inicie o servidor de desenvolvimento Angular:
+   ```sh
+   ng serve
+   ```
+
+3. Acesse o aplicativo no navegador:
+   ```
+   http://localhost:4200/
+   ```
+
+4. Certifique-se de que o back-end (API REST em Java Spring Boot) esteja rodando e configurado para aceitar requisições do front-end.
+
+## Testes
+
+Para rodar os testes unitários:
+```sh
+ng test
+```
